@@ -1,0 +1,23 @@
+<h3 class="text-center">Login</h3>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" class="container">
+    <div class="form-group">
+        <div class="form-label-group">
+            <label for="inputUsuario">Usuario</label>
+            <input id="inputUsuario" placeholder="Usuario" class="form-control" type="text" formControlName="username"
+                required autofocus>
+        </div>
+    </div>
+    <div class="form-group mt-3">
+        <div class="form-label-group">
+            <label for="inputPassword">Contraseña</label>
+            <input id="inputPassword" placeholder="Contraseña" class="form-control" type="password"
+                formControlName="password" required>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+        <button class="btn btn-primary" type="submit">Ingresar</button>
+    </div>
+    <div *ngIf="isLoginFailed" class="alert alert-danger mt-3">
+        Error: {{errorMessage}}
+    </div>
+</form>
