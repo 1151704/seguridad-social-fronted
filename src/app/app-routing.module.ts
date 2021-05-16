@@ -1,3 +1,4 @@
+import { MainEmpresaComponent } from './components/main-empresa/main-empresa.component';
 import { MainInicioComponent } from './components/main-inicio/main-inicio.component';
 import { MainComponent } from './components/main/main.component';
 import { InicioSignInComponent } from './components/inicio-sign-in/inicio-sign-in.component';
@@ -20,6 +21,7 @@ const routes: Routes = [
     component: MainComponent,
     children: [
       { path: "", component: MainInicioComponent },
+      { path: 'empresa', component: MainEmpresaComponent },
     ]
   }
 ]

@@ -48,11 +48,13 @@ export class InicioSignInComponent implements OnInit {
     this.errorMessage = '';
     this.isLoginFailed = false;
     this.loginInfo = new AuthLoginInfo(customerData.username, customerData.password);
-    // Swal.fire({
-    //   title: 'Procesando datos',
-    //   allowOutsideClick: false,
-    //   onBeforeOpen: () => Swal.showLoading()
-    // });
+    Swal.fire({
+      title: 'Procesando datos',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading()
+      }
+    });
     const attemptAuth = this.authService.attemptAuth(this.loginInfo);
 
     if (attemptAuth) {

@@ -1,0 +1,86 @@
+<div class="container-fluid">
+
+  <div class="card mb-3 ">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Actualizar Empresa
+    </div>
+    <div class="card-body">
+
+      <form [formGroup]="proveedorForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group col-6">
+            <label>
+              Nombre:
+            </label>
+            <input type="text" class="form-control" formControlName="nombre" readonly disabled>
+          </div>
+
+          <div class="form-group col-6">
+            <label>
+              Nit:
+            </label>
+            <input type="text" class="form-control" formControlName="nit" readonly disabled>
+          </div>
+        </div>
+        <div class="form-row">
+
+          <div class="form-group col-6">
+            <label>
+              Teléfono:
+            </label>
+            <input type="text" class="form-control" formControlName="telefono">
+          </div>
+
+          <div class="form-group col-6">
+            <label>
+              Email:
+            </label>
+            <input type="text" class="form-control" formControlName="email">
+          </div>
+
+
+        </div>
+        <div class="form-group">
+          <label>
+            Dirección:
+          </label>
+          <input type="text" class="form-control" formControlName="direccion">
+        </div>
+        <div class="form-group">
+          <label>
+            Misión:
+          </label>
+          <textarea class="form-control" formControlName="mision"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Visión:
+          </label>
+          <textarea class="form-control" formControlName="vision"></textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="custom-file">
+            <input accept="image/x-png,image/jpeg" type="file" class="custom-file-input" id="customFileLang" lang="es"
+              (change)="handleFileInput($event)">
+            <label class="custom-file-label" for="customFileLang">{{nameFile?nameFile: 'Seleccione una
+              fotografia'}}</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Estado:
+          </label>
+          <input type="checkbox" formControlName="enable">
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-success" [disabled]="!proveedorForm.valid">Actualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

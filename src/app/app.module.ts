@@ -16,6 +16,10 @@ import { InicioMainComponent } from './components/inicio-main/inicio-main.compon
 import { InicioSignInComponent } from './components/inicio-sign-in/inicio-sign-in.component';
 import { MainComponent } from './components/main/main.component';
 import { MainInicioComponent } from './components/main-inicio/main-inicio.component';
+import { MainHeaderComponent } from './components/main-header/main-header.component';
+import { MainFooterComponent } from './components/main-footer/main-footer.component';
+import { MainMenuComponent } from './components/main-menu/main-menu.component';
+import { MainEmpresaComponent } from './components/main-empresa/main-empresa.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,10 @@ import { MainInicioComponent } from './components/main-inicio/main-inicio.compon
     InicioSignInComponent,
     MainComponent,
     MainInicioComponent,
+    MainHeaderComponent,
+    MainFooterComponent,
+    MainMenuComponent,
+    MainEmpresaComponent,
   ],
   imports: [
     BrowserModule,

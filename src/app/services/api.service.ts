@@ -1,3 +1,6 @@
+import { NotificacionService } from './notificacion.service';
+import { HttpClient } from '@angular/common/http';
+import { EmpresaService } from './empresa.service';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,5 +8,12 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  constructor() { }
+  empresaService: EmpresaService;
+  notifService: NotificacionService;
+
+  constructor(private http: HttpClient) {
+    this.empresaService = new EmpresaService(http)
+    this.notifService = new NotificacionService()
+  }
+
 }
