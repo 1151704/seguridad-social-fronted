@@ -1,3 +1,6 @@
+import { MainPlanRegistrarComponent } from './components/main-plan-registrar/main-plan-registrar.component';
+import { MainPlanEditarComponent } from './components/main-plan-editar/main-plan-editar.component';
+import { MainPlanesComponent } from './components/main-planes/main-planes.component';
 import { MainEmpresaComponent } from './components/main-empresa/main-empresa.component';
 import { MainInicioComponent } from './components/main-inicio/main-inicio.component';
 import { MainComponent } from './components/main/main.component';
@@ -22,6 +25,9 @@ const routes: Routes = [
     children: [
       { path: "", component: MainInicioComponent },
       { path: 'empresa', component: MainEmpresaComponent },
+      { path: 'planes', component: MainPlanesComponent },
+      { path: 'plan-editar', component: MainPlanEditarComponent },
+      { path: 'plan-registrar', component: MainPlanRegistrarComponent },
     ]
   }
 ]

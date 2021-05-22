@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="card mb-3 ">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Planes
+        </div>
+        <div class="card-body">
+            <button class="btn btn-success btn-sm" [routerLink]="[ '/main/plan-registrar']" title="Registrar"> <i
+                    class="fa fa-plus"></i> Registrar</button>
+            <table class=" mt-2 table table-striped table-bordered table-sm">
+                <thead>
+                    <tr>
+                        <th>Imagen</th>
+                        <th>Titulo</th>
+                        <th>Descripción</th>
+                        <th>Estado</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="planes.length == 0">
+                        <td colspan="7" align="center">No hay registros</td>
+                    </tr>
+                    <tr *ngFor="let plan of planes; let i = index">
+
+                        <td style="width: 10%;" *ngIf="plan.file">
+                            <img [src]="urlBase+'file/'+plan.file.id" [alt]="plan.file.fileName"
+                                class="img-thumbnail rounded">
+                        </td>
+
+                        <td *ngIf="!plan.file"></td>
+
+                        <td>{{plan.titulo}}</td>
+                        <td>{{plan.descripcion}}</td>
+                        <td>{{plan.enable?'ACTIVO':'INACTIVO'}}</td>
+                        <td>
+                            <button class="btn btn-outline-info btn-sm p-1" (click)="editPlan(plan)" title="Editar"> <i
+                                    class="fa fa-edit"></i> Editar</button>
+                            <button class="btn btn-outline-warning btn-sm p-1 ml-1" (click)="cambiarEstado(plan)"
+                                title="Cambiar"> <i class="fa fa-copy"></i> Cambiar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

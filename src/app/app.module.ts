@@ -20,6 +20,9 @@ import { MainHeaderComponent } from './components/main-header/main-header.compon
 import { MainFooterComponent } from './components/main-footer/main-footer.component';
 import { MainMenuComponent } from './components/main-menu/main-menu.component';
 import { MainEmpresaComponent } from './components/main-empresa/main-empresa.component';
+import { MainPlanesComponent } from './components/main-planes/main-planes.component';
+import { MainPlanEditarComponent } from './components/main-plan-editar/main-plan-editar.component';
+import { MainPlanRegistrarComponent } from './components/main-plan-registrar/main-plan-registrar.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,9 @@ import { MainEmpresaComponent } from './components/main-empresa/main-empresa.com
     MainFooterComponent,
     MainMenuComponent,
     MainEmpresaComponent,
+    MainPlanesComponent,
+    MainPlanEditarComponent,
+    MainPlanRegistrarComponent,
   ],
   imports: [
     BrowserModule,
