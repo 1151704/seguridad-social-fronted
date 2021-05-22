@@ -1,6 +1,6 @@
 import { NAME_APP } from './../../url.constants';
 import { Title } from '@angular/platform-browser';
-import { ApiService } from './../../services/api.service';
+import { ApiService } from './../../core/api.service';
 import { TokenStorageService } from './../../services/auth/token-storage.service';
 import { Empresa } from './../../models/empresa.model';
 import { Component, OnInit } from '@angular/core';

@@ -1,3 +1,7 @@
+import { MainUsuariosComponent } from './components/main-usuarios/main-usuarios.component';
+import { MainUsuarioEditarComponent } from './components/main-usuario-editar/main-usuario-editar.component';
+import { MainUsuarioRegistrarComponent } from './components/main-usuario-registrar/main-usuario-registrar.component';
+import { MainUsuarioComponent } from './components/main-usuario/main-usuario.component';
 import { MainPlanRegistrarComponent } from './components/main-plan-registrar/main-plan-registrar.component';
 import { MainPlanEditarComponent } from './components/main-plan-editar/main-plan-editar.component';
 import { MainPlanesComponent } from './components/main-planes/main-planes.component';
@@ -28,6 +32,10 @@ const routes: Routes = [
       { path: 'planes', component: MainPlanesComponent },
       { path: 'plan-editar', component: MainPlanEditarComponent },
       { path: 'plan-registrar', component: MainPlanRegistrarComponent },
+      { path: 'perfil', component: MainUsuarioComponent},
+      { path: 'usuarios', component: MainUsuariosComponent},
+      { path: 'usuario-registrar', component: MainUsuarioRegistrarComponent},
+      { path: 'usuario-editar', component: MainUsuarioEditarComponent},
     ]
   }
 ]

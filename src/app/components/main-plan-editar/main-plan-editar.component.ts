@@ -1,5 +1,5 @@
 import { PlanSalidaApi } from './../../container/plan-salida-api';
-import { ApiService } from './../../services/api.service';
+import { ApiService } from './../../core/api.service';
 import { Plan } from './../../models/plan.model';
 import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';

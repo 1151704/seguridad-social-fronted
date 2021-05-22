@@ -36,7 +36,7 @@
               <div class="form-label-group">
                 <input type="text" id="inputIdentificacion" class="form-control" placeholder="Identificación" readonly
                   disabled
-                  value="{{(info.usuario.tipoId ? info.usuario.tipoId.tipo+' ':'') +info.usuario.identificacion }}">
+                  value="{{(info.usuario.tipoIdentificacion ? info.usuario.tipoIdentificacion.tipo+' ':'') +info.usuario.identificacion }}">
                 <label for="inputIdentificacion">Identificación</label>
               </div>
             </div>
@@ -44,13 +44,6 @@
         </div>
         <div class="form-group">
           <div class="form-row">
-            <div class="col-md-6">
-              <div class="form-label-group">
-                <input type="text" id="inputProveedor" class="form-control" placeholder="Eps" readonly disabled
-                  value="{{(info.usuario.eps ? info.usuario.eps.nombre : 'Sin eps') | uppercase }}">
-                <label for="inputProveedor">Empresa</label>
-              </div>
-            </div>
             <div class="col-md-6">
               <div class="form-label-group">
                 <input type="text" id="inputRol" class="form-control" placeholder="Rol" readonly disabled

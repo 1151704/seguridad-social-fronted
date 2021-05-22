@@ -1,18 +1,28 @@
-<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/main/' ]">
+<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="[ '/main/' ]">
     <a class="nav-link" href="" onclick="return false;">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>&nbsp;Inicio</span>
     </a>
 </li>
-<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/main/empresa' ]">
+<li class="nav-item"  *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="[ '/main/empresa' ]">
     <a class="nav-link" href="" onclick="return false;">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>&nbsp;Empresa</span>
     </a>
 </li>
-<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/main/planes' ]">
+<li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="[ '/main/planes' ]">
     <a class="nav-link" href="" onclick="return false;">
         <i class="fas fa-fw fa-tachometer-alt"></i>
         <span>&nbsp;Planes</span>
+    </a>
+</li>
+<li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="[ '/main/usuarios' ]">
+    <a class="nav-link" href="" onclick="return false;">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>&nbsp;Usuarios</span>
     </a>
 </li>

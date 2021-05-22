@@ -1,0 +1,103 @@
+<div class="container-fluid">
+
+    <!-- DataTables Example -->
+    <div class="card mb-3 ">
+      <div class="card-header">
+        <i class="fas fa-table"></i>
+        Mi perfil
+      </div>
+      <div class="card-body">
+        <form [formGroup]="formPassword" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" id="inputNombres" class="form-control" placeholder="Nombres" readonly
+                    required="required" autofocus="autofocus" value="{{usuario.nombres | uppercase }}">
+                  <label for="inputNombres">Nombres</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" id="inputApellidos" class="form-control" placeholder="Apellidos" readonly
+                    required="required" value="{{usuario.apellidos | uppercase }}">
+                  <label for="inputApellidos">Apellidos</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email" readonly
+                    required="required" value="{{usuario.email | uppercase }}">
+                  <label for="inputEmail">Email</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" id="inputIdentificacion" class="form-control" placeholder="Identificación" readonly
+                    disabled
+                    value="{{(usuario.tipoIdentificacion ? usuario.tipoIdentificacion.tipo+' ':'') +usuario.identificacion }}">
+                  <label for="inputIdentificacion">Identificación</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="text" id="inputRol" class="form-control" placeholder="Rol" readonly disabled
+                    value="{{(usuario.rol ? usuario.rol.descripcion : '') | uppercase}}">
+                  <label for="inputRol">Rol</label>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="password" id="inputPass" minlength="5" class="form-control" formControlName="password"
+                    placeholder="Contraseña" value="">
+                  <label for="inputPass">Contraseña nueva</label>
+                  <small class="form-text text-muted" *ngIf="formPassword.hasError('required', 'password')">
+                    Ingrese tu nueva contraseña
+                  </small>
+                  <small class="form-text text-muted" *ngIf="formPassword.hasError('minlength', 'password')">
+                    Minimo de 5 caracteres
+                  </small>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-label-group">
+                  <input type="password" id="inputPassConfir" class="form-control" formControlName="confirmPassword"
+                    placeholder="Confirmar" value="">
+                  <label for="inputPassConfir">Confirmar contraseña</label>
+                  <small class="form-text text-muted" *ngIf="formPassword.hasError('notSame')">
+                    Contraseña no coinciden
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <div class="form-row">
+              <div class="col-md-12 text-center">
+                <button class="btn btn-success" type="submit" [disabled]="!formPassword.valid">Guardar</button>
+              </div>
+            </div>
+          </div>
+  
+        </form>
+  
+      </div>
+    </div>
+  
+  </div>
+  <!-- /.container-fluid -->
+  

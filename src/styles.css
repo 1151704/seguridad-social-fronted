@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+.tr-color-1 td, .color-1 {
+    background-color: #bbe6f6 !important;
+}
+.tr-color-2 td, .color-2 {
+    background-color: #e2ffed !important;
+}
+.tr-color-0 td, .color-0 {
+    background-color: #ffe8ea !important;
+}
+.table-scrolled {
+    max-height: 60vh;
+    overflow-y: auto;
+}

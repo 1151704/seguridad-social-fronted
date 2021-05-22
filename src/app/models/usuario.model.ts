@@ -10,7 +10,7 @@ export class Usuario {
     identificacion: string;
     username: string;
     fechaRegistro: string;
-    tipoId: TipoIdentificacion;
+    tipoIdentificacion: TipoIdentificacion;
     empresa: Empresa;
     rol: Rol;
     enable: boolean;

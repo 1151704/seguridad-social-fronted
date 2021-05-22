@@ -1,4 +1,4 @@
-import { ApiService } from './../../services/api.service';
+import { ApiService } from './../../core/api.service';
 import { Plan } from './../../models/plan.model';
 import { PlanSalidaApi } from './../../container/plan-salida-api';
 import { HttpEventType, HttpResponse } from '@angular/common/http';

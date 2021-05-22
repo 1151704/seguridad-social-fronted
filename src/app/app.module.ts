@@ -1,6 +1,6 @@
+import { ApiService } from './core/api.service';
+import { NotificacionService } from './core/notificacion.service';
 import { TokenInterceptor } from './core/interceptor';
-import { ApiService } from './services/api.service';
-import { NotificacionService } from './services/notificacion.service';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -23,6 +23,11 @@ import { MainEmpresaComponent } from './components/main-empresa/main-empresa.com
 import { MainPlanesComponent } from './components/main-planes/main-planes.component';
 import { MainPlanEditarComponent } from './components/main-plan-editar/main-plan-editar.component';
 import { MainPlanRegistrarComponent } from './components/main-plan-registrar/main-plan-registrar.component';
+import { MainUsuariosComponent } from './components/main-usuarios/main-usuarios.component';
+import { MainUsuarioComponent } from './components/main-usuario/main-usuario.component';
+import { MainUsuarioEditarComponent } from './components/main-usuario-editar/main-usuario-editar.component';
+import { MainUsuarioRegistrarComponent } from './components/main-usuario-registrar/main-usuario-registrar.component';
+import { NotificationListComponent } from './components/notification-list/notification-list.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +44,11 @@ import { MainPlanRegistrarComponent } from './components/main-plan-registrar/mai
     MainPlanesComponent,
     MainPlanEditarComponent,
     MainPlanRegistrarComponent,
+    MainUsuariosComponent,
+    MainUsuarioComponent,
+    MainUsuarioEditarComponent,
+    MainUsuarioRegistrarComponent,
+    NotificationListComponent,
   ],
   imports: [
     BrowserModule,

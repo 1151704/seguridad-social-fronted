@@ -1,5 +1,5 @@
 import { PlanSalidaApi } from './../../container/plan-salida-api';
-import { ApiService } from './../../services/api.service';
+import { ApiService } from './../../core/api.service';
 import { TokenStorageService } from './../../services/auth/token-storage.service';
 import { API_REST } from './../../url.constants';
 import { Plan } from './../../models/plan.model';

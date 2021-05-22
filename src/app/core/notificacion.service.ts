@@ -1,10 +1,8 @@
-import { Notification, NotificationType } from './../models/notification';
-import { Observable, Subject } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { NotificationType, Notification } from '../models/notification';
+import { Observable, Subject } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class NotificacionService {
 
   private _subject = new Subject<Notification>();
@@ -30,7 +28,7 @@ export class NotificacionService {
 
   error(title: string, error: any, timeout = 0) {
     let message = error;
-    console.log(error);
+    console.error(error);
     if (error) {
       if (error.status) {
         message = 'Error ' + error.status;
@@ -89,4 +87,5 @@ export class NotificacionService {
 
     return string;
   }
+
 }
