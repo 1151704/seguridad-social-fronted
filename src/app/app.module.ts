@@ -28,6 +28,7 @@ import { MainUsuarioComponent } from './components/main-usuario/main-usuario.com
 import { MainUsuarioEditarComponent } from './components/main-usuario-editar/main-usuario-editar.component';
 import { MainUsuarioRegistrarComponent } from './components/main-usuario-registrar/main-usuario-registrar.component';
 import { NotificationListComponent } from './components/notification-list/notification-list.component';
+import { InicioPrincipalComponent } from './components/inicio-principal/inicio-principal.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { NotificationListComponent } from './components/notification-list/notifi
     MainUsuarioEditarComponent,
     MainUsuarioRegistrarComponent,
     NotificationListComponent,
+    InicioPrincipalComponent,
   ],
   imports: [
     BrowserModule,

@@ -41,6 +41,9 @@ export class MainPlanEditarComponent implements OnInit {
     this.proveedorForm = this.fb.group({
       titulo: ['', Validators.required],
       descripcion: ['', Validators.required],
+      precio: ['', Validators.required],
+      color: ['', Validators.required],
+      servicios: ['', Validators.required],
       enable: [false],
     });
 
@@ -48,7 +51,7 @@ export class MainPlanEditarComponent implements OnInit {
       .subscribe(data => {
         if (data.plan) {
           this.proveedorForm.patchValue(data.plan);
-          this.proveedor = Object.assign({}, this.proveedorForm.value);
+          this.proveedor = data.plan
         } else {
           this.router.navigate(['/main/planes']);
         }
@@ -74,9 +77,12 @@ export class MainPlanEditarComponent implements OnInit {
     itemProveedor.id = this.proveedor.id;
     itemProveedor.titulo = this.proveedorEdit.titulo;
     itemProveedor.descripcion = this.proveedorEdit.descripcion;
+    itemProveedor.precio = this.proveedorEdit.precio;
+    itemProveedor.color = this.proveedorEdit.color;
+    itemProveedor.servicios = this.proveedorEdit.servicios;
     itemProveedor.enable = this.proveedorEdit.enable;
     itemProveedor.file = this.currentFileUpload;
-
+    
     this.apiService.planService.guardarPlan(itemProveedor).subscribe(
       event => {
         if (event.type === HttpEventType.UploadProgress) {

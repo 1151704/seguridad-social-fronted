@@ -36,6 +36,9 @@ export class MainPlanRegistrarComponent implements OnInit {
     this.proveedorForm = this.fb.group({
       titulo: ['', Validators.required],
       descripcion: ['', Validators.required],
+      precio: ['', Validators.required],
+      color: ['', Validators.required],
+      servicios: ['', Validators.required],
       enable: [false],
     });
 
@@ -59,6 +62,9 @@ export class MainPlanRegistrarComponent implements OnInit {
 
     itemProveedor.titulo = this.proveedorEdit.titulo;
     itemProveedor.descripcion = this.proveedorEdit.descripcion;
+    itemProveedor.precio = this.proveedorEdit.precio;
+    itemProveedor.color = this.proveedorEdit.color;
+    itemProveedor.servicios = this.proveedorEdit.servicios;
     itemProveedor.enable = true;
     itemProveedor.file = this.currentFileUpload;
 

@@ -27,17 +27,34 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/select2/dist/css/select2.min.css",
+              "src/vendor-inicio/bootstrap/css/bootstrap.min.css", 
+              "src/vendor-inicio/bootstrap-icons/bootstrap-icons.css", 
+              "src/vendor-inicio/aos/aos.css", 
+              "src/vendor-inicio/remixicon/remixicon.css", 
+              "src/vendor-inicio/swiper/swiper-bundle.min.css",
+              "src/vendor-inicio/glightbox/css/glightbox.min.css", 
+              "src/vendor-inicio/style.css",
+              "src/vendor-inicio/style-login.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "src/styles.css",
-              "src/sb-admin.min.css",
-              "node_modules/select2/dist/css/select2.min.css"
+              "src/sb-admin.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
-              "node_modules/select2/dist/js/select2.min.js"
+              "node_modules/select2/dist/js/select2.min.js",
+              "src/vendor-inicio/bootstrap/js/bootstrap.bundle.js", 
+              "src/vendor-inicio/aos/aos.js", 
+              "src/vendor-inicio/php-email-form/validate.js", 
+              "src/vendor-inicio/swiper/swiper-bundle.min.js", 
+              "src/vendor-inicio/purecounter/purecounter.js",
+              "src/vendor-inicio/isotope-layout/isotope.pkgd.min.js", 
+              "src/vendor-inicio/glightbox/js/glightbox.min.js", 
+              "src/vendor-inicio/main.js",
+              "src/vendor-inicio/main-login.js"
             ]
           },
           "configurations": {

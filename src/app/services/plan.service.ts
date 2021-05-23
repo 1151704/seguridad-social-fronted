@@ -34,9 +34,12 @@ export class PlanService {
       formdata.append('file', proveedor.file);
     formdata.append('titulo', proveedor.titulo);
     formdata.append('descripcion', proveedor.descripcion);
-    formdata.append('enable', ""+proveedor.enable);
+    formdata.append('precio', proveedor.precio.toString());
+    formdata.append('color', proveedor.color);
+    formdata.append('servicios', proveedor.servicios);
+    formdata.append('enable', proveedor.enable.toString());
     if (proveedor.id) 
-      formdata.append('id', proveedor.id+"");   
+      formdata.append('id', proveedor.id.toString());   
 
     const req = new HttpRequest('POST', `${this.baseUrl}`, formdata, {
       reportProgress: true

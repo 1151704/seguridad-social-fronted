@@ -13,6 +13,9 @@
                         <th>Imagen</th>
                         <th>Titulo</th>
                         <th>Descripción</th>
+                        <th>Precio</th>
+                        <th>Color</th>
+                        <th>Servicios</th>
                         <th>Estado</th>
                         <th></th>
                     </tr>
@@ -32,6 +35,9 @@
 
                         <td>{{plan.titulo}}</td>
                         <td>{{plan.descripcion}}</td>
+                        <td>{{plan.precio | currency}}</td>
+                        <td><input type="color" [value]="plan.color" disabled readonly/></td>
+                        <td>{{plan.servicios}}</td>
                         <td>{{plan.enable?'ACTIVO':'INACTIVO'}}</td>
                         <td>
                             <button class="btn btn-outline-info btn-sm p-1" (click)="editPlan(plan)" title="Editar"> <i
