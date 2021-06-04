@@ -1,8 +1,22 @@
+<nav>
+  <label class="logo">PROFESIONAL CARE</label>
+  <ul>
+    <li><a class="active" href="">INICIO</a></li>
+    <li><a href="">PLANES</a></li>
+    <li><a href="">¿QUIENES SOMOS?</a></li>
+    <li><a href="" onclick="return false;" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
+  </ul>
+  <label id="icon">
+    <i class="fas fa-bars"></i>
+  </label>
+</nav>
+
 <div class="content">
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <img src="assets/undraw_remotely_2j6y.svg" alt="Image" class="img-fluid">
+                <img id="imagen_login" src="assets/login.jpg" class="img-responsive"alt="Image" class="img-fluid">
             </div>
             <div class="col-md-6 contents">
                 <div class="row justify-content-center">
@@ -22,7 +36,7 @@
 
                             </div>
 
-                            <input type="submit" value="Ingresar" class="btn btn-block btn-primary">
+                            <input id="boton_login" type="submit" value="Ingresar" class="btn btn-block btn-primary">
                             <div *ngIf="isLoginFailed" class="alert alert-danger mt-3">
                                 Error: {{errorMessage}}
                             </div>

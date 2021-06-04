@@ -1,4 +1,206 @@
-<!-- ======= Header ======= -->
+
+
+<nav>
+  <label class="logo" >PROFESIONAL CARE</label>
+  <ul>
+    <li><a class="active" href="">INICIO</a></li>
+    <li><a href="">PLANES</a></li>
+    <li><a href="">¿QUIENES SOMOS?</a></li>
+    <li><a href="" onclick="return false;" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
+  </ul>
+  <label id="icon">
+    <i class="fas fa-bars"></i>
+  </label>
+</nav>
+
+
+
+<div class="title-2">
+  <h2>Seguridad Social Para Todos.</h2>
+</div>
+
+<div class="container-2">
+  <section id="about" class="about">
+
+    <div class="container" data-aos="fade-up">
+      <div class="row gx-0">
+
+        <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="content">
+            <h2 class="title-3">¿Quienes somos?</h2>
+            <h5 style="text-align: justify;">
+              Para nuestra empresa, es de gran importancia presentarles a ustedes una propuesta comercial
+              La cual permita brindarle mayor seguridad en cuanto a la afiliación de seguridad social
+              Seguimiento de sus servicios adquiridos, de acuerdo con sus necesidades presentes y futuras,
+              Con el fin de ofrecerles la mejor asesoría en suministro de planillas verificables.
+              PROFESIONAL CARE le brinda un respaldo y una trayectoria con excelentes referencias por
+              parte
+              de nuestros clientes a los cuales se les administra en departamento de Nómina. </h5>
+          </div>
+          <div class="content">
+            <h2>Mision</h2>
+
+            <h5 style="text-align: justify;">{{empresa.mision}}</h5>
+          </div>
+          <div class="content">
+            <h2>Vision</h2>
+            <h5 style="text-align: justify;">{{empresa.vision}}</h5>
+
+          </div>
+        </div>
+
+        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+          <img src="assets/40c29289-1307-4465-861e-db36efdfde99.jpg" class="img-fluid" alt="">
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <script>
+    $(document).ready(function () {
+      $('#icon').click(function () {
+        $('ul').toggleClass('show');
+      });
+    });
+  </script>
+
+  <main id="main">
+
+    <section id="pricing" class="pricing">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Mira los planes que podemos ofrecerte</h2>
+          <p>PLANES</p>
+        </header>
+
+        <br>
+
+
+        <div class="row gy-4" data-aos="fade-left">
+
+          <div *ngFor="let plan of planes; let i = index" class="col-lg-3 col-md-6" data-aos="zoom-in"
+            [data-aos-delay]="i+1*100">
+            <div id="box_plan" class="box">
+              <h3 id="text-hover" [style]="'color: '+plan.color+';'">{{plan.titulo}}</h3>
+              <div id="text-hover_precio" class="price">{{plan.precio | currency}}</div>
+              <img *ngIf="!plan.file" src="assets/pricing-free.png" class="img-fluid" alt="">
+              <img *ngIf="plan.file" [src]="urlBase+'file/'+plan.file.id" [alt]="plan.file.fileName" class="img-fluid">
+              <ul class="mb-0">
+                <li id="text-hover_t">{{plan.servicios}}</li>
+                <li id="text-hover_t">{{plan.descripcion}}</li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <section id="clients" class="clients">
+
+    <div class="container" data-aos="fade-up">
+
+      <header class="section-header">
+        <p>Convenios EPS</p>
+
+        <p>Entidades Prestadoras de Salud</p>
+      </header>
+
+      <div class="clients-slider swiper-container">
+        <div class="swiper-wrapper align-items-center">
+          <div class="swiper-slide"><img src="assets/eps-sanitas.jpg" class="img-fluid" alt="sanitas"></div>
+          <div class="swiper-slide"><img src="assets/sura_blanco.jpg" class="img-fluid" alt="sura"></div>
+          <div class="swiper-slide"><img src="assets/coomeva.jpg" class="img-fluid" alt="coomeva"></div>
+          <div class="swiper-slide"><img src="assets/porvenir.jpg" class="img-fluid" alt="porvenir"></div>
+          <div class="swiper-slide"><img src="assets/aportes_en_linea.jpg" class="img-fluid" alt=""></div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<section>
+  <footer class="footer">
+
+    <div class="main-content">
+
+      <div class="left box">
+        <h3>Sobre Nosotros</h3>
+
+        <div class="content">
+          <p>ROFESIONAL CARE le brinda un respaldo y una trayectoria con excelentes referencias por parte de nuestros
+            clientes a los cuales se les administra en departamento de Nómina.</p>
+          <div class="social">
+            <a href="#"><span class="fab fa-facebook-f"></span></a>
+            <a href="#"><span class="fab fa-instagram"></span></a>
+            <a href="#"><span class="fab fa-youtube"></span></a>
+
+          </div>
+        </div>
+
+      </div>
+      <div class="center box">
+
+        <h3>Direcciones</h3>
+
+        <div class="content">
+          <div class="place">
+            <span class="fas fa-map-marker-alt"></span>
+            <span class="text">1 N° 11-81 Loca 1 Barrio La Playa</span>
+          </div>
+          <div class="phone">
+            <span class="fas fa-phone-alt"></span>
+            <span class="text">+573015406332 +573115407518</span>
+          </div>
+          <div class="email">
+            <span class="fas fa-envelope"></span>
+            <span class="text">profesionalcareseccional@gmail.com</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="right box">
+        <h3>Contactenos</h3>
+        <div class="content">
+          <form action="">
+            <div class="email">
+              <div class="text">Email *</div>
+              <input type="email" required>
+            </div>
+            <div class="msg">
+              <div class="text">Mensaje *</div>
+              <textarea rows="2" cols="25" required></textarea>
+            </div>
+            <div class="btn">
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div clas="bottom">
+
+      <span class="credit">Creada por Estudiantes <a href="">UFPS|</a></span>
+      <span class="far fa-copyright"><span>2021 Todos los derechos reservados.</span></span>
+
+    </div>
+  </footer>
+</section>
+
+<!-- ======= Header
 <header id="header" class="header fixed-top">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
@@ -17,12 +219,12 @@
             [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
+    </nav>
 
   </div>
-</header><!-- End Header -->
+</header>
 
-<!-- ======= Hero Section ======= -->
+
 <section id="hero" class="hero d-flex align-items-center">
 
   <div class="container">
@@ -48,11 +250,11 @@
     </div>
   </div>
 
-</section><!-- End Hero -->
+</section> End Hero -->
 
 
 
-<!-- 
+<!--
 <section id="registrar" class="contact">
 
   <div class="container" data-aos="fade-up">
@@ -64,7 +266,7 @@
 
     <div class="row justify-content-center align-items-center">
 
-      
+
 
       <div class="col-lg-8">
         <form action="forms/contact.php" method="post" class="php-email-form">
@@ -84,12 +286,12 @@
                 <li><a class="dropdown-item" href="#">Cedula de ciudadania</a></li>
                 <li><a class="dropdown-item" href="#">PEP</a></li>
                 <li><a class="dropdown-item" href="#">Tarjeta migratoria</a></li>
-            
-                
+
+
               </ul>
-             
+
             </div>
-            
+
             <div class="col-md-6 ">
               <input type="number" class="form-control" name="numero de documento" placeholder="Numero de documento" required>
             </div>
@@ -98,8 +300,8 @@
               <input type="text" class="form-control" name="Profesion" placeholder="Profesion" required>
             </div>
 
-          
-            
+
+
             <div class="col-md-12">
               <input type="text" class="form-control" name="Departamento" placeholder="Departamento" required>
             </div>
@@ -115,20 +317,20 @@
             <div class="col-md-6">
               <input type="text" name="name" class="form-control" placeholder="Situacion laboral" required>
             </div>
-            
+
             <div class="col-md-6 ">
               <input type="email" class="form-control" name="email" placeholder="Correo Electronico" required>
             </div>
-            
+
             <div class="input-group">
               <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tipo de afiliacion</button>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Independiente</a></li>
                 <li><a class="dropdown-item" href="#">Dependiente</a></li>
-               
-                
+
+
               </ul>
-             
+
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -154,9 +356,9 @@
                 &nbsp;Mis padres
               </label>
             </div>
-            
-            
-            
+
+
+
             <div class="input-group">
               <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Seleccionar plan</button>
               <ul class="dropdown-menu">
@@ -164,9 +366,9 @@
                 <li><a class="dropdown-item" href="#">Salud+pension</a></li>
                 <li><a class="dropdown-item" href="#">Salud+ccf</a></li>
                 <li><a class="dropdown-item" href="#">Salud+ccf+pension</a></li>
-                
+
               </ul>
-             
+
             </div>
 
             <div class="input-group">
@@ -177,11 +379,11 @@
                 <li><a class="dropdown-item" href="#">Riesgo 3</a></li>
                 <li><a class="dropdown-item" href="#">Riesgo 4</a></li>
                 <li><a class="dropdown-item" href="#">Riesgo 5</a></li>
-                
+
               </ul>
-             
+
             </div>
-            
+
             <div class="col-md-12 ">
               <label> <p>Adjunta tu cedula</p></label>
               <input type="file" class="form-control" name="adjuntatusdocumentos" placeholder="Adjunta tu cedula" required>
@@ -191,8 +393,8 @@
               <label> <p>Adjunta documento de beneficiarios(Si los hay)</p></label>
               <input type="file" class="form-control" name="adjuntatusdocumentos" placeholder="Documento del beneficiario" required>
             </div>
-        
-            
+
+
             <div class="col-md-4 text-center">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
@@ -210,9 +412,9 @@
 
   </div>
 
-</section> Section -->
+</section>
 <main id="main">
-  <!-- ======= About Section ======= -->
+
   <section id="about" class="about">
 
     <div class="container" data-aos="fade-up">
@@ -249,11 +451,11 @@
       </div>
     </div>
 
-  </section><!-- End About Section -->
+  </section>
 
 
 
-  <!-- ======= Pricing Section ======= -->
+
   <section id="pricing" class="pricing">
 
     <div class="container" data-aos="fade-up">
@@ -264,7 +466,7 @@
       </header>
 
       <div class="row gy-4" data-aos="fade-left">
-        
+
         <div *ngFor="let plan of planes; let i = index" class="col-lg-3 col-md-6" data-aos="zoom-in" [data-aos-delay]="i+1*100">
           <div class="box">
             <h3 [style]="'color: '+plan.color+';'">{{plan.titulo}}</h3>
@@ -282,7 +484,7 @@
 
     </div>
 
-  </section><!-- End Pricing Section -->
+  </section>
 
 
   <section id="clients" class="clients">
@@ -307,17 +509,16 @@
       </div>
     </div>
 
-  </section><!-- End Clients Section -->
+  </section>
 
 
 
-  <!-- ======= Contact Section ======= -->
-  <!-- End Contact Section -->
 
 
-</main><!-- End #main -->
 
-<!-- ======= Footer ======= -->
+</main>
+
+
 <footer id="footer" class="footer">
 
   <div class="footer-top">
@@ -381,7 +582,8 @@
     </div>
 
   </div>
-</footer><!-- End Footer -->
+</footer>
 
 <a href="#header" class="back-to-top scrollto d-flex align-items-center justify-content-center"><i
     class="bi bi-arrow-up-short"></i></a>
+-->
