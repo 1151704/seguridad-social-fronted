@@ -12,12 +12,13 @@
         <li><a id="text_navbar" class="nav-link scrollto active" href="#hero">Inicio</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="#about">Quienes Somos</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="#pricing">Planes</a></li>
-        <li><a id="boton_navbar" class="getstarted scrollto" href="" onclick="return false;"
-            [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-            [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
-      </ul>
-      <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
-    </nav>
+        <li><a id="text_navbar" class="nav-link scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/afiliacion' ]">Afiliación</a></li>
+        <li><a id="boton_navbar" class="getstarted scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
+        </nav>
 
   </div>
 </header>
@@ -39,26 +40,19 @@
                             <div class="form-group first">
                                 <label for="username">Usuario</label>
                                 <input type="text" class="form-control" id="username" formControlName="username">
-
                             </div>
                             <div class="form-group last mb-4 mt-3">
                                 <label for="password">Contraseña</label>
                                 <input type="password" class="form-control" id="password" formControlName="password">
-
                             </div>
-
                             <input id="boton_login" type="submit" value="Ingresar" class="btn btn-block btn-primary">
                             <div *ngIf="isLoginFailed" class="alert alert-danger mt-3">
                                 Error: {{errorMessage}}
                             </div>
-
-
                         </form>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 </div>

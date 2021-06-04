@@ -1,4 +1,5 @@
 import { InicioPrincipalComponent } from './components/inicio-principal/inicio-principal.component';
+import { InicioAfiliacionComponent } from './components/inicio-afiliacion/inicio-afiliacion.component';
 import { MainUsuariosComponent } from './components/main-usuarios/main-usuarios.component';
 import { MainUsuarioEditarComponent } from './components/main-usuario-editar/main-usuario-editar.component';
 import { MainUsuarioRegistrarComponent } from './components/main-usuario-registrar/main-usuario-registrar.component';
@@ -20,7 +21,8 @@ const routes: Routes = [
     component: InicioComponent,
     children: [
       { path: "", component: InicioPrincipalComponent },
-      { path: "signin", component: InicioSignInComponent }
+      { path: "signin", component: InicioSignInComponent },
+      { path: "afiliacion", component: InicioAfiliacionComponent }
     ]
   },
   { path: "", redirectTo: "inicio", pathMatch: "full" },

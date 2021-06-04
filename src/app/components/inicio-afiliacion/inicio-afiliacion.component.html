@@ -1,5 +1,3 @@
-
-
 <header id="header" class="header fixed-top">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
@@ -14,15 +12,21 @@
         <li><a id="text_navbar" class="nav-link scrollto active" href="#hero">Inicio</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="#about">Quienes Somos</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="#pricing">Planes</a></li>
-        <li><a id="boton_navbar" class="getstarted scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="" onclick="return false;"
+            [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[ '/inicio/afiliacion' ]">Afiliación</a></li>
+        <li><a id="boton_navbar" class="getstarted scrollto" href="" onclick="return false;"
+            [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
     </nav>
 
   </div>
 </header>
-<br><br>
+<br>
+<br>
+<br>
 
 <section id="registrar" class="contact">
   <div class="container" data-aos="fade-up">
@@ -30,6 +34,7 @@
       <p>Afiliate</p>
     </header>
     <div class="row justify-content-center align-items-center">
+
       <div class="col-lg-8">
         <form action="forms/contact.php" method="post" class="php-email-form">
           <div class="row gy-4">
@@ -40,15 +45,17 @@
               <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" required>
             </div>
             <div class="input-group">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tipo de documento</button>
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Tipo de documento</button>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Cedula de ciudadania</a></li>
                 <li><a class="dropdown-item" href="#">PEP</a></li>
                 <li><a class="dropdown-item" href="#">Tarjeta migratoria</a></li>
-            </ul>
+              </ul>
             </div>
             <div class="col-md-6 ">
-              <input type="number" class="form-control" name="numero de documento" placeholder="Numero de documento" required>
+              <input type="number" class="form-control" name="numero de documento" placeholder="Numero de documento"
+                required>
             </div>
             <div class="col-md-6 ">
               <input type="text" class="form-control" name="Profesion" placeholder="Profesion" required>
@@ -71,64 +78,101 @@
             <div class="col-md-6 ">
               <input type="email" class="form-control" name="email" placeholder="Correo Electronico" required>
             </div>
+            <div>
             <div class="input-group">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tipo de afiliacion</button>
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Tipo de afiliacion</button>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Independiente</a></li>
                 <li><a class="dropdown-item" href="#">Dependiente</a></li>
               </ul>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <label class="form-check-label" for="flexRadioDefault1">
-                &nbsp;Sin beneficiarios
-              </label>
+</div>
+            <br><br><br>
+            <div class="row">
+
+              <div class="col-lg-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  &nbsp;&nbsp;
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    Sin <br> beneficiarios
+                  </label>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  &nbsp;&nbsp;
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Hijos
+                  </label>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  &nbsp;&nbsp;
+                  <label class="form-check-label" for="flexRadioDefault2">
+                    Pareja e hijos
+                  </label>
+                </div>
+              </div>
+              <div class="col-lg-3">
+
+
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                  &nbsp;&nbsp;
+                  <label class="form-check-label align-items-center" for="flexRadioDefault2">
+                    Mis padres
+                  </label>
+                </div>
+              </div>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                &nbsp;Hijos
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                &nbsp; Pareja e hijos
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                &nbsp;Mis padres
-              </label>
-            </div>
+
             <div class="input-group">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Seleccionar plan</button>
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">Seleccionar plan</button>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Salud</a></li>
                 <li><a class="dropdown-item" href="#">Salud+pension</a></li>
                 <li><a class="dropdown-item" href="#">Salud+ccf</a></li>
                 <li><a class="dropdown-item" href="#">Salud+ccf+pension</a></li>
+
               </ul>
+
             </div>
             <div class="input-group">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">¿Desea contratar arl?</button>
+              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">¿Desea contratar arl?</button>
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Riesgo 1</a></li>
                 <li><a class="dropdown-item" href="#">Riesgo 2</a></li>
                 <li><a class="dropdown-item" href="#">Riesgo 3</a></li>
                 <li><a class="dropdown-item" href="#">Riesgo 4</a></li>
                 <li><a class="dropdown-item" href="#">Riesgo 5</a></li>
+
               </ul>
+
+            </div>
+
+            <div class="col-md-12 ">
+              <label>
+                <p>Adjunta tu cedula</p>
+              </label>
+              <input type="file" class="form-control" name="adjuntatusdocumentos" placeholder="Adjunta tu cedula"
+                required>
             </div>
             <div class="col-md-12 ">
-              <label> <p>Adjunta tu cedula</p></label>
-              <input type="file" class="form-control" name="adjuntatusdocumentos" placeholder="Adjunta tu cedula" required>
+              <label>
+                <p>Adjunta documento de beneficiarios(Si los hay)</p>
+              </label>
+              <input type="file" class="form-control" name="adjuntatusdocumentos"
+                placeholder="Documento del beneficiario" required>
             </div>
-            <div class="col-md-12 ">
-              <label> <p>Adjunta documento de beneficiarios(Si los hay)</p></label>
-              <input type="file" class="form-control" name="adjuntatusdocumentos" placeholder="Documento del beneficiario" required>
-            </div>
+
+
             <div class="col-md-4 text-center">
               <div class="loading">Loading</div>
               <div class="error-message"></div>
@@ -143,72 +187,64 @@
 </section>
 
 
-
-<footer id="footer" class="footer">
-
-  <div class="footer-top">
-    <div class="container">
-      <div class="row gy-12">
-        <div class="col-lg-12 col-md-12 footer-info">
-          <a href="#" class="logo d-flex align-items-center">
-            <img src="assets/logo.png" alt="">
-            <span>Profesional Care</span>
-          </a>
-          <p>{{empresa.razonSocial}}</p>
+<footer class="footer">
+  <div class="main-content">
+    <div class="left box">
+      <h3>Sobre Nosotros</h3>
+      <div class="content">
+        <p>ROFESIONAL CARE le brinda un respaldo y una trayectoria con excelentes referencias por parte de nuestros
+          clientes a los cuales se les administra en departamento de Nómina.</p>
+        <div class="social">
+          <a href="#"><span class="fab fa-facebook-f"></span></a>
+          <a href="#"><span class="fab fa-instagram"></span></a>
+          <a href="#"><span class="fab fa-youtube"></span></a>
         </div>
-
-        <section id="contact" class="contact">
-          <div class="container" data-aos="fade-up">
-            <header class="section-header">
-              <p>Contactanos</p>
-            </header>
-
-            <div class="row col-lg-12 mb-4">
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-geo-alt"></i>
-                  <h3>Dirección</h3>
-                  <p>{{empresa.direccion}}</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-telephone"></i>
-                  <h3>Llamanos</h3>
-                  <p>{{empresa.telefono}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="row col-lg-12 mb-4">
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Correo Electronico</h3>
-                  <p>{{empresa.email}}</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-clock"></i>
-                  <h3>Horario</h3>
-                  <p>Lunes a Viernes<br>8:00AM - 6:00PM</p>
-                </div>
-              </div>
-            </div>
+      </div>
+    </div>
+    <div class="center box">
+      <h3>Direcciones</h3>
+      <div class="content">
+        <div class="place">
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="text">1 N° 11-81 Loca 1 Barrio La Playa</span>
+        </div>
+        <div class="phone">
+          <span class="fas fa-phone-alt"></span>
+          <span class="text">+573015406332 +573115407518</span>
+        </div>
+        <div class="email">
+          <span class="fas fa-envelope"></span>
+          <span class="text">profesionalcareseccional@gmail.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="right box">
+      <h3>Contactenos</h3>
+      <div class="content">
+        <form action="">
+          <div class="email">
+            <div class="text">Email *</div>
+            <input type="email" required>
           </div>
-        </section>
+          <div class="msg">
+            <div class="text">Mensaje *</div>
+            <textarea rows="2" cols="25" required></textarea>
+          </div>
+          <div class="btn">
+            <button id="boton_enviar" type="submit">Enviar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+  <div clas="bottom">
 
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Profesional Care</span></strong>. Todos los derechos reservados - 2021
-    </div>
+    <span class="credit">Creada por Estudiantes <a href="">UFPS|</a></span>
+    <span class="far fa-copyright"><span>2021 Todos los derechos reservados.</span></span>
 
   </div>
 </footer>
 
+
 <a href="#header" class="back-to-top scrollto d-flex align-items-center justify-content-center"><i
     class="bi bi-arrow-up-short"></i></a>
-

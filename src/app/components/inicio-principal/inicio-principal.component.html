@@ -14,6 +14,8 @@
         <li><a id="text_navbar" class="nav-link scrollto active" href="#hero">Inicio</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="#about">Quienes Somos</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="#pricing">Planes</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/afiliacion' ]">Afiliación</a></li>
         <li><a id="boton_navbar" class="getstarted scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
       </ul>
