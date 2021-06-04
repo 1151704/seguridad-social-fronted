@@ -1,16 +1,27 @@
-<nav>
-  <label class="logo">PROFESIONAL CARE</label>
-  <ul>
-    <li><a class="active" href="">INICIO</a></li>
-    <li><a href="">PLANES</a></li>
-    <li><a href="">¿QUIENES SOMOS?</a></li>
-    <li><a href="" onclick="return false;" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-        [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
-  </ul>
-  <label id="icon">
-    <i class="fas fa-bars"></i>
-  </label>
-</nav>
+<header id="header" class="header fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+    <a href="#" class="logo d-flex align-items-center">
+
+      <img id="logo_nav" src="assets/logo-fondo.png" alt="">
+      <span id="text_navbar">PROFESIONAL CARE</span>
+    </a>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a id="text_navbar" class="nav-link scrollto active" href="#hero">Inicio</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="#about">Quienes Somos</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="#pricing">Planes</a></li>
+        <li><a id="boton_navbar" class="getstarted scrollto" href="" onclick="return false;"
+            [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+
+  </div>
+</header>
+<br><br>
 
 <div class="content">
     <div class="container">

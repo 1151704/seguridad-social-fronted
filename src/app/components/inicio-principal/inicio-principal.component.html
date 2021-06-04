@@ -1,5 +1,29 @@
 
 
+<header id="header" class="header fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+    <a href="#" class="logo d-flex align-items-center">
+
+      <img id="logo_nav" src="assets/logo-fondo.png" alt="">
+      <span id="text_navbar">PROFESIONAL CARE</span>
+    </a>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a id="text_navbar" class="nav-link scrollto active" href="#hero">Inicio</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="#about">Quienes Somos</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="#pricing">Planes</a></li>
+        <li><a id="boton_navbar" class="getstarted scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav>
+
+  </div>
+</header>
+<br><br>
+<!--
 <nav>
   <label class="logo" >PROFESIONAL CARE</label>
   <ul>
@@ -13,12 +37,7 @@
     <i class="fas fa-bars"></i>
   </label>
 </nav>
-
-
-
-<div class="title-2">
-  <h2>Seguridad Social Para Todos.</h2>
-</div>
+-->
 
 <div class="container-2">
   <section id="about" class="about">
@@ -131,7 +150,7 @@
   </section>
 </div>
 
-<section>
+
   <footer class="footer">
 
     <div class="main-content">
@@ -198,7 +217,7 @@
 
     </div>
   </footer>
-</section>
+
 
 <!-- ======= Header
 <header id="header" class="header fixed-top">
