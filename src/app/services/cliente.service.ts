@@ -5,25 +5,31 @@ import { PlanSalidaApi } from './../container/plan-salida-api';
 import { PlanApi } from './../container/plan-api';
 import { PlanesApi } from './../container/planes-api';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpRequest, HttpHeaders } from '@angular/common/http';
 import { API_REST } from './../url.constants';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PlanService {
+export class ClienteService {
 
   baseUrl = API_REST + 'clientes/';
+  private HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
 
   constructor(private http: HttpClient) { }
 
   getClientes(): Observable<ClientesApi>{
-    return this.http.get<Cliente>(this.baseUrl+'todos');
+    return this.http.get<ClientesApi>(this.baseUrl+'todos');
 
   }
 
   getClienteId(id: string): Observable<Cliente>{
     return this.http.get<Cliente>(`${this.baseUrl}+"porId/"${id}`);
+  }
+
+  guardarCliente(cliente: Cliente) : Observable<Cliente>{
+    return this.http.post<Cliente>(this.baseUrl + "save", cliente, {headers: this.HttpHeaders})
+
   }
 }
