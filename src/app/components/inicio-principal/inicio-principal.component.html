@@ -1,220 +1,47 @@
-<!-- ======= Header ======= -->
+
+
 <header id="header" class="header fixed-top">
   <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
 
     <a href="#" class="logo d-flex align-items-center">
 
-      <img src="assets/logo-fondo.png" alt="">
-      <span>PROFESSIONAL CARE</span>
+      <img id="logo_nav" src="assets/logo-fondo.png" alt="">
+      <span id="text_navbar">PROFESIONAL CARE</span>
     </a>
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a class="nav-link scrollto active" href="#hero">Inicio</a></li>
-        <li><a class="nav-link scrollto" href="#about">Quienes Somos</a></li>
-        <li><a class="nav-link scrollto" href="#pricing">Planes</a></li>
-        <li><a class="getstarted scrollto" href="" onclick="return false;" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-            [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
-            <li><a class="getstarted scrollto" href="" onclick="return false;" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-              [routerLink]="[ '/inicio/afiliacion' ]">Afiliate</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto active" href="#hero">Inicio</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="#about">Quienes Somos</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="#pricing">Planes</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
+          [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/afiliacion' ]">Afiliación</a></li>
+        <li><a id="boton_navbar" class="getstarted scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
       </ul>
-      <i class="bi bi-list mobile-nav-toggle"></i>
-    </nav><!-- .navbar -->
+      <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
+    </nav>
 
   </div>
-</header><!-- End Header -->
+</header>
+<br><br>
+<!--
+<nav>
+  <label class="logo" >PROFESIONAL CARE</label>
+  <ul>
+    <li><a class="active" href="">INICIO</a></li>
+    <li><a href="">PLANES</a></li>
+    <li><a href="">¿QUIENES SOMOS?</a></li>
+    <li><a href="" onclick="return false;" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+        [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
+  </ul>
+  <label id="icon">
+    <i class="fas fa-bars"></i>
+  </label>
+</nav>
+-->
 
-<!-- ======= Hero Section ======= -->
-<section id="hero" class="hero d-flex align-items-center">
-
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 d-flex flex-column justify-content-center">
-        <h1 data-aos="fade-up">Una manera sencilla de pagar tus aportes a seguridad social en linea</h1>
-        <h2 data-aos="fade-up" data-aos-delay="400">Si ya estas afiliado con nosotros puedes consultar aqui tus
-          pagos
-          pendientes</h2>
-        <div data-aos="fade-up" data-aos-delay="600">
-          <div class="text-center text-lg-start">
-            <a href="#hero"
-              class="btn-get-started d-inline-flex scrollto align-items-center justify-content-center align-self-center">
-              <span>Paga en linea</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-        <img src="assets/portada.png" class="img-fluid" alt="">
-      </div>
-    </div>
-  </div>
-
-</section><!-- End Hero -->
-
-
-
-<!-- 
-<section id="registrar" class="contact">
-
-  <div class="container" data-aos="fade-up">
-
-    <header class="section-header">
-
-      <p>Afiliate</p>
-    </header>
-
-    <div class="row justify-content-center align-items-center">
-
-      
-
-      <div class="col-lg-8">
-        <form action="forms/contact.php" method="post" class="php-email-form">
-          <div class="row gy-4">
-
-            <div class="col-md-6">
-              <input type="text" name="nombres" class="form-control" placeholder="Nombres" required>
-            </div>
-
-            <div class="col-md-6 ">
-              <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" required>
-            </div>
-
-            <div class="input-group">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tipo de documento</button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Cedula de ciudadania</a></li>
-                <li><a class="dropdown-item" href="#">PEP</a></li>
-                <li><a class="dropdown-item" href="#">Tarjeta migratoria</a></li>
-            
-                
-              </ul>
-             
-            </div>
-            
-            <div class="col-md-6 ">
-              <input type="number" class="form-control" name="numero de documento" placeholder="Numero de documento" required>
-            </div>
-
-            <div class="col-md-6 ">
-              <input type="text" class="form-control" name="Profesion" placeholder="Profesion" required>
-            </div>
-
-          
-            
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="Departamento" placeholder="Departamento" required>
-            </div>
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="Ciudad" placeholder="Ciudad o Municipio" required>
-            </div>
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="direccion" placeholder="Direccion" required>
-            </div>
-            <div class="col-md-12">
-              <input type="text" class="form-control" name="Numero" placeholder="Numero de contacto" required>
-            </div>
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control" placeholder="Situacion laboral" required>
-            </div>
-            
-            <div class="col-md-6 ">
-              <input type="email" class="form-control" name="email" placeholder="Correo Electronico" required>
-            </div>
-            
-            <div class="input-group">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tipo de afiliacion</button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Independiente</a></li>
-                <li><a class="dropdown-item" href="#">Dependiente</a></li>
-               
-                
-              </ul>
-             
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-              <label class="form-check-label" for="flexRadioDefault1">
-                &nbsp;Sin beneficiarios
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                &nbsp;Hijos
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                &nbsp; Pareja e hijos
-              </label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-              <label class="form-check-label" for="flexRadioDefault2">
-                &nbsp;Mis padres
-              </label>
-            </div>
-            
-            
-            
-            <div class="input-group">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Seleccionar plan</button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Salud</a></li>
-                <li><a class="dropdown-item" href="#">Salud+pension</a></li>
-                <li><a class="dropdown-item" href="#">Salud+ccf</a></li>
-                <li><a class="dropdown-item" href="#">Salud+ccf+pension</a></li>
-                
-              </ul>
-             
-            </div>
-
-            <div class="input-group">
-              <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">¿Desea contratar arl?</button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Riesgo 1</a></li>
-                <li><a class="dropdown-item" href="#">Riesgo 2</a></li>
-                <li><a class="dropdown-item" href="#">Riesgo 3</a></li>
-                <li><a class="dropdown-item" href="#">Riesgo 4</a></li>
-                <li><a class="dropdown-item" href="#">Riesgo 5</a></li>
-                
-              </ul>
-             
-            </div>
-            
-            <div class="col-md-12 ">
-              <label> <p>Adjunta tu cedula</p></label>
-              <input type="file" class="form-control" name="adjuntatusdocumentos" placeholder="Adjunta tu cedula" required>
-            </div>
-
-            <div class="col-md-12 ">
-              <label> <p>Adjunta documento de beneficiarios(Si los hay)</p></label>
-              <input type="file" class="form-control" name="adjuntatusdocumentos" placeholder="Documento del beneficiario" required>
-            </div>
-        
-            
-            <div class="col-md-4 text-center">
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your message has been sent. Thank you!</div>
-
-              <button type="submit">Enviar</button>
-            </div>
-
-          </div>
-        </form>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section> Section -->
-<main id="main">
-  <!-- ======= About Section ======= -->
+<div class="container-2">
   <section id="about" class="about">
 
     <div class="container" data-aos="fade-up">
@@ -222,7 +49,7 @@
 
         <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
           <div class="content">
-            <h2>¿Quienes somos?</h2>
+            <h2 class="title-3">¿Quienes somos?</h2>
             <h5 style="text-align: justify;">
               Para nuestra empresa, es de gran importancia presentarles a ustedes una propuesta comercial
               La cual permita brindarle mayor seguridad en cuanto a la afiliación de seguridad social
@@ -251,41 +78,54 @@
       </div>
     </div>
 
-  </section><!-- End About Section -->
+  </section>
+
+  <script>
+    $(document).ready(function () {
+      $('#icon').click(function () {
+        $('ul').toggleClass('show');
+      });
+    });
+  </script>
+
+  <main id="main">
+
+    <section id="pricing" class="pricing">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+          <h2>Mira los planes que podemos ofrecerte</h2>
+          <p>PLANES</p>
+        </header>
+
+        <br>
 
 
+        <div class="row gy-4" data-aos="fade-left">
 
-  <!-- ======= Pricing Section ======= -->
-  <section id="pricing" class="pricing">
+          <div *ngFor="let plan of planes; let i = index" class="col-lg-3 col-md-6" data-aos="zoom-in"
+            [data-aos-delay]="i+1*100">
+            <div id="box_plan" class="box">
+              <h3 id="text-hover" [style]="'color: '+plan.color+';'">{{plan.titulo}}</h3>
+              <div id="text-hover_precio" class="price">{{plan.precio | currency}}</div>
+              <img *ngIf="!plan.file" src="assets/pricing-free.png" class="img-fluid" alt="">
+              <img *ngIf="plan.file" [src]="urlBase+'file/'+plan.file.id" [alt]="plan.file.fileName" class="img-fluid">
+              <ul class="mb-0">
+                <li id="text-hover_t">{{plan.servicios}}</li>
+                <li id="text-hover_t">{{plan.descripcion}}</li>
+              </ul>
 
-    <div class="container" data-aos="fade-up">
-
-      <header class="section-header">
-        <h2>Mira los planes que podemos ofrecerte</h2>
-        <p>PLANES</p>
-      </header>
-
-      <div class="row gy-4" data-aos="fade-left">
-        
-        <div *ngFor="let plan of planes; let i = index" class="col-lg-3 col-md-6" data-aos="zoom-in" [data-aos-delay]="i+1*100">
-          <div class="box">
-            <h3 [style]="'color: '+plan.color+';'">{{plan.titulo}}</h3>
-            <div class="price">{{plan.precio | currency}}</div>
-            <img *ngIf="!plan.file" src="assets/pricing-free.png" class="img-fluid" alt="">
-            <img *ngIf="plan.file" [src]="urlBase+'file/'+plan.file.id" [alt]="plan.file.fileName" class="img-fluid">
-            <ul class="mb-0">
-              <li>{{plan.servicios}}</li>
-              <li>{{plan.descripcion}}</li>
-            </ul>
+            </div>
           </div>
+
         </div>
 
       </div>
 
-    </div>
+    </section>
 
-  </section><!-- End Pricing Section -->
-
+  </main>
 
   <section id="clients" class="clients">
 
@@ -309,81 +149,74 @@
       </div>
     </div>
 
-  </section><!-- End Clients Section -->
+  </section>
+</div>
 
 
-
-  <!-- ======= Contact Section ======= -->
-  <!-- End Contact Section -->
-
-
-</main><!-- End #main -->
-
-<!-- ======= Footer ======= -->
-<footer id="footer" class="footer">
-
-  <div class="footer-top">
-    <div class="container">
-      <div class="row gy-12">
-        <div class="col-lg-12 col-md-12 footer-info">
-          <a href="#" class="logo d-flex align-items-center">
-            <img src="assets/logo.png" alt="">
-            <span>Profesional Care</span>
-          </a>
-          <p>{{empresa.razonSocial}}</p>
+<footer class="footer">
+  <div class="main-content">
+    <div class="left box">
+      <h3>Sobre Nosotros</h3>
+      <div class="content">
+        <p>ROFESIONAL CARE le brinda un respaldo y una trayectoria con excelentes referencias por parte de nuestros
+          clientes a los cuales se les administra en departamento de Nómina.</p>
+        <div class="social">
+          <a href="#"><span class="fab fa-facebook-f"></span></a>
+          <a href="#"><span class="fab fa-instagram"></span></a>
+          <a href="#"><span class="fab fa-youtube"></span></a>
         </div>
-
-        <section id="contact" class="contact">
-          <div class="container" data-aos="fade-up">
-            <header class="section-header">
-              <p>Contactanos</p>
-            </header>
-
-            <div class="row col-lg-12 mb-4">
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-geo-alt"></i>
-                  <h3>Dirección</h3>
-                  <p>{{empresa.direccion}}</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-telephone"></i>
-                  <h3>Llamanos</h3>
-                  <p>{{empresa.telefono}}</p>
-                </div>
-              </div>
-            </div>
-            <div class="row col-lg-12 mb-4">
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-envelope"></i>
-                  <h3>Correo Electronico</h3>
-                  <p>{{empresa.email}}</p>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="info-box">
-                  <i class="bi bi-clock"></i>
-                  <h3>Horario</h3>
-                  <p>Lunes a Viernes<br>8:00AM - 6:00PM</p>
-                </div>
-              </div>
-            </div>
+      </div>
+    </div>
+    <div class="center box">
+      <h3>Direcciones</h3>
+      <div class="content">
+        <div class="place">
+          <span class="fas fa-map-marker-alt"></span>
+          <span class="text">{{empresa.direccion}}</span>
+        </div>
+        <div class="phone">
+          <span class="fas fa-phone-alt"></span>
+          <span class="text">{{empresa.telefono}}</span>
+        </div>
+        <div class="email">
+          <span class="fas fa-envelope"></span>
+          <span class="text">{{empresa.email}}</span>
+        </div>
+      </div>
+    </div>
+    <div class="right box">
+      <h3>Contactenos</h3>
+      <div class="content">
+        <form action="">
+          <div class="email">
+            <div class="text">Email *</div>
+            <input type="email" required>
           </div>
-        </section>
+          <div class="msg">
+            <div class="text">Mensaje *</div>
+            <textarea rows="2" cols="25" required></textarea>
+          </div>
+          <div class="btn">
+            <button type="submit">Enviar</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+  <div clas="bottom">
 
-  <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Profesional Care</span></strong>. Todos los derechos reservados - 2021
-    </div>
+    <span class="credit">Creada por Estudiantes <a href="">UFPS|</a></span>
+    <span class="far fa-copyright"><span>2021 Todos los derechos reservados.</span></span>
 
   </div>
-</footer><!-- End Footer -->
+</footer>
+
+
+<a href="#header" class="back-to-top scrollto d-flex align-items-center justify-content-center"><i
+  class="bi bi-arrow-up-short"></i></a>
+
+
 
 <a href="#header" class="back-to-top scrollto d-flex align-items-center justify-content-center"><i
     class="bi bi-arrow-up-short"></i></a>
+

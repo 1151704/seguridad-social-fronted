@@ -1,7 +1,36 @@
+<header id="header" class="header fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+    <a href="#" class="logo d-flex align-items-center">
+
+      <img id="logo_nav" src="assets/logo-fondo.png" alt="">
+      <span id="text_navbar">PROFESIONAL CARE</span>
+    </a>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a id="text_navbar" class="nav-link scrollto active" href="#hero">Inicio</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="#about">Quienes Somos</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="#pricing">Planes</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="" onclick="return false;"
+            [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[ '/inicio/afiliacion' ]">Afiliación</a></li>
+        <li><a id="boton_navbar" class="getstarted scrollto" href="" onclick="return false;"
+            [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
+    </nav>
+
+  </div>
+</header>
+<br>
+<br>
+<br>
 
 <div class="row justify-content-center align-items-center">
 
-      
+
 
     <div class="col-lg-8">
       <form  (ngSubmit)="onSubmit()" method="post" class="php-email-form">
@@ -11,7 +40,7 @@
             <input type="text" name="nombres" class="form-control" [(ngModel)]="cliente.nombre1" placeholder="Nombres" required>
           </div>
 
-        
+
 
           <div class="col-md-6 ">
             <input type="text" class="form-control" name="apellidos" [(ngModel)]="cliente.apellido1" placeholder="Apellidos" required>
@@ -23,12 +52,12 @@
               <li><a class="dropdown-item" href="#">Cedula de ciudadania</a></li>
               <li><a class="dropdown-item" href="#">PEP</a></li>
               <li><a class="dropdown-item" href="#">Tarjeta migratoria</a></li>
-          
-              
+
+
             </ul>
-           
+
           </div>
-          
+
           <div class="col-md-6 ">
             <input type="number" class="form-control" name="numero de documento" [(ngModel)]="soli.cliente" [(ngModel)]="cliente.identificacion" placeholder="Numero de documento" required>
           </div>
@@ -37,8 +66,8 @@
             <input type="text" class="form-control" name="Profesion" formControlName="profesion" placeholder="Profesion" required>
           </div>
 
-        
-          
+
+
           <div class="col-md-12">
             <input type="text" class="form-control" name="Departamento" formControlName="departamento" placeholder="Departamento" required>
           </div>
@@ -54,20 +83,20 @@
           <div class="col-md-6">
             <input type="text" name="name" class="form-control"  [(ngModel)]="soli.observaciones" placeholder="Situacion laboral" required>
           </div>
-          
+
           <div class="col-md-6 ">
             <input type="email" class="form-control" name="email" [(ngModel)]="cliente.correo" placeholder="Correo Electronico" required>
           </div>
-          
+
           <div class="input-group">
             <button class="btn btn-outline-secondary dropdown-toggle" formControlName="tipo" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tipo de afiliacion</button>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Independiente</a></li>
               <li><a class="dropdown-item" href="#">Dependiente</a></li>
-             
-              
+
+
             </ul>
-           
+
           </div>
           <div class="form-check">
             <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
@@ -93,9 +122,9 @@
               &nbsp;Mis padres
             </label>
           </div>
-          
-          
-          
+
+
+
           <div class="input-group">
             <button class="btn btn-outline-secondary dropdown-toggle"  [(ngModel)]="soli.plan" type="button" data-bs-toggle="dropdown" aria-expanded="false">Seleccionar plan</button>
             <ul class="dropdown-menu">
@@ -103,9 +132,9 @@
               <li><a class="dropdown-item" href="#">Salud+pension</a></li>
               <li><a class="dropdown-item" href="#">Salud+ccf</a></li>
               <li><a class="dropdown-item" href="#">Salud+ccf+pension</a></li>
-              
+
             </ul>
-           
+
           </div>
 
           <div class="input-group">
@@ -116,11 +145,11 @@
               <li><a class="dropdown-item" href="#">Riesgo 3</a></li>
               <li><a class="dropdown-item" href="#">Riesgo 4</a></li>
               <li><a class="dropdown-item" href="#">Riesgo 5</a></li>
-              
+
             </ul>
-           
+
           </div>
-          
+
           <div class="col-md-12 ">
             <label> <p>Adjunta tu cedula</p></label>
             <input type="file" class="form-control" name="adjuntatusdocumentos" placeholder="Adjunta tu cedula" required>
@@ -130,8 +159,8 @@
             <label> <p>Adjunta documento de beneficiarios(Si los hay)</p></label>
             <input type="file" class="form-control" name="adjuntatusdocumentos" placeholder="Documento del beneficiario" required>
           </div>
-      
-          
+
+
           <div class="col-md-4 text-center">
             <div class="loading">Loading</div>
             <div class="error-message"></div>
@@ -145,3 +174,8 @@
 
     </div>
 </div>>
+
+
+<a href="#header" class="back-to-top scrollto d-flex align-items-center justify-content-center"><i
+  class="bi bi-arrow-up-short"></i></a>
+
