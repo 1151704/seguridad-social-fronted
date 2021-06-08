@@ -1,7 +1,7 @@
 import { ClienteService } from './../../services/cliente.service';
 import { Cliente } from './../../models/cliente.model';
 import { FormGroup } from '@angular/forms';
-import { solicitud } from './../../models/solicitud-afiliacion';
+import { Solicitud } from './../../models/solicitud-afiliacion';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class InicioSolicitudComponent implements OnInit {
 
   public cliente: Cliente= new Cliente();
-  public soli: solicitud = new solicitud();
+  public soli: Solicitud = new Solicitud();
   constructor(private serviceCliente: ClienteService) { }
 
   ngOnInit(): void {

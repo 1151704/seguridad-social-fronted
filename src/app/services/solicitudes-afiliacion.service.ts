@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpEvent, HttpRequest } from '@angular/common/http';
 import { API_REST } from './../url.constants';
 import { Injectable } from '@angular/core';
+import { SolicitudesApi } from '../container/solicitudes-api';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,8 @@ export class SolicitudesAfiliacionService {
 
   constructor(private http: HttpClient) { }
 
-  getSolicitudes(): Observable<PlanesApi> {
-    return this.http.get<PlanesApi>(this.baseUrl+'todos');
+  getSolicitudes(): Observable<SolicitudesApi> {
+    return this.http.get<SolicitudesApi>(this.baseUrl+'todos');
   }
 
 

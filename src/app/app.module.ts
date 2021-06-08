@@ -30,6 +30,7 @@ import { MainUsuarioRegistrarComponent } from './components/main-usuario-registr
 import { NotificationListComponent } from './components/notification-list/notification-list.component';
 import { InicioPrincipalComponent } from './components/inicio-principal/inicio-principal.component';
 import { InicioSolicitudComponent } from './components/inicio-solicitud/inicio-solicitud.component';
+import { MainSolicitudesComponent } from './components/main-solicitudes/main-solicitudes.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { InicioSolicitudComponent } from './components/inicio-solicitud/inicio-s
     NotificationListComponent,
     InicioPrincipalComponent,
     InicioSolicitudComponent,
+    MainSolicitudesComponent,
   ],
   imports: [
     BrowserModule,

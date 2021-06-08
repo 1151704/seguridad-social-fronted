@@ -1,3 +1,4 @@
+import { SolicitudesAfiliacionService } from './../services/solicitudes-afiliacion.service';
 import { UsuarioService } from './../services/usuario.service';
 import { PlanService } from './../services/plan.service';
 import { EmpresaService } from './../services/empresa.service';
@@ -15,11 +16,13 @@ export class ApiService {
   empresaService: EmpresaService;
   planService: PlanService;
   usuarioService: UsuarioService;
+  solicitudService: SolicitudesAfiliacionService;
 
   constructor(private http: HttpClient, public notifService: NotificacionService, public utilService: UtilsService) {
     this.empresaService = new EmpresaService(http)
     this.planService = new PlanService(http)
     this.usuarioService = new UsuarioService(http)
+    this.solicitudService= new SolicitudesAfiliacionService(http)
   }
 
 }

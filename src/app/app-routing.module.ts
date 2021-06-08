@@ -14,6 +14,7 @@ import { InicioSignInComponent } from './components/inicio-sign-in/inicio-sign-i
 import { InicioComponent } from './components/inicio/inicio.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { MainSolicitudesComponent } from './components/main-solicitudes/main-solicitudes.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,7 @@ const routes: Routes = [
       { path: 'usuarios', component: MainUsuariosComponent},
       { path: 'usuario-registrar', component: MainUsuarioRegistrarComponent},
       { path: 'usuario-editar', component: MainUsuarioEditarComponent},
+      { path: 'solicitudes', component: MainSolicitudesComponent }
     ]
   }
 ]
