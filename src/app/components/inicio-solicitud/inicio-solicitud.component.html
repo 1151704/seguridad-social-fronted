@@ -27,152 +27,130 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
 
 <div class="row justify-content-center align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="well well-sm">
+          <div class="col-lg-8">
+            <form (ngSubmit)="onSubmit()" method="post" class="php-email-form">
+              <div class="row gy-4">
 
-    <div class="col-lg-8">
-      <form  (ngSubmit)="onSubmit()" method="post" class="php-email-form">
-        <div class="row gy-4">
+                <div class="col-sd-3 col-md-3 col-lg-3 col-xl-3">
+                  <input type="text" name="nombre1" class="form-control" [(ngModel)]="cliente.nombre1"
+                    placeholder="Primer nombre" required>
+                </div>
+                <div class="col-sd-3 col-md-3 col-lg-3 col-xl-3">
+                  <input type="text" name="nombre2" class="form-control" [(ngModel)]="cliente.nombre1"
+                    placeholder="Segundo nombre" required>
+                </div>
 
-          <div class="col-md-6">
-            <input type="text" name="nombres" class="form-control" [(ngModel)]="cliente.nombre1" placeholder="Nombres" required>
+                <div class="col-sd-3 col-md-3 col-lg-3 col-xl-3">
+                  <input type="text" class="form-control" name="apellido1" [(ngModel)]="cliente.apellido1"
+                    placeholder="Primer apellido" required>
+                </div>
+                <div class="col-sd-3 col-md-3 col-lg-3 col-xl-3">
+                  <input type="text" class="form-control" name="apellido2" [(ngModel)]="cliente.apellido1"
+                    placeholder="Segundo apellido" required>
+                </div>
+
+
+
+                <div class="input-group col-sd-3 col-md-3 col-lg-3 col-xl-3">
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">Tipo de documento</button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Cedula de ciudadania</a></li>
+                    <li><a class="dropdown-item" href="#">PEP</a></li>
+                    <li><a class="dropdown-item" href="#">Tarjeta migratoria</a></li>
+
+
+                  </ul>
+
+                </div>
+
+                <div class="col-sd-3 col-md-3 col-lg-3 col-xl-3">
+                  <input type="number" class="form-control" name="identificacion" [(ngModel)]="soli.cliente"
+                    [(ngModel)]="cliente.identificacion" placeholder="Numero de documento" required>
+                </div>
+
+
+                <div class="col-sd-4 col-md-4 col-lg-4 col-xl-4">
+                  <input type="text" class="form-control" name="profesion" formControlName="profesion"
+                    placeholder="Profesion" required>
+                </div>
+
+
+
+                <div class="col-sd-4 col-md-4 col-lg-4 col-xl-4">
+                  <input type="text" class="form-control" name="municipio" formControlName="ciudad"
+                    placeholder="Ciudad o Municipio" required>
+                </div>
+                <div class="col-sd-4 col-md-4 col-lg-4 col-xl-4">
+                  <input type="text" class="form-control" name="direccion" [(ngModel)]="cliente.direccion"
+                    placeholder="Direccion" required>
+                </div>
+
+                <div class="col-sd-4 col-md-4 col-lg-4 col-xl-4">
+                  <input type="text" class="form-control" name="telefono" [(ngModel)]="cliente.telefono"
+                    placeholder="Numero de contacto" required>
+                </div>
+
+
+                <div class="col-sd-4 col-md-4 col-lg-4 col-xl-4">
+                  <input type="email" class="form-control" name="correo" [(ngModel)]="cliente.correo"
+                    placeholder="Correo Electronico" required>
+                </div>
+                <div class="input-group col-sd-4 col-md-4 col-lg-4 col-xl-4">
+                  <button class="btn btn-outline-secondary dropdown-toggle" formControlName="tipo" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">Tipo de afiliacion</button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Independiente</a></li>
+                    <li><a class="dropdown-item" href="#">Dependiente</a></li>
+                  </ul>
+                </div>
+                <div class="input-group col-sd-4 col-md-4 col-lg-4 col-xl-4">
+                  <button class="btn btn-outline-secondary dropdown-toggle" [(ngModel)]="soli.plan" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">Tipo de plan</button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Salud</a></li>
+                    <li><a class="dropdown-item" href="#">Salud+Pension</a></li>
+                    <li><a class="dropdown-item" href="#">Salud+CCF</a></li>
+                    <li><a class="dropdown-item" href="#">Salud+CCF+Pension</a></li>
+                  </ul>
+
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <div class="input-group mb-3">
+                  <label class="input-group-text" for="inputGroupFile01">Adjunta tu cedula</label>
+                  <input type="file" class="form-control" id="inputGroupFile01">
+                </div>
+
+
+                <div class="col-md-4 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Enviar</button>
+                </div>
+
+              </div>
+            </form>
           </div>
-
-
-          <div class="col-md-6 ">
-            <input type="text" class="form-control" name="apellidos" [(ngModel)]="cliente.apellido1" placeholder="Apellidos" required>
-          </div>
-
-          <div class="input-group">
-            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tipo de documento</button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Cedula de ciudadania</a></li>
-              <li><a class="dropdown-item" href="#">PEP</a></li>
-              <li><a class="dropdown-item" href="#">Tarjeta migratoria</a></li>
-
-
-            </ul>
-
-          </div>
-
-          <div class="col-md-6 ">
-            <input type="number" class="form-control" name="numero de documento" [(ngModel)]="soli.cliente" [(ngModel)]="cliente.identificacion" placeholder="Numero de documento" required>
-          </div>
-
-          <div class="col-md-6 ">
-            <input type="text" class="form-control" name="Profesion" formControlName="profesion" placeholder="Profesion" required>
-          </div>
-
-
-
-          <div class="col-md-12">
-            <input type="text" class="form-control" name="Departamento" formControlName="departamento" placeholder="Departamento" required>
-          </div>
-          <div class="col-md-12">
-            <input type="text" class="form-control" name="Ciudad" formControlName="ciudad" placeholder="Ciudad o Municipio" required>
-          </div>
-          <div class="col-md-12">
-            <input type="text" class="form-control" name="direccion" [(ngModel)]="cliente.direccion" placeholder="Direccion" required>
-          </div>
-          <div class="col-md-12">
-            <input type="text" class="form-control" name="Numero" [(ngModel)]="cliente.telefono"placeholder="Numero de contacto" required>
-          </div>
-          <div class="col-md-6">
-            <input type="text" name="name" class="form-control"  [(ngModel)]="soli.observaciones" placeholder="Situacion laboral" required>
-          </div>
-
-          <div class="col-md-6 ">
-            <input type="email" class="form-control" name="email" [(ngModel)]="cliente.correo" placeholder="Correo Electronico" required>
-          </div>
-
-          <div class="input-group">
-            <button class="btn btn-outline-secondary dropdown-toggle" formControlName="tipo" type="button" data-bs-toggle="dropdown" aria-expanded="false">Tipo de afiliacion</button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Independiente</a></li>
-              <li><a class="dropdown-item" href="#">Dependiente</a></li>
-
-
-            </ul>
-
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-              &nbsp;Sin beneficiarios
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              &nbsp;Hijos
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              &nbsp; Pareja e hijos
-            </label>
-          </div>
-          <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              &nbsp;Mis padres
-            </label>
-          </div>
-
-
-
-          <div class="input-group">
-            <button class="btn btn-outline-secondary dropdown-toggle"  [(ngModel)]="soli.plan" type="button" data-bs-toggle="dropdown" aria-expanded="false">Seleccionar plan</button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Salud</a></li>
-              <li><a class="dropdown-item" href="#">Salud+pension</a></li>
-              <li><a class="dropdown-item" href="#">Salud+ccf</a></li>
-              <li><a class="dropdown-item" href="#">Salud+ccf+pension</a></li>
-
-            </ul>
-
-          </div>
-
-          <div class="input-group">
-            <button class="btn btn-outline-secondary dropdown-toggle"  formControlName="arl" type="button" data-bs-toggle="dropdown" aria-expanded="false">¿Desea contratar arl?</button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Riesgo 1</a></li>
-              <li><a class="dropdown-item" href="#">Riesgo 2</a></li>
-              <li><a class="dropdown-item" href="#">Riesgo 3</a></li>
-              <li><a class="dropdown-item" href="#">Riesgo 4</a></li>
-              <li><a class="dropdown-item" href="#">Riesgo 5</a></li>
-
-            </ul>
-
-          </div>
-
-          <div class="col-md-12 ">
-            <label> <p>Adjunta tu cedula</p></label>
-            <input type="file" class="form-control" name="adjuntatusdocumentos" placeholder="Adjunta tu cedula" required>
-          </div>
-
-          <div class="col-md-12 ">
-            <label> <p>Adjunta documento de beneficiarios(Si los hay)</p></label>
-            <input type="file" class="form-control" name="adjuntatusdocumentos" placeholder="Documento del beneficiario" required>
-          </div>
-
-
-          <div class="col-md-4 text-center">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your message has been sent. Thank you!</div>
-
-            <button type="submit">Enviar</button>
-          </div>
-
         </div>
-      </form>
-
+      </div>
     </div>
-</div>>
+  </div>
+</div>
 
 
 <a href="#header" class="back-to-top scrollto d-flex align-items-center justify-content-center"><i
-  class="bi bi-arrow-up-short"></i></a>
-
+    class="bi bi-arrow-up-short"></i></a>
