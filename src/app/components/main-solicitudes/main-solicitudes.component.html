@@ -8,11 +8,12 @@
             <table class=" mt-2 table table-striped table-bordered table-sm">
                 <thead>
                     <tr>
-                        <th>id</th>
+                        <th>Estaqdo</th>
                         <th>observaciones</th>
                         <th>Repuesta</th>
-                        <th>Cliente</th>
-                        <th>Titulo del Plan</th>
+                        <th>Pla</th>
+                        <th>Nombre Cliente</th>
+                        <th>Identificacion Cliente</th>
                         <!-- <th>Estado</th> -->
                         <th></th>
                     </tr>
@@ -24,23 +25,24 @@
                     <tr *ngFor="let plan of solicitudes; let i = index">
 
                         <td style="width: 10%;" *ngIf="plan.file">
-                            <img [src]="urlBase+'file/'+plan.file.id" [alt]="plan.file.fileName"
-                                class="img-thumbnail rounded">
+                            <!-- <img [src]="urlBase+'file/'+plan.file.id" [alt]="plan.file.fileName"
+                                class="img-thumbnail rounded"> -->
                         </td>
 
                         <td *ngIf="!plan.file"></td>
 
-                        <td>{{plan.id}}</td>
+                        <td>{{plan.estadoSolicitud}}</td>
                         <td>{{plan.observaciones}}</td>
                         <td>{{plan.respuesta}}</td>
-                        <td>{{plan.cliente}}</td>
-                        <td>{{plan.plan.titulo}}</td>
+                        <td>{{plan.ssptPlan.titulo}}</td>
+                        <td>{{plan.nombre1}} {{plan.nombre2}} {{plan.apellido1}} {{plan.apellido2}}</td>
+                        <td>{{plan.ssptCliente.tipoIdentificacion.tipo}} {{plan.ssptCliente.identificacion}}</td>
                         <!-- <td>plan.enable?'ACEPTAR':'RECHAZAR'</td> -->
                         <td>
-                            <button class="btn btn-outline-info btn-sm p-1" (click)="editPlan(plan)" title="Editar"> <i
+                            <!-- <button class="btn btn-outline-info btn-sm p-1" (click)="editPlan(plan)" title="Editar"> <i
                                     class="fa fa-edit"></i> Editar</button>
                             <button class="btn btn-outline-warning btn-sm p-1 ml-1" (click)="cambiarEstado(plan)"
-                                title="Cambiar"> <i class="fa fa-copy"></i> Cambiar</button>
+                                title="Cambiar"> <i class="fa fa-copy"></i> Cambiar</button> -->
                         </td>
                     </tr>
                 </tbody>

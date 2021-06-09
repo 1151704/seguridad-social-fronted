@@ -1,19 +1,19 @@
 import { Rol } from '../models/rol.model';
 
 export const TIPOS_DOCUMENTOS = [
-  { value: 'CC', label: 'Cédula de ciudadanía' },
-  { value: 'TI', label: 'Tarjeta de identidad' },
-  { value: 'RC', label: 'Registro civil' },
-  { value: 'CE', label: 'Cédula de extranjería' },
-  { value: 'PA', label: 'Pasaporte' },
-  { value: 'NV', label: 'Certificado de nacido vivo' },
-  { value: 'CD', label: 'Carné diplomático' },
-  { value: 'SC', label: 'Salvo conducto de permanencia' },
-  { value: 'PR', label: 'Pasaporte de la ONU' },
-  { value: 'PE', label: 'Permiso Especial de Permanencia' },
-  { value: 'NI', label: 'NIT' },
-  { value: 'AS', label: 'Adulto sin Identificación' },
-  { value: 'MS', label: 'Menor sin Identificación' }
+  { id: 3, value: 'CC', label: 'Cédula de ciudadanía' },
+  { id: 2, value: 'TI', label: 'Tarjeta de identidad' },
+  { id: 1, value: 'RC', label: 'Registro civil' },
+  { id: 4, value: 'CE', label: 'Cédula de extranjería' },
+  { id: 5, value: 'PA', label: 'Pasaporte' },
+  { id: 6, value: 'NV', label: 'Certificado de nacido vivo' },
+  { id: 7, value: 'CD', label: 'Carné diplomático' },
+  { id: 8, value: 'SC', label: 'Salvo conducto de permanencia' },
+  { id: 9, value: 'PR', label: 'Pasaporte de la ONU' },
+  { id: 10, value: 'PE', label: 'Permiso Especial de Permanencia' },
+  { id: 11, value: 'NI', label: 'NIT' },
+  { id: 12, value: 'AS', label: 'Adulto sin Identificación' },
+  { id: 13, value: 'MS', label: 'Menor sin Identificación' }
 ]
 
 export const ROLES: Rol[] = [

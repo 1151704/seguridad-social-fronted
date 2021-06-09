@@ -25,10 +25,8 @@ export class MainSolicitudesComponent implements OnInit {
     this.token.validate();
     this.apiService.solicitudService.getSolicitudes()
       .subscribe(data => {
-        this.solicitudes = [];
-        if (data.solicitudes) {
-          this.solicitudes = data.solicitudes;
-        }
+        console.log(data)
+        this.solicitudes = data.solicitudes;
       });
   }
 }
