@@ -11,6 +11,8 @@ import { Departamento } from 'src/app/models/departamento.model';
 import { Municipio } from 'src/app/models/municipio.model';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import Swal from 'sweetalert2';
+import { Empresa } from './../../models/empresa.model';
+import { API_REST } from 'src/app/url.constants';
 
 @Component({
   selector: 'app-inicio-solicitud',
@@ -18,7 +20,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./inicio-solicitud.component.css']
 })
 export class InicioSolicitudComponent implements OnInit {
-
+  empresa: Empresa = null
   solicitud: SolicitudSalidaApi;
   solicitudForm: FormGroup;
 
@@ -27,7 +29,7 @@ export class InicioSolicitudComponent implements OnInit {
   progress: { percentage: number } = { percentage: 0 };
 
   nameFile: string = null;
-
+  urlBase: string = API_REST;
   tipos = TIPOS_DOCUMENTOS;
   tiposPlan: Plan[] = []
   tiposCliente: TipoCliente[] = []
@@ -36,11 +38,16 @@ export class InicioSolicitudComponent implements OnInit {
   municipios: Municipio[] = []
   municipio: Municipio = null
 
-  constructor(private apiService: ApiService, 
+  constructor(private apiService: ApiService,
     private fb: FormBuilder,
     private router: Router) { }
 
   ngOnInit(): void {
+    this.apiService.empresaService.getEmpresaActual().subscribe(
+      data => {
+        this.empresa = data
+      }
+    )
     this.solicitudForm = this.fb.group({
       nombre1: ['', Validators.required],
       nombre2: ['', ],

@@ -2,20 +2,20 @@
     <div class="card mb-3 ">
         <div class="card-header">
             <i class="fas fa-table"></i>
-            Planes
+            Solicitudes
         </div>
         <div class="card-body">
             <table class=" mt-2 table table-striped table-bordered table-sm">
                 <thead>
                     <tr>
-                        <th>Estaqdo</th>
+                        <th>Estado</th>
                         <th>observaciones</th>
                         <th>Repuesta</th>
-                        <th>Pla</th>
+                        <th>Plan</th>
                         <th>Nombre Cliente</th>
                         <th>Identificacion Cliente</th>
                         <!-- <th>Estado</th> -->
-                        <th></th>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +29,7 @@
                                 class="img-thumbnail rounded"> -->
                         </td>
 
-                        <td *ngIf="!plan.file"></td>
+                       
 
                         <td>{{plan.estadoSolicitud}}</td>
                         <td>{{plan.observaciones}}</td>
@@ -37,13 +37,13 @@
                         <td>{{plan.ssptPlan.titulo}}</td>
                         <td>{{plan.nombre1}} {{plan.nombre2}} {{plan.apellido1}} {{plan.apellido2}}</td>
                         <td>{{plan.ssptCliente.tipoIdentificacion.tipo}} {{plan.ssptCliente.identificacion}}</td>
-                        <!-- <td>plan.enable?'ACEPTAR':'RECHAZAR'</td> -->
-                        <td>
+
+                        <!-- <td>
                             <!-- <button class="btn btn-outline-info btn-sm p-1" (click)="editPlan(plan)" title="Editar"> <i
                                     class="fa fa-edit"></i> Editar</button>
                             <button class="btn btn-outline-warning btn-sm p-1 ml-1" (click)="cambiarEstado(plan)"
-                                title="Cambiar"> <i class="fa fa-copy"></i> Cambiar</button> -->
-                        </td>
+                                title="Cambiar"> <i class="fa fa-copy"></i> Cambiar</button>
+                        </td> -->
                     </tr>
                 </tbody>
             </table>

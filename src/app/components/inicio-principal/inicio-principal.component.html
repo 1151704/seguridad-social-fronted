@@ -11,7 +11,7 @@
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a id="text_navbar" class="nav-link scrollto active" href="#hero">Inicio</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto active" href="#">Inicio</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="#about">Quienes Somos</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="#pricing">Planes</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
@@ -25,21 +25,7 @@
   </div>
 </header>
 <br><br>
-<!--
-<nav>
-  <label class="logo" >PROFESIONAL CARE</label>
-  <ul>
-    <li><a class="active" href="">INICIO</a></li>
-    <li><a href="">PLANES</a></li>
-    <li><a href="">¿QUIENES SOMOS?</a></li>
-    <li><a href="" onclick="return false;" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-        [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
-  </ul>
-  <label id="icon">
-    <i class="fas fa-bars"></i>
-  </label>
-</nav>
--->
+
 
 <div class="container-2">
   <section id="about" class="about">
@@ -50,7 +36,7 @@
         <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
           <div class="content">
             <h2 class="title-3">¿Quienes somos?</h2>
-            <h5 style="text-align: justify;">
+            <h5 id="prin_qmv"style="text-align: justify;">
               Para nuestra empresa, es de gran importancia presentarles a ustedes una propuesta comercial
               La cual permita brindarle mayor seguridad en cuanto a la afiliación de seguridad social
               Seguimiento de sus servicios adquiridos, de acuerdo con sus necesidades presentes y futuras,
@@ -62,11 +48,11 @@
           <div class="content">
             <h2>Mision</h2>
 
-            <h5 style="text-align: justify;">{{empresa.mision}}</h5>
+            <h5 id="prin_qmv" style="text-align: justify;">{{empresa.mision}}</h5>
           </div>
           <div class="content">
             <h2>Vision</h2>
-            <h5 style="text-align: justify;">{{empresa.vision}}</h5>
+            <h5 id="prin_qmv" style="text-align: justify;">{{empresa.vision}}</h5>
 
           </div>
         </div>
@@ -153,70 +139,61 @@
 </div>
 
 
-<footer class="footer">
-  <div class="main-content">
-    <div class="left box">
+<footer class="footer text-white" style="background-color: #343759;">
+  <div class="row m-0">
+
+    <br>
+    <div class="col-sd-6 col-md-6 col-lg-6 col-xl-6">
+      <br><br>
       <h3>Sobre Nosotros</h3>
-      <div class="content">
-        <p>ROFESIONAL CARE le brinda un respaldo y una trayectoria con excelentes referencias por parte de nuestros
-          clientes a los cuales se les administra en departamento de Nómina.</p>
-        <div class="social">
-          <a href="#"><span class="fab fa-facebook-f"></span></a>
-          <a href="#"><span class="fab fa-instagram"></span></a>
-          <a href="#"><span class="fab fa-youtube"></span></a>
-        </div>
-      </div>
+      <h5>{{empresa.razonSocial}}</h5>
     </div>
-    <div class="center box">
-      <h3>Direcciones</h3>
-      <div class="content">
-        <div class="place">
-          <span class="fas fa-map-marker-alt"></span>
-          <span class="text">{{empresa.direccion}}</span>
-        </div>
-        <div class="phone">
-          <span class="fas fa-phone-alt"></span>
-          <span class="text">{{empresa.telefono}}</span>
-        </div>
-        <div class="email">
-          <span class="fas fa-envelope"></span>
-          <span class="text">{{empresa.email}}</span>
-        </div>
-      </div>
-    </div>
-    <div class="right box">
+    <br>
+    <div class="col-sd-6 col-md-6 col-lg-6 col-xl-6">
+      <br><br>
       <h3>Contactenos</h3>
-      <div class="content">
-        <form action="">
-          <div class="email">
-            <div class="text">Email *</div>
-            <input type="email" required>
-          </div>
-          <div class="msg">
-            <div class="text">Mensaje *</div>
-            <textarea rows="2" cols="25" required></textarea>
-          </div>
-          <div class="btn">
-            <button type="submit">Enviar</button>
-          </div>
-        </form>
+      <br>
+      <div class="place">
+        <h6 class="fas fa-map-marker-alt"></h6>
+        <h6 class="text">{{empresa.direccion}}</h6>
+      </div>
+      <br>
+      <div class="phone">
+        <h6 class="fas fa-phone-alt"></h6>
+        <h6 class="text">{{empresa.telefono}}</h6>
+      </div>
+      <br>
+      <div class="email">
+        <h6 class="fas fa-envelope"></h6>
+        <h6 class="text">{{empresa.email}}</h6>
       </div>
     </div>
-  </div>
-  <div clas="bottom">
-
-    <span class="credit">Creada por Estudiantes <a href="">UFPS|</a></span>
-    <span class="far fa-copyright"><span>2021 Todos los derechos reservados.</span></span>
 
   </div>
+
+  <br>
+  <br>
+
+  <p class="d-flex justify-content-center align-items-center">
+    <span class="me-3">No pierdas esta oportunidad</span>
+    <button type="button" class="btn btn-outline-light btn-rounded" href="" onclick="return false;" [routerLinkActive]="['active']"
+    [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/afiliacion' ]">
+      Afiliate ya!
+    </button>
+  </p>
+
+
+  <!-- Copyright -->
+  <div class="text-center p-3">
+    © 2021 Copyright: PROFESIONAL CARE
+  </div>
+  <!-- Copyright -->
 </footer>
+<!-- Footer -->
 
 
 <a href="#header" class="back-to-top scrollto d-flex align-items-center justify-content-center"><i
   class="bi bi-arrow-up-short"></i></a>
 
 
-
-<a href="#header" class="back-to-top scrollto d-flex align-items-center justify-content-center"><i
-    class="bi bi-arrow-up-short"></i></a>
 

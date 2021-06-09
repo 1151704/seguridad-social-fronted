@@ -1,4 +1,5 @@
-import { NAME_APP } from './../../url.constants';
+import { ApiService } from './../../core/api.service';
+import { API_REST, NAME_APP } from './../../url.constants';
 import { Title } from '@angular/platform-browser';
 import { TokenStorageService } from './../../services/auth/token-storage.service';
 import { AuthService } from './../../services/auth/auth.service';
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
+import { Empresa } from 'src/app/models/empresa.model';
 
 @Component({
   selector: 'app-inicio-sign-in',
@@ -14,7 +16,8 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./inicio-sign-in.component.css']
 })
 export class InicioSignInComponent implements OnInit {
-
+  empresa: Empresa = null
+  urlBase: string = API_REST;
   checkoutForm: any;
   isLoggedIn = false;
   isLoginFailed = false;
@@ -22,6 +25,7 @@ export class InicioSignInComponent implements OnInit {
   private loginInfo: AuthLoginInfo;
 
   constructor(
+    private apiService: ApiService,
     private authService: AuthService,
     private tokenStorage: TokenStorageService,
     private router: Router,
@@ -42,6 +46,11 @@ export class InicioSignInComponent implements OnInit {
         this.router.navigate(['/main']);
       }
     })
+    this.apiService.empresaService.getEmpresaActual().subscribe(
+      data => {
+        this.empresa = data
+      }
+    )
   }
 
   onSubmit(customerData: any) {

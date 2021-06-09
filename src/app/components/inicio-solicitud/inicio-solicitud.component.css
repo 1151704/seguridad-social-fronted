@@ -170,14 +170,7 @@
     text-align: justify;
   }
 
-  .footer{
 
-    bottom: 0px;
-    width: 100%;
-    background: #111;
-    color: #d9d9d9;
-    box-sizing: border-box;
-  }
 
   .main-content{
     display: flex;

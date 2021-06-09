@@ -16,7 +16,7 @@
   @media (max-width: 1048px){
     label.logo{
       font-size: 32px;
-      padding-left: 20px;
+      padding-left: 10px;
     }
     nav ul{
       margin-right: 20px;
@@ -66,6 +66,10 @@
     margin-top:30px;
 
   }
+ /* #prin_qmv{
+    font-size: 15px;
+    font-family: Reboto;
+  } */
   .container-1{
 
     width: 90%;
@@ -187,7 +191,7 @@
   .main-content .box{
 
   flex-basis: 50%;
-    padding: 10px 20px;
+    padding: 5px 5px;
 
   }
 
@@ -209,7 +213,7 @@
   }
 
   .left .content .social a{
-    padding: 0 2px;
+    padding: 0 1px;
   }
 
   .left .content .social a span{
@@ -252,7 +256,7 @@
   .center .content .text{
   font-size: 1.0625rem;
   font-weight: 500;
-  padding-left: 10px;
+
   }
 
   .center .content .phone{

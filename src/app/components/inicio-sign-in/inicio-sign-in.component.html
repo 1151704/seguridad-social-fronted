@@ -9,7 +9,7 @@
 
     <nav id="navbar" class="navbar">
       <ul>
-        <li><a id="text_navbar" class="nav-link scrollto active" href="#hero">Inicio</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto active" href="#">Inicio</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="#about">Quienes Somos</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="#pricing">Planes</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
@@ -59,3 +59,55 @@
         </div>
     </div>
 </div>
+
+<footer class="footer text-white" style="background-color: #343759;">
+  <div class="row m-0">
+
+    <br>
+    <div class="col-sd-6 col-md-6 col-lg-6 col-xl-6">
+      <br><br>
+      <h3>Sobre Nosotros</h3>
+      <h5>{{empresa.razonSocial}}</h5>
+    </div>
+    <br>
+    <div class="col-sd-6 col-md-6 col-lg-6 col-xl-6">
+      <br><br>
+      <h3>Contactenos</h3>
+      <br>
+      <div class="place">
+        <h6 class="fas fa-map-marker-alt"></h6>
+        <h6 class="text">{{empresa.direccion}}</h6>
+      </div>
+      <br>
+      <div class="phone">
+        <h6 class="fas fa-phone-alt"></h6>
+        <h6 class="text">{{empresa.telefono}}</h6>
+      </div>
+      <br>
+      <div class="email">
+        <h6 class="fas fa-envelope"></h6>
+        <h6 class="text">{{empresa.email}}</h6>
+      </div>
+    </div>
+
+  </div>
+
+  <br>
+  <br>
+
+  <p class="d-flex justify-content-center align-items-center">
+    <span class="me-3">No pierdas esta oportunidad</span>
+    <button type="button" class="btn btn-outline-light btn-rounded" href="" onclick="return false;" [routerLinkActive]="['active']"
+    [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/afiliacion' ]">
+      Afiliate ya!
+    </button>
+  </p>
+
+
+  <!-- Copyright -->
+  <div class="text-center p-3">
+    © 2021 Copyright: PROFESIONAL CARE
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
