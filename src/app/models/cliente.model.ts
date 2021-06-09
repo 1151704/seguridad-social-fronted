@@ -15,6 +15,7 @@ export class Cliente {
     idTipoCliente: number;
     idMunicipio: number;
     idTipoPlan: number;
+    profesion: string;
     file: File;
 
 }

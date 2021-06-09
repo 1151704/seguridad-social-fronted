@@ -8,6 +8,7 @@ export class Solicitud {
     respuesta: string;
     cliente: string;
     plan: Plan;
+    file: File;
 
 
   }
