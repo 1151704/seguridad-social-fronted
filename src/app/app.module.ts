@@ -31,6 +31,7 @@ import { NotificationListComponent } from './components/notification-list/notifi
 import { InicioPrincipalComponent } from './components/inicio-principal/inicio-principal.component';
 import { InicioSolicitudComponent } from './components/inicio-solicitud/inicio-solicitud.component';
 import { MainSolicitudesComponent } from './components/main-solicitudes/main-solicitudes.component';
+import { MainSolicitudesEditarComponent } from './components/main-solicitudes-editar/main-solicitudes-editar.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { MainSolicitudesComponent } from './components/main-solicitudes/main-sol
     InicioPrincipalComponent,
     InicioSolicitudComponent,
     MainSolicitudesComponent,
+    MainSolicitudesEditarComponent,
   ],
   imports: [
     BrowserModule,

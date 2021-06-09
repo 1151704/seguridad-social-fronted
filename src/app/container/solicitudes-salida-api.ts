@@ -2,6 +2,7 @@ import { Plan } from "../models/plan.model";
 
 export class SolicitudSalidaApi {
 
+
 	nombre1: string;
 	nombre2: string;
 	apellido1: string;

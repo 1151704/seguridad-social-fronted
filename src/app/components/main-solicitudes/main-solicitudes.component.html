@@ -14,6 +14,7 @@
                         <th>Plan</th>
                         <th>Nombre Cliente</th>
                         <th>Identificacion Cliente</th>
+                        <th>Respuesta</th>
                         <!-- <th>Estado</th> -->
 
                     </tr>
@@ -29,7 +30,7 @@
                                 class="img-thumbnail rounded"> -->
                         </td>
 
-                       
+
 
                         <td>{{plan.estadoSolicitud}}</td>
                         <td>{{plan.observaciones}}</td>
@@ -38,12 +39,11 @@
                         <td>{{plan.nombre1}} {{plan.nombre2}} {{plan.apellido1}} {{plan.apellido2}}</td>
                         <td>{{plan.ssptCliente.tipoIdentificacion.tipo}} {{plan.ssptCliente.identificacion}}</td>
 
-                        <!-- <td>
-                            <!-- <button class="btn btn-outline-info btn-sm p-1" (click)="editPlan(plan)" title="Editar"> <i
+                      <td>
+                           <button class="btn btn-outline-info btn-sm p-1" (click)="editPlan(plan)" title="Editar"> <i
                                     class="fa fa-edit"></i> Editar</button>
-                            <button class="btn btn-outline-warning btn-sm p-1 ml-1" (click)="cambiarEstado(plan)"
-                                title="Cambiar"> <i class="fa fa-copy"></i> Cambiar</button>
-                        </td> -->
+                          
+                        </td>
                     </tr>
                 </tbody>
             </table>

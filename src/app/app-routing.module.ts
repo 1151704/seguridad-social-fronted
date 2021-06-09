@@ -15,6 +15,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { MainSolicitudesComponent } from './components/main-solicitudes/main-solicitudes.component';
+import { MainSolicitudesEditarComponent } from './components/main-solicitudes-editar/main-solicitudes-editar.component';
 
 const routes: Routes = [
   {
@@ -41,6 +42,8 @@ const routes: Routes = [
       { path: 'usuario-registrar', component: MainUsuarioRegistrarComponent},
       { path: 'usuario-editar', component: MainUsuarioEditarComponent},
       { path: 'solicitudes', component: MainSolicitudesComponent }
+      { path: 'solicitudes-editar', component: MainSolicitudesEditarComponent},
+
     ]
   }
 ]

@@ -1,0 +1,75 @@
+<div class="container-fluid">
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#" onclick="return false" [routerLink]="[ '/main/planes' ]">Planes</a>
+    </li>
+    <li class="breadcrumb-item active">Actualizar</li>
+  </ol>
+
+  <div class="card mb-3 ">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Actualizar Plan
+    </div>
+    <div class="card-body">
+
+      <form [formGroup]="proveedorForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>
+            Titulo:
+          </label>
+          <input type="text" class="form-control" formControlName="titulo">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Descripción:
+          </label>
+          <textarea type="text" class="form-control" formControlName="descripcion"></textarea>
+        </div>
+
+        <div class="form-group">
+          <div class="custom-file">
+            <input accept="image/x-png,image/jpeg" type="file" class="custom-file-input" id="customFileLang" lang="es"
+              (change)="handleFileInput($event)">
+            <label class="custom-file-label" for="customFileLang">{{nameFile?nameFile: 'Seleccione una
+              fotografia'}}</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Precio:
+          </label>
+          <input type="number" class="form-control" formControlName="precio">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Color:
+          </label>
+          <input type="color" class="form-control" formControlName="color">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Servicios:
+          </label>
+          <input type="text" class="form-control" formControlName="servicios">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Estado:
+          </label>
+          <input type="checkbox" formControlName="enable">
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-success" [disabled]="!proveedorForm.valid">Actualizar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
