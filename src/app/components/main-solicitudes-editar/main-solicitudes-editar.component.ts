@@ -70,11 +70,25 @@ export class MainSolicitudesEditarComponent implements OnInit {
     itemProveedor.respuesta = this.proveedorEdit.respuesta;
 
     this.apiService.solicitudService.responderSolicitud(this.proveedor.id, itemProveedor).subscribe(
+
       data => {
-        console.log(data)
+        Swal.fire(
+                     'Exito!',
+                     `La solicitud ha sido respondida`,
+                     'success'
+                   )
+                   setTimeout(() => this.router.navigate(['/main/solicitudes']), 500);
       }, error => {
-        console.log(error)
+
+        Swal.fire(
+        'Error',
+        `Error al responder la solicitud`,
+        'error'
+      )
+
       }
+
+
     )
 
     // itemProveedor.file = this.currentFileUpload;
