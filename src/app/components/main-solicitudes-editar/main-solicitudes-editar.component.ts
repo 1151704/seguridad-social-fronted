@@ -1,3 +1,4 @@
+import { SolicitudRespuestaSalidaApi } from './../../container/solicitud-respuesta-salida-api';
 import { TipoIdentificacion } from './../../models/tipo-identificacion.model';
 import { Component, OnInit } from '@angular/core';
 import { SolicitudSalidaApi } from 'src/app/container/solicitudes-salida-api';
@@ -29,97 +30,84 @@ export class MainSolicitudesEditarComponent implements OnInit {
 
 
   ngOnInit() {
-  let proveedorId = window.localStorage.getItem("editSolicitudId");
-  if (!proveedorId) {
-    this.router.navigate(['/main/solicitudes']);
-    return;
+    let proveedorId = window.localStorage.getItem("editSolicitudId");
+    if (!proveedorId) {
+      this.router.navigate(['/main/solicitudes']);
+      return;
+    }
+
+    this.proveedor = new Solicitud();
+
+    this.proveedorForm = this.fb.group({
+      observaciones: ['', Validators.required],
+      respuesta: ['', Validators.required],
+    });
+
+    this.apiService.solicitudService.getSolicitudPorId(proveedorId)
+      .subscribe(data => {
+        if (data.solicitud) {
+          this.proveedorForm.patchValue(data.solicitud);
+          this.proveedor = data.solicitud
+        } else {
+          this.router.navigate(['/main/solicitudes']);
+        }
+      });
   }
 
-  this.proveedor = new Solicitud();
+  handleFileInput(event: any) {
+    this.selectedFiles = event.target.files;
+    this.nameFile = this.selectedFiles.item(0).name;
+    this.currentFileUpload = null;
+    this.progress.percentage = 0;
+  }
 
-  // estadoSolicitud: string;
-  // observaciones: string;
-  // respuesta: string;
-  // ssptCliente: Cliente;
-  // ssptPlan: Plan;
-  // file: File;
+  onSubmit() {
+    this.proveedorEdit = Object.assign({}, this.proveedorForm.value);
 
-  this.proveedorForm = this.fb.group({
-    estadoSolicitud: [false],
-    observaciones: ['', Validators.required],
-    repuesta: ['', Validators.required],
+    let itemProveedor = new SolicitudRespuestaSalidaApi();
 
+    itemProveedor.observacion = this.proveedorEdit.observaciones;
+    itemProveedor.respuesta = this.proveedorEdit.respuesta;
 
-    // ssptPlan.titulo: ['', Validators.required],
-    // ssptCliente.nombre1: ['', Validators.required],
-    // ssptCliente.nombre2: ['', Validators.required],
-    // ssptCliente.apellido1: ['', Validators.required],
-    // ssptCliente.apellido2: ['', Validators.required],
-    // ssptCliente.identificacion: ['', Validators.required],
-
-  });
-
-  this.apiService.planService.getSolicitudId(proveedorId)
-    .subscribe(data => {
-      if (data.solicitud) {
-        this.proveedorForm.patchValue(data.plan);
-        this.proveedor = data.solicitud
-      } else {
-        this.router.navigate(['/main/solicitudes']);
+    this.apiService.solicitudService.responderSolicitud(this.proveedor.id, itemProveedor).subscribe(
+      data => {
+        console.log(data)
+      }, error => {
+        console.log(error)
       }
-    });
-}
+    )
 
-handleFileInput(event: any) {
-  this.selectedFiles = event.target.files;
-  this.nameFile = this.selectedFiles.item(0).name;
-  this.currentFileUpload = null;
-  this.progress.percentage = 0;
-}
+    // itemProveedor.file = this.currentFileUpload;
 
-onsubmit() {
-  this.progress.percentage = 0;
+    // this.apiService.solicitudService.guardar(itemProveedor).subscribe(
+    //   event => {
+    //     if (event.type === HttpEventType.UploadProgress) {
+    //       this.progress.percentage = Math.round(
+    //         (100 * event.loaded) / event.total
+    //       );
+    //     } else if (event instanceof HttpResponse) {
+    //       if (event.ok) {
+    //         this.currentFileUpload = null;
+    //         this.progress.percentage = 0;
+    //         Swal.fire(
+    //           'Exito!',
+    //           `La solicitud ha sido actualizado`,
+    //           'success'
+    //         )
+    //         setTimeout(() => this.router.navigate(['/main/solictudes']), 500);
+    //       } else {
+    //         this.apiService.notifService.error("Error", event);
+    //       }
+    //     }
+    //   }, error => {
+    //     Swal.fire(
+    //       'Error',
+    //       `Error al actualizar el plan`,
+    //       'error'
+    //     )
+    //   });
 
-  this.currentFileUpload = this.selectedFiles && this.selectedFiles.length != 0 ? this.selectedFiles.item(0) : null;
-
-  this.proveedorEdit = Object.assign({}, this.proveedorForm.value);
-
-  let itemProveedor = new Solicitud();
-
-  itemProveedor.estadoSolicitud = this.proveedorEdit.estadoSolicitud;
-  itemProveedor.observaciones = this.proveedorEdit.observaciones;
-  itemProveedor.respuesta = this.proveedorEdit.respuesta;
-  // itemProveedor.file = this.currentFileUpload;
-
-  this.apiService.solicitudService.guardar(itemProveedor).subscribe(
-    event => {
-      if (event.type === HttpEventType.UploadProgress) {
-        this.progress.percentage = Math.round(
-          (100 * event.loaded) / event.total
-        );
-      } else if (event instanceof HttpResponse) {
-        if (event.ok) {
-          this.currentFileUpload = null;
-          this.progress.percentage = 0;
-          Swal.fire(
-            'Exito!',
-            `La solicitud ha sido actualizado`,
-            'success'
-          )
-          setTimeout(() => this.router.navigate(['/main/solictudes']), 500);
-        } else {
-          this.apiService.notifService.error("Error", event);
-        }
-      }
-    }, error => {
-      Swal.fire(
-        'Error',
-        `Error al actualizar el plan`,
-        'error'
-      )
-    });
-
-}
+  }
 }
 
 

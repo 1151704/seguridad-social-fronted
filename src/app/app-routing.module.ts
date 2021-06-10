@@ -41,7 +41,7 @@ const routes: Routes = [
       { path: 'usuarios', component: MainUsuariosComponent},
       { path: 'usuario-registrar', component: MainUsuarioRegistrarComponent},
       { path: 'usuario-editar', component: MainUsuarioEditarComponent},
-      { path: 'solicitudes', component: MainSolicitudesComponent }
+      { path: 'solicitudes', component: MainSolicitudesComponent },
       { path: 'solicitudes-editar', component: MainSolicitudesEditarComponent},
 
     ]

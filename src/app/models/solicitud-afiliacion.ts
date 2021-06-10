@@ -4,7 +4,8 @@ import { File } from "./file.model";
 
 export class Solicitud {
 
-  estadoSolicitud: string;
+    id: number;
+    estadoSolicitud: string;
     observaciones: string;
     respuesta: string;
     ssptCliente: Cliente;

@@ -1,10 +1,6 @@
-import { SolicitudesAfiliacionService } from './../../services/solicitudes-afiliacion.service';
-import { SolicitudesApi } from './../../container/solicitudes-api';
 import { Solicitud } from 'src/app/models/solicitud-afiliacion';
 import { ApiService } from './../../core/api.service';
 import { TokenStorageService } from './../../services/auth/token-storage.service';
-import { SolicitudSalidaApi } from './../../container/solicitudes-salida-api';
-import { API_REST } from './../../url.constants';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -29,4 +25,9 @@ export class MainSolicitudesComponent implements OnInit {
         this.solicitudes = data.solicitudes;
       });
   }
+
+  editPlan(proveedor: Solicitud): void {
+    localStorage.setItem("editSolicitudId", proveedor.id.toString());
+    this.router.navigate(['/main/solicitudes-editar']);
+  };
 }
