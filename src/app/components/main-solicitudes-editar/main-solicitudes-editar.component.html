@@ -10,36 +10,77 @@
   <div class="card mb-3 ">
     <div class="card-header">
       <i class="fas fa-table"></i>
-      Actualizar Plan
+      Actualizar Solicitud
     </div>
     <div class="card-body">
 
-      <form [formGroup]="proveedorForm" *ngIf="proveedor.id" (ngSubmit)="onSubmit()">        
-        <div class="form-group">
+      <form [formGroup]="proveedorForm" *ngIf="proveedor.id" (ngSubmit)="onSubmit()">
+        <div class="row ">
+
+          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
           <label>
             Id Solicitud:
           </label>
-          <input type="text" class="form-control" [value]="proveedor.id">
-        </div>  
-        <div class="form-group">
+          <input type="text" class="form-control" [value]="proveedor.id" disabled>
+        </div>
+        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
           <label>
             Identificación cliente:
           </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptCliente.identificacion">
-        </div>  
-        <div class="form-group">
+          <input type="text" class="form-control" [value]="proveedor.ssptCliente.identificacion" disabled>
+        </div>
+        <div class="form-group col-sd-3 col-md-3 col-lg-3 col-xl-3">
           <label>
             Primer Nombre:
           </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptCliente.nombre1">
-        </div>  
-        <div class="form-group">
+          <input type="text" class="form-control" [value]="proveedor.ssptCliente.nombre1" disabled>
+        </div>
+        <div class="form-group col-sd-3 col-md-3 col-lg-3 col-xl-3">
           <label>
             Segundo Nombre:
           </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptCliente.nombre2">
-        </div> 
-        <div class="form-group">
+          <input type="text" class="form-control" [value]="proveedor.ssptCliente.nombre2" disabled>
+        </div>
+        <div class="form-group col-sd-3 col-md-3 col-lg-3 col-xl-3">
+          <label>
+            Primer Apellido:
+          </label>
+          <input type="text" class="form-control" [value]="proveedor.ssptCliente.apellido1" disabled>
+        </div>
+        <div class="form-group col-sd-3 col-md-3 col-lg-3 col-xl-3">
+          <label>
+            Segundo Apellido:
+          </label>
+          <input type="text" class="form-control" [value]="proveedor.ssptCliente.apellido2" disabled>
+        </div>
+        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+          <label>
+            Plan:
+          </label>
+          <input type="text" class="form-control" [value]="proveedor.ssptPlan.titulo" disabled>
+        </div>
+        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+          <label>
+            Correo Electronico:
+          </label>
+          <input type="text" class="form-control" [value]="proveedor.ssptCliente.correo" disabled>
+        </div>
+
+        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+          <label>
+            Numero de contacto:
+          </label>
+          <input type="text" class="form-control" [value]="proveedor.ssptCliente.telefono" disabled>
+        </div>
+        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+          <label>
+            Direccion:
+          </label>
+          <input type="text" class="form-control" [value]="proveedor.ssptCliente.direccion" disabled>
+        </div>
+  
+        <hr>
+        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
           <label>
             Respuesta:
           </label>
@@ -47,17 +88,18 @@
             <option value="APROBADA">Aceptada</option>
             <option value="NEGADA">Negada</option>
           </select>
-        </div> 
-        <div class="form-group">
+        </div>
+        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
           <label>
             Observaciones:
           </label>
           <textarea  class="form-control" formControlName="observaciones"></textarea>
-        </div> 
+        </div>
 
         <div class="d-flex justify-content-center">
           <button type="submit" class="btn btn-success" [disabled]="!proveedorForm.valid">Actualizar</button>
         </div>
+      </div>
       </form>
     </div>
   </div>
