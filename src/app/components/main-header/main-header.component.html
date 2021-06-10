@@ -16,10 +16,9 @@
           class="fas fa-user-circle fa-fw"></i>
       </a>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-        <a class="dropdown-item" href="#" [routerLink]="[ '/main/perfil/' ]" onclick="return false;">Cambiar
-          contraseña</a>
+        <li class="dropdown-item"><a  href="#" [routerLink]="[ '/main/perfil/' ]" onclick="return false;">Cambiar contraseña</a></li>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" (click)="logout()" href="" onclick="return false;">Cerrar sesión</a>
+        <li class="dropdown-item"><a class="dropdown-item" (click)="logout()" href="" onclick="return false;">Cerrar sesión</a></li>
       </div>
     </li>
   </ul>

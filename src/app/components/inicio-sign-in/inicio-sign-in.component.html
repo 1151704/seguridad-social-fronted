@@ -61,53 +61,75 @@
 </div>
 
 <footer class="footer text-white" style="background-color: #343759;">
-  <div class="row m-0">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row gy-12">
+        <div class="col-lg-12 col-md-12 footer-info">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <img src="./img/logo.png" alt="">
+            <span>Profesional Care</span>
+          </a>
+          <p>Professional Care es una empresa de centro de pagos y gestión de afiliaciones a seguridad social.</p>
 
-    <br>
-    <div class="col-sd-6 col-md-6 col-lg-6 col-xl-6">
-      <br><br>
-      <h3>Sobre Nosotros</h3>
-      <h5>{{empresa.razonSocial}}</h5>
+        </div>
+
+
+
+      <section id="contact" class="contact">
+        <div class="container" data-aos="fade-up">
+          <header class="section-header">
+            <p>Contactanos</p>
+          </header>
+
+              <div class="row col-lg-12 align-items-center justify-content-center" style="text-align: center">
+                <div class="col-md-6">
+                  <div class="info-box">
+                    <i class="bi bi-geo-alt"></i>
+                    <h3>Dirección</h3>
+                    <p>{{empresa.direccion}}</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="info-box">
+                    <i class="bi bi-telephone"></i>
+                    <h3>Llamanos</h3>
+                    <p>{{empresa.telefono}}</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="info-box">
+                    <i class="bi bi-envelope"></i>
+                    <h3>Correo Electrónico</h3>
+                    <p>{{empresa.email}}</p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="info-box">
+                    <i class="bi bi-clock"></i>
+                    <h3>Horario</h3>
+                    <p>Lunes - viernes<br>8:00AM - 6:00PM</p>
+                  </div>
+                </div>
+
+              </div>
+
+
+        </div>
+      </section>
+
+      </div>
     </div>
-    <br>
-    <div class="col-sd-6 col-md-6 col-lg-6 col-xl-6">
-      <br><br>
-      <h3>Contactenos</h3>
-      <br>
-      <div class="place">
-        <h6 class="fas fa-map-marker-alt"></h6>
-        <h6 class="text">{{empresa.direccion}}</h6>
-      </div>
-      <br>
-      <div class="phone">
-        <h6 class="fas fa-phone-alt"></h6>
-        <h6 class="text">{{empresa.telefono}}</h6>
-      </div>
-      <br>
-      <div class="email">
-        <h6 class="fas fa-envelope"></h6>
-        <h6 class="text">{{empresa.email}}</h6>
-      </div>
+  </div>
+
+  <div class="container">
+    <div class="copyright text-white">
+      &copy; Copyright <strong><span>ProfesionalCare</span></strong>. All Rights Reserved.
     </div>
 
   </div>
+  </footer><!-- End Footer -->
 
-  <br>
-  <br>
-
-  <p class="d-flex justify-content-center align-items-center">
-    <span class="me-3">No pierdas esta oportunidad</span>
-    <button type="button" class="btn btn-outline-light btn-rounded" href="" onclick="return false;" [routerLinkActive]="['active']"
-    [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/afiliacion' ]">
-      Afiliate ya!
-    </button>
-  </p>
+  <a href="#header" class="back-to-top scrollto d-flex align-items-center justify-content-center"><i
+    class="bi bi-arrow-up-short"></i></a>
 
 
-  <!-- Copyright -->
-  <div class="text-center p-3">
-    © 2021 Copyright: PROFESIONAL CARE
-  </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
