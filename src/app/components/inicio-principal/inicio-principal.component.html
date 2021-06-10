@@ -12,12 +12,12 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><a id="text_navbar" class="nav-link scrollto active" href="#">Inicio</a></li>
-        <li><a id="text_navbar" class="nav-link scrollto" href="#about">Quienes Somos</a></li>
+        <li><a id="text_navbar" class="nav-link scrollto" href="#about">¿Quienes somos?</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="#pricing">Planes</a></li>
         <li><a id="text_navbar" class="nav-link scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
           [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/afiliacion' ]">Afiliación</a></li>
         <li><a id="boton_navbar" class="getstarted scrollto" href="" onclick="return false;" [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/signin' ]">Iniciar Sesion</a></li>
+            [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/signin' ]">Iniciar Sesión</a></li>
       </ul>
       <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
     </nav>
@@ -30,8 +30,8 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-6 d-flex flex-column justify-content-center">
-        <h1 data-aos="fade-up">Una manera sencilla de pagar tus aportes a seguridad social en linea</h1>
-        <h2 data-aos="fade-up" data-aos-delay="400">Si ya estas afiliado con nosotros puedes consultar aqui tus pagos pendientes</h2>
+        <h1 data-aos="fade-up " style="text-align: center"> TU SEGURIDAD ESTÁ EN TUS MANOS</h1>
+        <h2 data-aos="fade-up" data-aos-delay="400" >Una manera sencilla de afiliarte a seguridad social.</h2>
         <div data-aos="fade-up" data-aos-delay="600">
           <div class="text-center text-lg-start">
             <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" [routerLinkActive]="['active']"
@@ -58,24 +58,22 @@
 
         <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
           <div class="content">
-            <h2 class="title-3">¿Quienes somos?</h2>
-            <h5 style="text-align: justify;">
+            <h2 class="title-3" style="text-align: center">¿Quienes somos?</h2>
+            <h5 data-aos="fade-up" style="text-align: justify;">
               Para nuestra empresa, es de gran importancia presentarles a ustedes una propuesta comercial
               La cual permita brindarle mayor seguridad en cuanto a la afiliación de seguridad social
               Seguimiento de sus servicios adquiridos, de acuerdo con sus necesidades presentes y futuras,
               Con el fin de ofrecerles la mejor asesoría en suministro de planillas verificables.
-              PROFESIONAL CARE le brinda un respaldo y una trayectoria con excelentes referencias por
-              parte
-              de nuestros clientes a los cuales se les administra en departamento de Nómina. </h5>
+              Profesional Care le brinda un respaldo y una trayectoria con excelentes referencias por
+              parte de nuestros clientes a los cuales se les administra en departamento de Nómina. </h5>
           </div>
           <div class="content">
-            <h2>Mision</h2>
-
-            <h5 id="prin_qmv" style="text-align: justify;">{{empresa.mision}}</h5>
+            <h2 style="text-align: center">Mision</h2>
+            <h5 data-aos="fade-up" id="prin_qmv" style="text-align: justify;">{{empresa.mision}}</h5>
           </div>
           <div class="content">
-            <h2>Vision</h2>
-            <h5 id="prin_qmv" style="text-align: justify;">{{empresa.vision}}</h5>
+            <h2 style="text-align: center">Vision</h2>
+            <h5 data-aos="fade-up" id="prin_qmv" style="text-align: justify;">{{empresa.vision}}</h5>
 
           </div>
         </div>
@@ -104,8 +102,7 @@
       <div class="container" data-aos="fade-up">
 
         <header class="section-header">
-          <h2>Mira los planes que podemos ofrecerte</h2>
-          <p>PLANES</p>
+          <p>Planes</p>
         </header>
 
         <br>
@@ -142,8 +139,6 @@
 
       <header class="section-header">
         <p>Convenios EPS</p>
-
-        <p>Entidades Prestadoras de Salud</p>
       </header>
 
       <div class="clients-slider swiper-container">
@@ -229,33 +224,33 @@
           <p>Contactanos</p>
         </header>
        
-            <div class="row col-lg-12 align-items-center justify-content-center">
-              <div class="col-md-2">
+            <div class="row col-lg-12 align-items-center justify-content-center" style="text-align: center">
+              <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-geo-alt"></i>
-                  <h3>Direccion</h3>
+                  <h3>Dirección</h3>
                   <p>{{empresa.direccion}}</p>
                 </div>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-telephone"></i>
                   <h3>Llamanos</h3>
                   <p>{{empresa.telefono}}</p>
                 </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-envelope"></i>
-                  <h3>Correo Electronico</h3>
+                  <h3>Correo Electrónico</h3>
                   <p>profesionalcareseccional@gmail.com</p>
                 </div>
               </div>
-              <div class="col-md-2">
+              <div class="col-md-6">
                 <div class="info-box">
                   <i class="bi bi-clock"></i>
                   <h3>Horario</h3>
-                  <p>lunes - viernes<br>8:00AM - 6:00PM</p>
+                  <p>Lunes - viernes<br>8:00AM - 6:00PM</p>
                 </div>
               </div>
 
@@ -271,7 +266,7 @@
 
 <div class="container">
   <div class="copyright">
-    &copy; Copyright <strong><span>ProfesionalCare</span></strong>. All Rights Reserved
+    &copy; Copyright <strong><span>ProfesionalCare</span></strong>. All Rights Reserved.
   </div>
 
 </div>
