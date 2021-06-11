@@ -48,6 +48,14 @@ export class MainSolicitudesEditarComponent implements OnInit {
   }
 
   onSubmit() {
+    if (this.proveedor.estadoSolicitud!='PENDIENTE'){
+      Swal.fire(
+        'Operación Invalida',
+        'No puede volver a responder la solicitud.',
+        'warning'
+      )
+    }
+
     this.proveedorEdit = Object.assign({}, this.proveedorForm.value);
 
     let itemProveedor = new SolicitudRespuestaSalidaApi();

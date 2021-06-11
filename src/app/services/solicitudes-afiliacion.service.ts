@@ -1,3 +1,4 @@
+import { SolicitudesBusquedaSalidaApi } from './../container/solicitudes-busqueda-salida-api';
 import { SolicitudRespuestaSalidaApi } from './../container/solicitud-respuesta-salida-api';
 import { SolicitudApi } from './../container/solicitud-api';
 import { SolicitudSalidaApi } from './../container/solicitudes-salida-api';
@@ -21,6 +22,10 @@ export class SolicitudesAfiliacionService {
 
   getSolicitudes(): Observable<SolicitudesApi> {
     return this.http.get<SolicitudesApi>(this.baseUrl+'todos');
+  }
+
+  getSolicitudesBusqueda(salida: SolicitudesBusquedaSalidaApi): Observable<SolicitudesApi> {
+    return this.http.post<SolicitudesApi>(this.baseUrl+'busqueda', salida);
   }
 
   getSolicitudPorId(id: string): Observable<SolicitudApi> {
