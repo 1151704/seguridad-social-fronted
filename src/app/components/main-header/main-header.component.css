@@ -1,3 +1,8 @@
 #header_main{background-color: #343759;}
 #text_navbar{color: white;}
 #userDropdown{color: white;}
+
+.navbar a{
+  padding: 10px 10px 10px 10px;
+  justify-content: center;
+}
