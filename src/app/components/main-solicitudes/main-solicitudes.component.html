@@ -15,7 +15,8 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group">
-                            <label>Tipo de documento</label>
+                            <div><label>Tipo de documento</label></div>
+                            
                             <select class="form-control" [(ngModel)]="estadoFiltro">
                                 <option value="">Todos</option>
                                 <option value="PENDIENTE">Pendientes</option>
@@ -27,8 +28,8 @@
                     <div class="col-md-3">
                         <div class="form-group justify-content-center align-items-center">
                           <div>
-                            <label>Buscar por Fecha</label>
-                            <input type="checkbox" [(ngModel)]="porFechaFiltro" style="display: block;">
+                            <label class="moveLabel">Buscar por Fecha</label>
+                            <input type="checkbox" [(ngModel)]="porFechaFiltro" style="display: inline-block;">
                           </div>
                         </div>
                     </div>
