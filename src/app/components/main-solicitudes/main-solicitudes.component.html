@@ -5,9 +5,49 @@
             Solicitudes
         </div>
         <div class="card-body">
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Busqueda</label>
+                            <input type="text" [(ngModel)]="busquedaFiltro" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label>Tipo de documento</label>
+                            <select class="form-control" [(ngModel)]="estadoFiltro">
+                                <option value="">Todos</option>
+                                <option value="PENDIENTE">Pendientes</option>
+                                <option value="NEGADA">Negadas</option>
+                                <option value="APROBADA">Aprobadas</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group justify-content-center align-items-center">
+                            <label>Buscar por Fecha</label>
+                            <input type="checkbox" [(ngModel)]="porFechaFiltro" style="display: block;" >
+                        </div>
+                    </div>
+                    <div class="col-md-3" *ngIf="porFechaFiltro">
+                        <div class="form-group">
+                            <label>Fecha</label>
+                            <input type="date" [(ngModel)]="fechaFiltro" class="form-control">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center m-2">
+                <a *ngIf="!cargando" class="btn btn-primary m-1" href="#" onclick="return false;" (click)="busqueda(0)">Listar</a>
+                <button *ngIf="cargando" class="btn btn-primary" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Cargando...
+                </button>   
+            </div>
             <table class=" mt-2 table table-striped table-bordered table-sm">
                 <thead>
                     <tr>
+                        <th>Soportes</th>
                         <th>Nombre Cliente</th>
                         <th>Identificacion Cliente</th>
                         <th>Plan</th>
@@ -25,9 +65,9 @@
                     </tr>
                     <tr *ngFor="let plan of solicitudes; let i = index">
 
-                        <td style="width: 10%;" *ngIf="plan.file">
-                            <!-- <img [src]="urlBase+'file/'+plan.file.id" [alt]="plan.file.fileName"
-                                class="img-thumbnail rounded"> -->
+                        <td style="width: 10%;" >
+                            <a *ngFor="let sop of plan.soportes" [href]="urlBase+'file/'+sop.file.id" 
+                            [download]="urlBase+'file/'+sop.file.id" target="_blank">{{sop.descripcion}}</a>
                         </td>
                         <td>{{plan.ssptCliente.nombre1}} {{plan.ssptCliente.nombre2}} {{plan.ssptCliente.apellido1}} {{plan.ssptCliente.apellido2}}</td>
                         <td>{{plan.ssptCliente.tipoIdentificacion.tipo}} {{plan.ssptCliente.identificacion}}</td>

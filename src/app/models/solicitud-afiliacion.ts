@@ -1,6 +1,5 @@
 import { Cliente } from './cliente.model';
 import { Plan } from 'src/app/models/plan.model';
-import { File } from "./file.model";
 
 export class Solicitud {
 
@@ -10,7 +9,6 @@ export class Solicitud {
     respuesta: string;
     ssptCliente: Cliente;
     ssptPlan: Plan;
-    file: File;
-
+    soportes: any;
 
   }

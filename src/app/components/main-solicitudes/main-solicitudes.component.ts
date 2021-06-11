@@ -3,6 +3,7 @@ import { ApiService } from './../../core/api.service';
 import { TokenStorageService } from './../../services/auth/token-storage.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
+import { API_REST } from 'src/app/url.constants';
 
 @Component({
   selector: 'app-main-solicitudes',
@@ -14,6 +15,13 @@ export class MainSolicitudesComponent implements OnInit {
   solicitudes: Solicitud[] = [];
 
   info: Solicitud;
+  urlBase: string = API_REST;
+
+  cargando: boolean = false;
+  porFechaFiltro: boolean = false;
+  estadoFiltro: string = '';
+  busquedaFiltro: string = '';
+  fechaFiltro: string = '';
 
   constructor(private token: TokenStorageService, private router: Router, private apiService: ApiService) { }
 
@@ -24,6 +32,11 @@ export class MainSolicitudesComponent implements OnInit {
         console.log(data)
         this.solicitudes = data.solicitudes;
       });
+  }
+  
+  busqueda() {
+    this.solicitudes = [];
+    this.cargando = true;
   }
 
   editPlan(proveedor: Solicitud): void {

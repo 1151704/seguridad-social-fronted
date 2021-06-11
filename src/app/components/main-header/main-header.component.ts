@@ -24,7 +24,7 @@ export class MainHeaderComponent implements OnInit {
 
   logout() {
     this.token.signOut();
-    this.router.navigate(['/inicio']);
+    this.router.navigate(['inicio/signin']);
   }
 
   sidebarToggle() {

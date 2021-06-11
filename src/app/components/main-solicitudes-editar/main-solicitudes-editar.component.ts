@@ -20,14 +20,7 @@ export class MainSolicitudesEditarComponent implements OnInit {
   proveedorEdit: Solicitud;
   proveedorForm: FormGroup;
 
-  selectedFiles: FileList;
-  currentFileUpload: File;
-  progress: { percentage: number } = { percentage: 0 };
-
-  nameFile: string = null;
-  constructor(private apiService: ApiService, private fb: FormBuilder, private router: Router) {
-  }
-
+  constructor(private apiService: ApiService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     let proveedorId = window.localStorage.getItem("editSolicitudId");
@@ -39,7 +32,7 @@ export class MainSolicitudesEditarComponent implements OnInit {
     this.proveedor = new Solicitud();
 
     this.proveedorForm = this.fb.group({
-      observaciones: ['', Validators.required],
+      estadoSolicitud: ['', Validators.required],
       respuesta: ['', Validators.required],
     });
 
@@ -54,72 +47,28 @@ export class MainSolicitudesEditarComponent implements OnInit {
       });
   }
 
-  handleFileInput(event: any) {
-    this.selectedFiles = event.target.files;
-    this.nameFile = this.selectedFiles.item(0).name;
-    this.currentFileUpload = null;
-    this.progress.percentage = 0;
-  }
-
   onSubmit() {
     this.proveedorEdit = Object.assign({}, this.proveedorForm.value);
 
     let itemProveedor = new SolicitudRespuestaSalidaApi();
 
-    itemProveedor.observacion = this.proveedorEdit.observaciones;
-    itemProveedor.respuesta = this.proveedorEdit.respuesta;
+    itemProveedor.observacion = this.proveedorEdit.respuesta;
+    itemProveedor.respuesta = this.proveedorEdit.estadoSolicitud;
 
     this.apiService.solicitudService.responderSolicitud(this.proveedor.id, itemProveedor).subscribe(
-
       data => {
         Swal.fire(
-                     'Exito!',
-                     `La solicitud ha sido respondida`,
-                     'success'
-                   )
-                   setTimeout(() => this.router.navigate(['/main/solicitudes']), 500);
+          'Exito!',
+          `La solicitud ha sido respondida`,
+          'success')
+        this.router.navigate(['/main/solicitudes'])
       }, error => {
-
         Swal.fire(
-        'Error',
-        `Error al responder la solicitud`,
-        'error'
-      )
-
+          'Error',
+          `Error al responder la solicitud`,
+          'error')
       }
-
-
     )
-
-    // itemProveedor.file = this.currentFileUpload;
-
-    // this.apiService.solicitudService.guardar(itemProveedor).subscribe(
-    //   event => {
-    //     if (event.type === HttpEventType.UploadProgress) {
-    //       this.progress.percentage = Math.round(
-    //         (100 * event.loaded) / event.total
-    //       );
-    //     } else if (event instanceof HttpResponse) {
-    //       if (event.ok) {
-    //         this.currentFileUpload = null;
-    //         this.progress.percentage = 0;
-    //         Swal.fire(
-    //           'Exito!',
-    //           `La solicitud ha sido actualizado`,
-    //           'success'
-    //         )
-    //         setTimeout(() => this.router.navigate(['/main/solictudes']), 500);
-    //       } else {
-    //         this.apiService.notifService.error("Error", event);
-    //       }
-    //     }
-    //   }, error => {
-    //     Swal.fire(
-    //       'Error',
-    //       `Error al actualizar el plan`,
-    //       'error'
-    //     )
-    //   });
 
   }
 }
