@@ -26,8 +26,10 @@
                     </div>
                     <div class="col-md-3">
                         <div class="form-group justify-content-center align-items-center">
+                          <div>
                             <label>Buscar por Fecha</label>
-                            <input type="checkbox" [(ngModel)]="porFechaFiltro" style="display: block;" >
+                            <input type="checkbox" [(ngModel)]="porFechaFiltro" style="display: block;">
+                          </div>
                         </div>
                     </div>
                     <div class="col-md-3" *ngIf="porFechaFiltro">
@@ -42,7 +44,7 @@
                 <a *ngIf="!cargando" class="btn btn-primary m-1" href="#" onclick="return false;" (click)="busqueda(0)">Listar</a>
                 <button *ngIf="cargando" class="btn btn-primary" type="button" disabled>
                     <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Cargando...
-                </button>   
+                </button>
             </div>
             <table class=" mt-2 table table-striped table-bordered table-sm">
                 <thead>
@@ -51,7 +53,7 @@
                         <th>Nombre Cliente</th>
                         <th>Identificacion Cliente</th>
                         <th>Plan</th>
-                        <th>Estado</th>                     
+                        <th>Estado</th>
                         <th>Repuesta</th>
                         <th>Observaciones</th>
                         <th>Acción</th>
@@ -66,7 +68,7 @@
                     <tr *ngFor="let plan of solicitudes; let i = index">
 
                         <td style="width: 10%;" >
-                            <a *ngFor="let sop of plan.soportes" [href]="urlBase+'file/'+sop.file.id" 
+                            <a *ngFor="let sop of plan.soportes" [href]="urlBase+'file/'+sop.file.id"
                             [download]="urlBase+'file/'+sop.file.id" target="_blank">{{sop.descripcion}}</a>
                         </td>
                         <td>{{plan.ssptCliente.nombre1}} {{plan.ssptCliente.nombre2}} {{plan.ssptCliente.apellido1}} {{plan.ssptCliente.apellido2}}</td>
@@ -78,7 +80,7 @@
                       <td>
                            <button class="btn btn-outline-info btn-sm p-1" (click)="editPlan(plan)" title="Editar"> <i
                                     class="fa fa-edit"></i> Responder</button>
-                          
+
                         </td>
                     </tr>
                 </tbody>

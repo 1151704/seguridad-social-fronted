@@ -6,6 +6,9 @@
   #text_navbar{
     color: white;
   }
+  .lessSize{
+    font-size: 44px;
+  }
 
   .footer .footer-top .footer-info p {
     padding-left: 8px;
