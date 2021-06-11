@@ -82,21 +82,23 @@
         <hr>
         <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
           <label>
-            Respuesta:
+            Respuesta: 
           </label>
-          <select class="form-control" formControlName="estadoSolicitud">
+          <select class="form-control" formControlName="estadoSolicitud" *ngIf="proveedor.estadoSolicitud=='PENDIENTE'">
             <option value="APROBADA">Aceptada</option>
             <option value="NEGADA">Negada</option>
           </select>
+          <input type="text" class="form-control" *ngIf="proveedor.estadoSolicitud!='PENDIENTE'" [value]="proveedor.estadoSolicitud" disabled>
         </div>
         <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
           <label>
             Observaciones:
           </label>
-          <textarea  class="form-control" formControlName="respuesta"></textarea>
+          <textarea class="form-control" formControlName="respuesta"  *ngIf="proveedor.estadoSolicitud=='PENDIENTE'"></textarea>
+          <textarea class="form-control" disabled *ngIf="proveedor.estadoSolicitud!='PENDIENTE'">{{proveedor.respuesta}}</textarea>
         </div>
 
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center" *ngIf="proveedor.estadoSolicitud=='PENDIENTE'">
           <button type="submit" class="btn btn-success" [disabled]="!proveedorForm.valid">Responder</button>
         </div>
       </div>
