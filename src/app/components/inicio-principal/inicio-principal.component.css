@@ -7,6 +7,10 @@
     color: white;
   }
 
+  .footer .footer-top .footer-info p {
+    padding-left: 8px;
+    }
+
   #logo_nav{
   background-color: white;
     border:1px solid #ffffff;
