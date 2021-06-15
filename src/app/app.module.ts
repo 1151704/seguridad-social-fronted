@@ -32,8 +32,10 @@ import { InicioPrincipalComponent } from './components/inicio-principal/inicio-p
 import { InicioSolicitudComponent } from './components/inicio-solicitud/inicio-solicitud.component';
 import { MainSolicitudesComponent } from './components/main-solicitudes/main-solicitudes.component';
 import { MainSolicitudesEditarComponent } from './components/main-solicitudes-editar/main-solicitudes-editar.component';
-import { ConsultarFacturaComponent } from './consultar-factura/consultar-factura.component';
-import { MostrarOrdenServicioComponent } from './mostrar-orden-servicio/mostrar-orden-servicio.component';
+import { ConsultarOrdenComponent } from './components/consultar-orden/consultar-orden.component';
+import { CargarOrdenComponent } from './components/cargar-orden/cargar-orden.component';
+//import { ConsultarFacturaComponent } from './consultar-factura/consultar-factura.component';
+//import { MostrarOrdenServicioComponent } from './mostrar-orden-servicio/mostrar-orden-servicio.component';
 
 @NgModule({
   declarations: [
@@ -59,8 +61,10 @@ import { MostrarOrdenServicioComponent } from './mostrar-orden-servicio/mostrar-
     InicioSolicitudComponent,
     MainSolicitudesComponent,
     MainSolicitudesEditarComponent,
-    ConsultarFacturaComponent,
-    MostrarOrdenServicioComponent,
+    ConsultarOrdenComponent,
+    CargarOrdenComponent,
+    //ConsultarFacturaComponent,
+    //MostrarOrdenServicioComponent,
   ],
   imports: [
     BrowserModule,
