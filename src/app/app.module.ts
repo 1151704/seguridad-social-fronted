@@ -33,6 +33,7 @@ import { InicioSolicitudComponent } from './components/inicio-solicitud/inicio-s
 import { MainSolicitudesComponent } from './components/main-solicitudes/main-solicitudes.component';
 import { MainSolicitudesEditarComponent } from './components/main-solicitudes-editar/main-solicitudes-editar.component';
 import { ConsultarFacturaComponent } from './consultar-factura/consultar-factura.component';
+import { MostrarOrdenServicioComponent } from './mostrar-orden-servicio/mostrar-orden-servicio.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ConsultarFacturaComponent } from './consultar-factura/consultar-factura
     MainSolicitudesComponent,
     MainSolicitudesEditarComponent,
     ConsultarFacturaComponent,
+    MostrarOrdenServicioComponent,
   ],
   imports: [
     BrowserModule,
