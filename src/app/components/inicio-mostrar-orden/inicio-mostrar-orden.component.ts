@@ -10,6 +10,8 @@ import Swal from 'sweetalert2';
 export class InicioMostrarOrdenComponent implements OnInit {
   cliente : any = null
   orden : any = null
+  url ="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/";
+
 
   constructor(private router: Router ) { }
 
@@ -25,6 +27,7 @@ export class InicioMostrarOrdenComponent implements OnInit {
       this.router.navigate(['/inicio/consultar-orden']);
     }
   }
+
 
   limpiar() {
     window.sessionStorage.removeItem('cliente')
