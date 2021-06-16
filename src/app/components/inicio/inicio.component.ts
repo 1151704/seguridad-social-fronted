@@ -1,8 +1,8 @@
-import { API_REST, NAME_APP } from './../../url.constants';
+import { API_REST } from './../../url.constants';
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { Empresa } from 'src/app/models/empresa.model';
-import { Router } from '@angular/router';
+import { ApiService } from 'src/app/core/api.service';
+
 
 @Component({
   selector: 'app-inicio',
@@ -10,12 +10,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-
-  empresa: Empresa = null
+  empresa: Empresa = new Empresa();
   urlBase: string = API_REST;
+  checkoutForm: any;
+  errorMessage = '';
 
-  constructor(private router: Router) { }
+  constructor(private apiService: ApiService){
+    
+  }
 
-  ngOnInit(): void {}
+  ngOnInit() {
+    this.apiService.empresaService.getEmpresaActual().subscribe(
+      data => {
+        console.log(data);
+        this.empresa = data;
+      }
+    )
+  }
+
 
 }

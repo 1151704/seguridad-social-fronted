@@ -16,7 +16,6 @@ import { Empresa } from 'src/app/models/empresa.model';
   styleUrls: ['./inicio-sign-in.component.css']
 })
 export class InicioSignInComponent implements OnInit {
-  empresa: Empresa = null
   urlBase: string = API_REST;
   checkoutForm: any;
   isLoggedIn = false;
@@ -25,7 +24,7 @@ export class InicioSignInComponent implements OnInit {
   private loginInfo: AuthLoginInfo;
 
   constructor(
-    private apiService: ApiService,
+
     private authService: AuthService,
     private tokenStorage: TokenStorageService,
     private router: Router,
@@ -46,11 +45,7 @@ export class InicioSignInComponent implements OnInit {
         this.router.navigate(['/main']);
       }
     })
-    this.apiService.empresaService.getEmpresaActual().subscribe(
-      data => {
-        this.empresa = data
-      }
-    )
+
   }
 
   onSubmit(customerData: any) {

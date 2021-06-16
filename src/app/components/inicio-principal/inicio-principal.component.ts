@@ -6,13 +6,13 @@ import { Component, OnInit } from '@angular/core';
 import { Plan } from 'src/app/models/plan.model';
 
 @Component({
+  
   selector: 'app-inicio-principal',
   templateUrl: './inicio-principal.component.html',
   styleUrls: ['./inicio-principal.component.css'],
 })
 export class InicioPrincipalComponent implements OnInit {
-  
-  empresa: Empresa = null
+  empresa: Empresa = new Empresa();
   planes: Plan[] = []
 
   urlBase: string = API_REST;
@@ -30,6 +30,12 @@ export class InicioPrincipalComponent implements OnInit {
         if (data.planes) {
           this.planes = data.planes
         }
+      }
+    )
+    this.apiService.empresaService.getEmpresaActual().subscribe(
+      data => {
+        console.log(data);
+        this.empresa = data;
       }
     )
   }
