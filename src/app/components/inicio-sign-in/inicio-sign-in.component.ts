@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { TokenStorageService } from './../../services/auth/token-storage.service';
 import { AuthService } from './../../services/auth/auth.service';
 import { AuthLoginInfo } from './../../auth/login-info';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
@@ -22,6 +22,7 @@ export class InicioSignInComponent implements OnInit {
   isLoginFailed = false;
   errorMessage = '';
   private loginInfo: AuthLoginInfo;
+  @Input() empresa: Empresa = new Empresa();
 
   constructor(
 

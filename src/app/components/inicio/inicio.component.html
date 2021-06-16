@@ -30,7 +30,7 @@
 <br>
 <br>
 <br>
-<router-outlet></router-outlet>
+<router-outlet (activate)="onOutletLoaded($event)" (change)="onOutletLoaded($event)"></router-outlet>
 <footer class="footer text-white" style="background-color: #343759;">
     <div class="footer-top">
         <div class="container">

@@ -15,16 +15,25 @@ export class InicioComponent implements OnInit {
   checkoutForm: any;
   errorMessage = '';
 
-  constructor(private apiService: ApiService){
-    
+  component: any;
+
+  constructor(private apiService: ApiService) {
   }
 
   ngOnInit() {
     this.apiService.empresaService.getEmpresaActual().subscribe(
       data => {
-        console.log(data);
         this.empresa = data;
+        this.onOutletLoaded(this.component)
       }
     )
   }
+
+  onOutletLoaded(component: any) {
+    console.log(component)
+    this.component = component
+    component.empresa = this.empresa;
+  }
+
+
 }
