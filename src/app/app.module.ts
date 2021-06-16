@@ -35,6 +35,9 @@ import { MainSolicitudesEditarComponent } from './components/main-solicitudes-ed
 import { MainGenerarOrdenesComponent } from './components/main-generar-ordenes/main-generar-ordenes.component';
 import { InicioConsultarOrdenComponent } from './components/inicio-consultar-orden/inicio-consultar-orden.component';
 import { InicioMostrarOrdenComponent } from './components/inicio-mostrar-orden/inicio-mostrar-orden.component';
+import { MainClientesComponent } from './components/main-clientes/main-clientes.component';
+import { MainClienteRegistrarComponent } from './components/main-cliente-registrar/main-cliente-registrar.component';
+import { MainClienteEditarComponent } from './components/main-cliente-editar/main-cliente-editar.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +66,9 @@ import { InicioMostrarOrdenComponent } from './components/inicio-mostrar-orden/i
     InicioConsultarOrdenComponent,
     InicioMostrarOrdenComponent,
     MainGenerarOrdenesComponent,
+    MainClientesComponent,
+    MainClienteRegistrarComponent,
+    MainClienteEditarComponent,
   ],
   imports: [
     BrowserModule,

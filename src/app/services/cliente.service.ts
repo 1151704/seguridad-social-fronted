@@ -20,12 +20,14 @@ export class ClienteService {
   constructor(private http: HttpClient) { }
 
   getClientes(): Observable<ClientesApi>{
-    return this.http.get<ClientesApi>(`${this.baseUrl}todos`);
+    //alert("ejecutao")
+    return this.http.get<ClientesApi>(this.baseUrl + 'todos');
 
   }
 
   getClienteId(id: string): Observable<Cliente>{
     return this.http.get<Cliente>(`${this.baseUrl}porId/${id}`);
+    alert("ejecutao");
   }
 
   getClienteDocumento(cedula: string): Observable<any>{

@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="card mb-3 ">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Clientes
+        </div>
+        <div class="card-body">
+            <button class="btn btn-success btn-sm"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[ '/main/cliente-registrar' ]" title="Registrar"> <i
+                    class="fa fa-plus"></i> Registrar</button>
+            <table class=" mt-2 table table-striped table-bordered table-sm">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>cedula</th>
+                        <th>numero telefono</th>
+                        <th>correo electronico</th>
+                        <th>direccion</th>
+                        <th>plan</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="clientes.length == 0">
+                        <td colspan="7" align="center">No hay registros</td>
+                    </tr>
+                    <tr *ngFor="let cliente of clientes; let i = index">
+
+                        <td >{{cliente.nombre1}}</td>
+
+                        <td>{{cliente.identificacion}}</td>
+                        <td>{{cliente.telefono}}</td>
+                        <td>{{cliente.correo}}</td>
+                        
+                        <td>{{cliente.direccion}}</td>
+                        <td>{{cliente.plan?cliente.plan.titulo:''}}</td>
+                        <td>
+                            <button class="btn btn-outline-info btn-sm p-1" (click)="editarCliente(cliente)" title="Editar"> <i
+                                    class="fa fa-edit"></i> Editar</button>
+                            <button class="btn btn-outline-warning btn-sm p-1 ml-1" (click)="cambiarEstado(plan)"
+                                title="Cambiar"> <i class="fa fa-copy"></i> Cambiar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

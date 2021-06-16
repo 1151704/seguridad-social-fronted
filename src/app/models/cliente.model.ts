@@ -1,3 +1,4 @@
+import { Plan } from 'src/app/models/plan.model';
 import { File } from "./file.model";
 
 export class Cliente {
@@ -14,8 +15,9 @@ export class Cliente {
     idTipoIdentificacion: number;
     idTipoCliente: number;
     idMunicipio: number;
-    idTipoPlan: number;
-    profesion: string;
+    plan: Plan;
+    idTipoPlan;
+    
     file: File;
 
 }

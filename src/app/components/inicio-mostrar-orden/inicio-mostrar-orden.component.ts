@@ -14,8 +14,14 @@ import Swal from 'sweetalert2';
 export class InicioMostrarOrdenComponent implements OnInit {
   cliente : any = null
   orden : any = null
+<<<<<<< HEAD
   signature: null
   md5 = new Md5();
+=======
+  url ="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/";
+
+
+>>>>>>> b4c6cbae6d8b573bd27a8d0da34b23bfd9dd0e34
   constructor(private router: Router ) { }
 
   ngOnInit(): void {
@@ -34,6 +40,7 @@ export class InicioMostrarOrdenComponent implements OnInit {
       this.router.navigate(['/inicio/consultar-orden']);
     }
   }
+
 
   limpiar() {
     window.sessionStorage.removeItem('cliente')

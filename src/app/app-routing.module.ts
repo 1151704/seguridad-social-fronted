@@ -1,3 +1,6 @@
+import { MainClienteEditarComponent } from './components/main-cliente-editar/main-cliente-editar.component';
+import { MainClienteRegistrarComponent } from './components/main-cliente-registrar/main-cliente-registrar.component';
+import { MainClientesComponent } from './components/main-clientes/main-clientes.component';
 import { MainGenerarOrdenesComponent } from './components/main-generar-ordenes/main-generar-ordenes.component';
 import { InicioSolicitudComponent } from './components/inicio-solicitud/inicio-solicitud.component';
 import { InicioPrincipalComponent } from './components/inicio-principal/inicio-principal.component';
@@ -49,6 +52,9 @@ const routes: Routes = [
       { path: 'solicitudes', component: MainSolicitudesComponent },
       { path: 'solicitudes-editar', component: MainSolicitudesEditarComponent},
       { path: 'generar-ordenes', component: MainGenerarOrdenesComponent},
+      { path: 'clientes', component: MainClientesComponent},
+      { path: 'cliente-registrar', component: MainClienteRegistrarComponent},
+      { path: 'cliente-editar', component: MainClienteEditarComponent},
     ]
   }
 ]

@@ -1,0 +1,123 @@
+<div class="container-fluid">
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <a href="#" onclick="return false" [routerLink]="[ '/main/usuarios' ]">Usuarios</a>
+      </li>
+      <li class="breadcrumb-item active">Registrar</li>
+    </ol>
+  
+    <div class="card mb-3 ">
+      <div class="card-header">
+        <i class="fas fa-table"></i>
+        Registrar usuario
+      </div>
+      <div class="card-body">
+          
+        
+        <form   [formGroup]="proveedorForm" (ngSubmit)="onSubmit()">
+  
+          <div class="form-group">
+            <label>
+              Nombre1:
+            </label>
+            <input type="text" class="form-control" formControlName="nombre1" >
+          </div>
+  
+          <div class="form-group">
+            <label>
+              Nombre2:
+            </label>
+            <input type="text" class="form-control"  formControlName="nombre2">
+          </div>
+
+          <div class="form-group">
+            <label>
+              Apellido1:
+            </label>
+            <input type="text" class="form-control" formControlName="apellido1" >
+          </div>
+
+          <div class="form-group">
+            <label>
+              Apellido2:
+            </label>
+            <input type="text" class="form-control" formControlName="apellido2" >
+          </div>
+  
+          <div class="form-group">
+            <label>
+              Tipo de identificación:
+            </label>
+            <select class="form-control"  formControlName="idTipoIdentificacion">
+              <option *ngFor="let tipo of tipos" value="{{tipo.id}}" >{{tipo.label}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>
+              Plan:
+            </label>
+            <select class="form-control" formControlName="idPlan" >
+              <option *ngFor="let plan of planes" value="{{plan.id}}" >{{plan.servicios}}</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label>
+              Identificación:
+            </label>
+            <input type="text" class="form-control" formControlName="identificación" >
+          </div>
+  
+          <div class="form-group">
+            <label>
+              Email:
+            </label>
+            <input type="text" class="form-control" formControlName="correo">
+          </div>
+
+          <div class="form-group">
+            <label>
+              Direccion:
+            </label>
+            <input type="text" class="form-control" formControlName="direccion">
+          </div>
+  
+          <div class="form-group">
+            <label>
+              Tipo de cliente:
+            </label>
+            <select class="form-control" >
+              <option *ngFor="let tipoCliente of tiposCliente" value="{{tipoCliente.id}}" >{{tipoCliente.descripcion}}</option>
+            </select>
+          </div>
+
+          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+            <label>
+              Departamento:
+            </label>
+          <select class="form-control" (ngModelChange)="getMunicipios($event)" 
+                         >
+                          <option *ngFor="let tipo of departamentos" [ngValue]="tipo" >{{tipo.nombreDepartamento}}</option>
+                        </select>
+                      </div>
+
+                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                        <label>
+                          Municipio:
+                        </label>
+                        <select class="form-control" >
+                          <option></option>
+                          <option *ngFor="let tipo of municipios" value="{{tipo.idMunicipio}}" >{{tipo.nombreMunicipio}}
+                          </option>
+                        </select>
+                      </div>
+  
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-success" >Registrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
