@@ -20,7 +20,8 @@ export class ClienteService {
   constructor(private http: HttpClient) { }
 
   getClientes(): Observable<ClientesApi>{
-    return this.http.get<ClientesApi>(`${this.baseUrl}todos`);
+    alert("ejecutao")
+    return this.http.get<ClientesApi>(this.baseUrl + 'todos');
 
   }
 

@@ -39,4 +39,11 @@
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>&nbsp;Generar Ordenes</span>
 </a>
+
+<li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+[routerLink]="[ '/main/clientes' ]">
+<a class="nav-link" href="" onclick="return false;">
+    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <span>&nbsp;clientes</span>
+</a>
 </li>
