@@ -1,23 +1,28 @@
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/core/api.service';
+import { Cliente } from './../../models/cliente.model';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Plan } from 'src/app/models/plan.model';
 import { PlanesApi } from './../../container/planes-api';
-import { ApiService } from 'src/app/core/api.service';
 import { TipoCliente } from 'src/app/models/tipo-cliente.model';
 import { TiposClientesApi } from './../../container/tipos-clientes-api';
 import { TIPOS_DOCUMENTOS } from 'src/app/data/datos.constants';
 import { ROLES } from './../../data/datos.constants';
-import { Cliente } from './../../models/cliente.model';
-import { Component, OnInit } from '@angular/core';
 import { Departamento } from 'src/app/models/departamento.model';
 import { Municipio } from 'src/app/models/municipio.model';
-
 @Component({
-  selector: 'app-main-cliente-registrar',
-  templateUrl: './main-cliente-registrar.component.html',
-  styleUrls: ['./main-cliente-registrar.component.css']
+  selector: 'app-main-cliente-editar',
+  templateUrl: './main-cliente-editar.component.html',
+  styleUrls: ['./main-cliente-editar.component.css']
 })
-export class MainClienteRegistrarComponent implements OnInit {
+export class MainClienteEditarComponent implements OnInit {
 
-   cliente: Cliente = new Cliente();
+  constructor(private apiService: ApiService, private router:Router, private fb: FormBuilder) { }
+
+  proveedorForm: FormGroup;
+  proveedor : Cliente;
+  cliente: Cliente = new Cliente();
    tipos = TIPOS_DOCUMENTOS;
    tiposCliente : TipoCliente [] = [];
    departamentos: Departamento[] = []
@@ -25,11 +30,38 @@ export class MainClienteRegistrarComponent implements OnInit {
   municipios: Municipio[] = []
   municipio: Municipio = null
   planes : Plan [] = [];
-  
-  constructor(private apiService: ApiService) { }
-
   ngOnInit(): void {
-    this.apiService.tipoClienteService.getTiposClientes()
+    let proveedorId = window.localStorage.getItem("editClienteId");
+    alert(proveedorId);
+    if (!proveedorId) {
+      this.router.navigate(['/main/clientes']);
+      return;
+    }
+
+    this.proveedorForm = this.fb.group({
+      nombre1: ['', Validators.required],
+      nombre2: ['', Validators.required],
+      precio: ['', Validators.required],
+      color: ['', Validators.required],
+      servicios: ['', Validators.required],
+      enable: [false],
+    });
+
+    this.proveedor = new Cliente();
+
+    this.apiService.clienteService.getClienteId(proveedorId)
+      .subscribe(data => {
+        
+        if (data) {
+          this.proveedorForm.patchValue(data);
+          this.proveedor = data;
+          
+        } else {
+          this.router.navigate(['/main/clientes']);
+        }
+      });
+
+      this.apiService.tipoClienteService.getTiposClientes()
       .subscribe(data => {
         this.tiposCliente = [];
         
@@ -65,7 +97,6 @@ export class MainClienteRegistrarComponent implements OnInit {
 
   }
 
-
   getMunicipios(dato: Departamento) {
     this.apiService.municipioService.getMunicipios(dato.idDepartamento).subscribe(
       data => {
@@ -74,27 +105,9 @@ export class MainClienteRegistrarComponent implements OnInit {
       }
     )
   }
+
   onSubmit(){
-
-    /*console.log(this.cliente.apellido1);
-    console.log(this.cliente.correo);
-    console.log(this.cliente.idMunicipio);
-    console.log(this.cliente.idTipoCliente);*/
-
-   this.apiService.clienteService.guardarCliente(this.cliente)
-    .subscribe(data => {
-      this.cliente = new Cliente;
-      
-      if (data.nombre1) {
-        this.apiService.notifService.success('Cliente registrado', '!Bien hecho!');
-        //alert("se ejecuto esa monda")
-      }
-    }, error => {
-      this.apiService.notifService.error('Error', 'Error al registrar cliente');
-      console.error(error);
-    });
-
+    console.log("hola");
   }
 
- 
 }

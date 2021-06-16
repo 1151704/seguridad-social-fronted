@@ -33,9 +33,9 @@
                         <td>{{cliente.correo}}</td>
                         
                         <td>{{cliente.direccion}}</td>
-                        <td>{{cliente.plan.titulo}}</td>
+                        <td>{{cliente.plan?cliente.plan.titulo:''}}</td>
                         <td>
-                            <button class="btn btn-outline-info btn-sm p-1" (click)="editPlan(plan)" title="Editar"> <i
+                            <button class="btn btn-outline-info btn-sm p-1" (click)="editarCliente(cliente)" title="Editar"> <i
                                     class="fa fa-edit"></i> Editar</button>
                             <button class="btn btn-outline-warning btn-sm p-1 ml-1" (click)="cambiarEstado(plan)"
                                 title="Cambiar"> <i class="fa fa-copy"></i> Cambiar</button>

@@ -1,3 +1,4 @@
+import { MainClienteEditarComponent } from './components/main-cliente-editar/main-cliente-editar.component';
 import { MainClienteRegistrarComponent } from './components/main-cliente-registrar/main-cliente-registrar.component';
 import { MainClientesComponent } from './components/main-clientes/main-clientes.component';
 import { MainGenerarOrdenesComponent } from './components/main-generar-ordenes/main-generar-ordenes.component';
@@ -53,6 +54,7 @@ const routes: Routes = [
       { path: 'generar-ordenes', component: MainGenerarOrdenesComponent},
       { path: 'clientes', component: MainClientesComponent},
       { path: 'cliente-registrar', component: MainClienteRegistrarComponent},
+      { path: 'cliente-editar', component: MainClienteEditarComponent},
     ]
   }
 ]

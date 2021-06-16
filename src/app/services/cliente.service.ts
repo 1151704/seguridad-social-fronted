@@ -27,6 +27,7 @@ export class ClienteService {
 
   getClienteId(id: string): Observable<Cliente>{
     return this.http.get<Cliente>(`${this.baseUrl}porId/${id}`);
+    alert("ejecutao");
   }
 
   getClienteDocumento(cedula: string): Observable<any>{

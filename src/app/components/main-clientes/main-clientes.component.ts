@@ -2,6 +2,7 @@ import { Cliente } from './../../models/cliente.model';
 import { ClientesApi } from './../../container/clientes-api';
 import { ApiService } from './../../core/api.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-clientes',
@@ -10,7 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainClientesComponent implements OnInit {
 
-  constructor(private apiService : ApiService) { }
+  constructor(private apiService : ApiService, private router: Router) { }
 
   clientes : Cliente []= [];
 
@@ -29,6 +30,12 @@ export class MainClientesComponent implements OnInit {
         console.error(error);
       });
       
+  }
+
+  editarCliente(proveedor : Cliente){
+    console.log(proveedor);
+    localStorage.setItem("editClienteId", proveedor.id+"");
+    this.router.navigate(['/main/cliente-editar']);
   }
 
 }
