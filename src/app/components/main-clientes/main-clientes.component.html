@@ -5,7 +5,8 @@
             Clientes
         </div>
         <div class="card-body">
-            <button class="btn btn-success btn-sm" [routerLink]="[ '/main/plan-registrar']" title="Registrar"> <i
+            <button class="btn btn-success btn-sm"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[ '/main/cliente-registrar' ]" title="Registrar"> <i
                     class="fa fa-plus"></i> Registrar</button>
             <table class=" mt-2 table table-striped table-bordered table-sm">
                 <thead>
@@ -15,7 +16,7 @@
                         <th>numero telefono</th>
                         <th>correo electronico</th>
                         <th>direccion</th>
-                        
+                        <th>plan</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -32,7 +33,7 @@
                         <td>{{cliente.correo}}</td>
                         
                         <td>{{cliente.direccion}}</td>
-                        
+                        <td>{{cliente.plan.titulo}}</td>
                         <td>
                             <button class="btn btn-outline-info btn-sm p-1" (click)="editPlan(plan)" title="Editar"> <i
                                     class="fa fa-edit"></i> Editar</button>
