@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Md5 } from 'src/md5';
 import Swal from 'sweetalert2';
+
+
+
 
 @Component({
   selector: 'app-inicio-mostrar-orden',
@@ -10,12 +14,17 @@ import Swal from 'sweetalert2';
 export class InicioMostrarOrdenComponent implements OnInit {
   cliente : any = null
   orden : any = null
-
+  signature: null
+  md5 = new Md5();
   constructor(private router: Router ) { }
 
   ngOnInit(): void {
-    this.cliente = JSON.parse(window.sessionStorage.getItem('cliente'))
-    this.orden = JSON.parse(window.sessionStorage.getItem('orden'))
+ //   const md5 = new Md5();
+   // this.signature = md5.appendStr('hello').end();
+    
+    this.cliente = JSON.parse(window.sessionStorage.getItem('cliente'));
+    this.orden = JSON.parse(window.sessionStorage.getItem('orden'));
+    this.md5.appendStr('4Vj8eK4rloUd272L48hsrarnUA').appendStr('508029').appendStr(this.orden.id).appendStr(this.cliente.plan.precio+0.19*this.cliente.plan.precio).appendStr('COP').end();
     if (!this.orden) {
       Swal.fire(
         'El cliente no existe',

@@ -40,6 +40,7 @@ export class InicioConsultarOrdenComponent implements OnInit {
         data => {
           Swal.close();
           if (data) {
+            
             window.sessionStorage.setItem('orden', JSON.stringify(data.orden))
             window.sessionStorage.setItem('cliente', JSON.stringify(data.cliente))
             this.router.navigate(['/inicio/mostrar-orden']);
