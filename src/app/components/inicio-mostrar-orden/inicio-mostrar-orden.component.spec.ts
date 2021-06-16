@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CargarOrdenComponent } from './cargar-orden.component';
+import { InicioMostrarOrdenComponent } from './inicio-mostrar-orden.component';
 
-describe('CargarOrdenComponent', () => {
-  let component: CargarOrdenComponent;
-  let fixture: ComponentFixture<CargarOrdenComponent>;
+describe('InicioMostrarOrdenComponent', () => {
+  let component: InicioMostrarOrdenComponent;
+  let fixture: ComponentFixture<InicioMostrarOrdenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CargarOrdenComponent ]
+      declarations: [ InicioMostrarOrdenComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CargarOrdenComponent);
+    fixture = TestBed.createComponent(InicioMostrarOrdenComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

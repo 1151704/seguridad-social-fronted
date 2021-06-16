@@ -14,7 +14,8 @@
         <input type="text" class="form-control" id="documento" placeholder="No. documento">
       </div>
       <div class="col-3">
-        <button type="submit" class="btn btn-primary mb-3">Consultar</button>
+        <button type="submit" class="btn btn-primary mb-3" [routerLinkActive]="['active']"
+        [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/mostrar-orden' ]">Consultar</button>
       </div>
     </form>
 </div>
