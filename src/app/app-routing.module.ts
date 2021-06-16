@@ -1,3 +1,4 @@
+import { InicioMostrarPagoComponent } from './components/inicio-mostrar-pago/inicio-mostrar-pago.component';
 import { MainClienteEditarComponent } from './components/main-cliente-editar/main-cliente-editar.component';
 import { MainClienteRegistrarComponent } from './components/main-cliente-registrar/main-cliente-registrar.component';
 import { MainClientesComponent } from './components/main-clientes/main-clientes.component';
@@ -32,7 +33,8 @@ const routes: Routes = [
       { path: "signin", component: InicioSignInComponent },
       { path: "afiliacion", component: InicioSolicitudComponent },
       { path: "consultar-orden", component: InicioConsultarOrdenComponent },
-      { path: "mostrar-orden", component: InicioMostrarOrdenComponent }
+      { path: "mostrar-orden", component: InicioMostrarOrdenComponent },
+      { path: "mostrar-pago", component: InicioMostrarPagoComponent }
     ]
   },
   { path: "", redirectTo: "inicio", pathMatch: "full" },
