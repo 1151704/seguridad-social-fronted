@@ -1,3 +1,4 @@
+import { MainGenerarOrdenesComponent } from './components/main-generar-ordenes/main-generar-ordenes.component';
 import { InicioSolicitudComponent } from './components/inicio-solicitud/inicio-solicitud.component';
 import { InicioPrincipalComponent } from './components/inicio-principal/inicio-principal.component';
 import { MainUsuariosComponent } from './components/main-usuarios/main-usuarios.component';
@@ -43,7 +44,7 @@ const routes: Routes = [
       { path: 'usuario-editar', component: MainUsuarioEditarComponent},
       { path: 'solicitudes', component: MainSolicitudesComponent },
       { path: 'solicitudes-editar', component: MainSolicitudesEditarComponent},
-
+      { path: 'generar-ordenes', component: MainGenerarOrdenesComponent},
     ]
   }
 ]

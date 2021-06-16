@@ -34,6 +34,7 @@ import { MainSolicitudesComponent } from './components/main-solicitudes/main-sol
 import { MainSolicitudesEditarComponent } from './components/main-solicitudes-editar/main-solicitudes-editar.component';
 import { ConsultarOrdenComponent } from './components/consultar-orden/consultar-orden.component';
 import { CargarOrdenComponent } from './components/cargar-orden/cargar-orden.component';
+import { MainGenerarOrdenesComponent } from './components/main-generar-ordenes/main-generar-ordenes.component';
 //import { ConsultarFacturaComponent } from './consultar-factura/consultar-factura.component';
 //import { MostrarOrdenServicioComponent } from './mostrar-orden-servicio/mostrar-orden-servicio.component';
 
@@ -63,6 +64,7 @@ import { CargarOrdenComponent } from './components/cargar-orden/cargar-orden.com
     MainSolicitudesEditarComponent,
     ConsultarOrdenComponent,
     CargarOrdenComponent,
+    MainGenerarOrdenesComponent,
     //ConsultarFacturaComponent,
     //MostrarOrdenServicioComponent,
   ],
