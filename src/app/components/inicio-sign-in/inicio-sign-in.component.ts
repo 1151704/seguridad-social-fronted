@@ -4,7 +4,7 @@ import { Title } from '@angular/platform-browser';
 import { TokenStorageService } from './../../services/auth/token-storage.service';
 import { AuthService } from './../../services/auth/auth.service';
 import { AuthLoginInfo } from './../../auth/login-info';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 import { FormBuilder } from '@angular/forms';
@@ -16,16 +16,16 @@ import { Empresa } from 'src/app/models/empresa.model';
   styleUrls: ['./inicio-sign-in.component.css']
 })
 export class InicioSignInComponent implements OnInit {
-  empresa: Empresa = null
   urlBase: string = API_REST;
   checkoutForm: any;
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
   private loginInfo: AuthLoginInfo;
+  @Input() empresa: Empresa = new Empresa();
 
   constructor(
-    private apiService: ApiService,
+
     private authService: AuthService,
     private tokenStorage: TokenStorageService,
     private router: Router,
@@ -46,11 +46,7 @@ export class InicioSignInComponent implements OnInit {
         this.router.navigate(['/main']);
       }
     })
-    this.apiService.empresaService.getEmpresaActual().subscribe(
-      data => {
-        this.empresa = data
-      }
-    )
+
   }
 
   onSubmit(customerData: any) {

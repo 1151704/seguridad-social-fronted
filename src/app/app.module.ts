@@ -32,11 +32,16 @@ import { InicioPrincipalComponent } from './components/inicio-principal/inicio-p
 import { InicioSolicitudComponent } from './components/inicio-solicitud/inicio-solicitud.component';
 import { MainSolicitudesComponent } from './components/main-solicitudes/main-solicitudes.component';
 import { MainSolicitudesEditarComponent } from './components/main-solicitudes-editar/main-solicitudes-editar.component';
+<<<<<<< HEAD
 import { ConsultarOrdenComponent } from './components/consultar-orden/consultar-orden.component';
 import { CargarOrdenComponent } from './components/cargar-orden/cargar-orden.component';
 import { MainGenerarOrdenesComponent } from './components/main-generar-ordenes/main-generar-ordenes.component';
 //import { ConsultarFacturaComponent } from './consultar-factura/consultar-factura.component';
 //import { MostrarOrdenServicioComponent } from './mostrar-orden-servicio/mostrar-orden-servicio.component';
+=======
+import { InicioConsultarOrdenComponent } from './components/inicio-consultar-orden/inicio-consultar-orden.component';
+import { InicioMostrarOrdenComponent } from './components/inicio-mostrar-orden/inicio-mostrar-orden.component';
+>>>>>>> 2449436378fc2f34d4d89323cb6f0567aa91a7ea
 
 @NgModule({
   declarations: [
@@ -62,11 +67,16 @@ import { MainGenerarOrdenesComponent } from './components/main-generar-ordenes/m
     InicioSolicitudComponent,
     MainSolicitudesComponent,
     MainSolicitudesEditarComponent,
+<<<<<<< HEAD
     ConsultarOrdenComponent,
     CargarOrdenComponent,
     MainGenerarOrdenesComponent,
     //ConsultarFacturaComponent,
     //MostrarOrdenServicioComponent,
+=======
+    InicioConsultarOrdenComponent,
+    InicioMostrarOrdenComponent,
+>>>>>>> 2449436378fc2f34d4d89323cb6f0567aa91a7ea
   ],
   imports: [
     BrowserModule,

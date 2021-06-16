@@ -1,1 +1,106 @@
-<router-outlet></router-outlet>
+<header id="header" class="header fixed-top">
+    <div class="container-fluid container-xxl d-flex align-items-center justify-content-between">
+
+        <a href="#" class="logo d-flex align-items-center">
+
+            <img id="logo_nav" src="assets/logo-fondo.png" alt="">
+            <span id="text_navbar">PROFESIONAL CARE</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a id="text_navbar" class="nav-link scrollto active" href="#">Inicio</a></li>
+                <li><a id="text_navbar" class="nav-link scrollto" href="#about">¿Quienes somos?</a></li>
+                <li><a id="text_navbar" class="nav-link scrollto" href="#pricing">Planes</a></li>
+                <li><a id="text_navbar" class="nav-link scrollto" href="" onclick="return false;"
+                        [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+                        [routerLink]="[ '/inicio/afiliacion' ]">Afiliación</a></li>
+                <li><a id="text_navbar" class="nav-link scrollto" href="" onclick="return false;"
+                        [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+                        [routerLink]="[ '/inicio/consultar-orden' ]">Consultar Factura</a></li>
+                <li><a id="boton_navbar" class="getstarted scrollto" href="" onclick="return false;"
+                        [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+                        [routerLink]="[ '/inicio/signin' ]">Iniciar Sesión</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle" style="color: white;"></i>
+        </nav>
+
+    </div>
+</header>
+<br>
+<br>
+<br>
+<router-outlet (activate)="onOutletLoaded($event)" (change)="onOutletLoaded($event)"></router-outlet>
+<footer class="footer text-white" style="background-color: #343759;">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row gy-12">
+                <div class="col-lg-12 col-md-12 footer-info">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <img src="../assets/logo.png" alt="">
+                        <span>Profesional Care</span>
+                    </a>
+                    <br>
+                    <h5 style="color: #343759;">&nbsp;{{"empresa.razonSocial"}}</h5>
+
+                </div>
+
+
+
+                <section id="contact" class="contact">
+                    <div class="container" data-aos="fade-up">
+                        <header class="section-header">
+                            <p>Contactanos</p>
+                        </header>
+
+                        <div class="row col-lg-12 align-items-center justify-content-center" style="text-align: center">
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-geo-alt"></i>
+                                    <h3>Dirección</h3>
+                                    <h5>{{empresa.direccion}}</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-telephone"></i>
+                                    <h3>Llamanos</h3>
+                                    <h5>{{empresa.telefono}}</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-envelope"></i>
+                                    <h3>Correo Electrónico</h3>
+                                    <h5>{{empresa.email}}</h5>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-box">
+                                    <i class="bi bi-clock"></i>
+                                    <h3>Horario</h3>
+                                    <h5>Lunes - viernes<br>8:00AM - 6:00PM</h5>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright text-white">
+                &copy; Copyright <strong><span>ProfesionalCare</span></strong>. All Rights Reserved.
+            </div>
+
+        </div>
+    </div>
+
+</footer>
+
+
+<a href="#header" class="back-to-top scrollto d-flex align-items-center justify-content-center"><i
+        class="bi bi-arrow-up-short"></i></a>

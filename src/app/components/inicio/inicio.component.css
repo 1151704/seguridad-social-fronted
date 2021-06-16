@@ -1,0 +1,320 @@
+
+#header{
+    background-color: #343759;
+    height: 117px;
+    }
+    #text_navbar{
+      color: white;
+    }
+    .lessSize{
+      font-size: 44px;
+    }
+  
+    .footer .footer-top .footer-info p {
+      padding-left: 8px;
+      }
+  
+    #logo_nav{
+    background-color: white;
+      border:1px solid #ffffff;
+      border-radius: 200px;
+      box-shadow: 4px 4px 4px 4px #343759;
+    }
+    @media (max-width: 1048px){
+      label.logo{
+        font-size: 32px;
+        padding-left: 10px;
+      }
+      nav ul{
+        margin-right: 20px;
+      }
+      nav a{
+        font-size: 17px;
+      }
+    }
+  
+    @media (max-width: 909px){
+      nav #icon{
+        display: block;
+  
+      }
+      nav ul{
+        position: fixed;
+        width: 100px;
+        height: 100vh;
+        background:#2f3640;
+        top:80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+      }
+      nav li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+      }
+      nav a{
+        font-size: 20px;
+      }
+      a.active,a:hover{
+        border:none;
+        color:#3498db;
+  
+      }
+      nav ul.show{
+        left:0;
+      }
+    }
+  
+    div.title-2{
+      text-align: center;
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-top:30px;
+  
+    }
+   /* #prin_qmv{
+      font-size: 15px;
+      font-family: Reboto;
+    } */
+    .container-1{
+  
+      width: 90%;
+      max-width: 900px;
+      margin: auto;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+    }
+    #box_plan{
+  
+    background: #343759;
+      border:1px solid #ffffff;
+      border-radius: 4px;
+      box-shadow: 0px 0px 4px 0px #343759;
+      text-align: center;
+      flex-grow: 1;
+      color: #343759;
+      width: 222px;
+      height: 480px;
+    }
+  
+    #box_plan>h2{
+  
+      font-size: 20px;
+      margin-bottom: 35px;
+    }
+    .tabla img{
+      width: 64px;
+      margin-bottom:35px;
+    }
+    #box_plan>h3{
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    #box_plan>p{
+      display: block;
+      margin-bottom: 20px;
+    }
+  
+    .boton{
+      display: inline-block;
+      width: 90px;
+      padding: 2px;
+      background: #a5f059;
+      text-decoration: none;
+      color: #343759;
+      border-radius: 100px;
+      text-align: center;
+      font-size: 14;
+      font-weight: 600;
+      margin: auto;
+    }
+  
+    #box_plan:hover{
+      background: #343759;
+      color: #f1f1f2;
+      transition: 0.5s all;
+      transform: scale(1.1);
+      cursor: pointer;
+  
+    }
+    #text-hover{font-size: 20px;
+      background: #343759;
+      color: #ffffff;
+      transition: 0.5s;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+  
+    #text-hover_precio{
+    font-size: 24px;
+      background: #343759;
+      color: #ffffff;
+      transition: 0.5s;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    #text-hover_t{
+    font-size: 17px;
+      background: #343759;
+      color: #ffffff;
+      transition: 0.5s;
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    h3.title-3{
+      text-align: left;
+      font-size: 18px;
+      text-transform: uppercase;
+      margin-top:30px;
+  
+    }
+  
+    .footer{
+  
+      bottom: 0px;
+      width: 100%;
+      background: #111;
+      color: #d9d9d9;
+      box-sizing: border-box;
+    }
+  
+    .main-content{
+      display: flex;
+  
+    }
+  
+    .main-content .box{
+  
+    flex-basis: 50%;
+      padding: 5px 5px;
+  
+    }
+  
+  
+    .box.h3 {
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+  
+    }
+  
+  
+    .box.content{
+      margin: 20px 0 0 0;
+    }
+  
+    .left.content.social{
+      margin: 20px 0 0 0;
+    }
+  
+    .left .content .social a{
+      padding: 0 1px;
+    }
+  
+    .left .content .social a span{
+      height: 40px;
+      width: 40px;
+      background: #1a1a1a;
+      line-height: 40px;
+      text-align: center;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+  
+    .left .content .social a span:hover{
+  
+      background: #f12020;
+  
+    }
+  
+    .left .content p{
+    text-align: justify;
+    }
+  
+    .center .content .fas{
+      font-size: 1.437rem;
+      background: #1a1a1a;
+      height: 45px;
+      width: 45px;
+      line-height: 45px;
+      text-align: center;
+      border-radius: 50%;
+      transition: 0.3s;
+      cursor: pointer;
+  
+    }
+     .center .content .fas:hover{
+    background: #f12020;
+     }
+  
+    .center .content .text{
+    font-size: 1.0625rem;
+    font-weight: 500;
+  
+    }
+  
+    .center .content .phone{
+    margin: 10px 0;
+  
+    }
+  
+    .right form .msg{
+      margin-top: 10px;
+    }
+    .right form input, .right form textarea{
+      width: 100%;
+      font-size: 1.0625rem;
+      background: #151515;
+      padding-left: 10px;
+      border:1px solid #222222;
+      color:#d9d9d9;
+  
+    }
+  
+    .right form input{
+      height: 35px;
+  
+    }
+    .right form .text{
+      font-size: 1.0625rem;
+      margin-bottom: 2px;
+      color: #656565;
+    }
+  
+    .right form .btn{
+      margin-top: 10px;
+    }
+    .right form .btn button{
+      height: 40px;
+      width: 100%;
+      border: none;
+      outline: none;
+      background: #f12020;
+      font-size: 1.0625rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: .3s;
+  
+    }
+  
+    .right form .btn button:hover{
+      background: #d9d9d9;
+    }
+  
+    .bottom {
+    padding:5px;
+    font-size: 0.9375rem;
+    background: #151515;
+    margin-bottom: 10px;
+  
+  
+    }
+  
+  
+  
+  
