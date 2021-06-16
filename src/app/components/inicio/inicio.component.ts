@@ -1,6 +1,8 @@
-import { NAME_APP } from './../../url.constants';
+import { API_REST, NAME_APP } from './../../url.constants';
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { Empresa } from 'src/app/models/empresa.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -9,10 +11,11 @@ import { Title } from '@angular/platform-browser';
 })
 export class InicioComponent implements OnInit {
 
-  constructor(private titleService: Title) { }
+  empresa: Empresa = null
+  urlBase: string = API_REST;
 
-  ngOnInit() {
-    this.titleService.setTitle(`${NAME_APP} - Inicio`);
-  }
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {}
 
 }

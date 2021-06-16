@@ -1,12 +1,12 @@
+<br>
+<br>
+<br>
 <div class="container justify-content-center" id = "container-consulta">
     <h3 class="text-center">Consultar Factura</h3>
     <form class="row">
       <div class="col-3">
-        <select class="form-select" aria-label="Default select example">
-          <option selected>Tipo</option>
-          <option value="1">CC</option>
-          <option value="2">TI</option>
-          <option value="3">CE</option>
+        <select class="form-control" aria-label="Default select example">
+          <option *ngFor="let tipo of tipos" value="{{tipo.id}}">{{tipo.label}}</option>
         </select>
       </div>
       <div class="col-6">

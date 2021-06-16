@@ -16,6 +16,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { MainSolicitudesComponent } from './components/main-solicitudes/main-solicitudes.component';
 import { MainSolicitudesEditarComponent } from './components/main-solicitudes-editar/main-solicitudes-editar.component';
+import { InicioConsultarOrdenComponent } from './components/inicio-consultar-orden/inicio-consultar-orden.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,8 @@ const routes: Routes = [
     children: [
       { path: "", component: InicioPrincipalComponent },
       { path: "signin", component: InicioSignInComponent },
-      { path: "afiliacion", component: InicioSolicitudComponent }
+      { path: "afiliacion", component: InicioSolicitudComponent },
+      { path: "consultar-orden", component: InicioConsultarOrdenComponent }
     ]
   },
   { path: "", redirectTo: "inicio", pathMatch: "full" },
