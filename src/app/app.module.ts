@@ -40,6 +40,7 @@ import { MainClienteRegistrarComponent } from './components/main-cliente-registr
 import { MainClienteEditarComponent } from './components/main-cliente-editar/main-cliente-editar.component';
 import { InicioMostrarPagoComponent } from './components/inicio-mostrar-pago/inicio-mostrar-pago.component';
 import { MainReportesComponent } from './components/main-reportes/main-reportes.component';
+import { MainOrdenesComponent } from './components/main-ordenes/main-ordenes.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { MainReportesComponent } from './components/main-reportes/main-reportes.
     MainClienteRegistrarComponent,
     MainClienteEditarComponent,
     InicioMostrarPagoComponent,
-    MainReportesComponent
+    MainReportesComponent,
+    MainOrdenesComponent
   ],
   imports: [
     BrowserModule,

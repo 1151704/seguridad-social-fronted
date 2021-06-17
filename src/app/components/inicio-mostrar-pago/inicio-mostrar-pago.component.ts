@@ -18,6 +18,7 @@ export class InicioMostrarPagoComponent implements OnInit {
     })*/
     this.pago= new Pago();
     this.activatedRoute.queryParamMap.subscribe(params =>{
+      if(params.get('telephone')!=null){
       //this.pago.description=params.get('description');
       this.pago.telephone=params.get('telephone');
       this.pago.buyerEmail= params.get('buyerEmail');
@@ -27,7 +28,17 @@ export class InicioMostrarPagoComponent implements OnInit {
       this.pago.processingDate = params.get('processingDate');
       this.pago.message= params.get('message');
       this.pago.transactionState = params.get('transactionState');
+       if(this.pago.message=="APPROVED"){
+         this.apiService.ordenesService.pagar(this.pago.referenceCode).subscribe(params => {
+           console.log(params)
+           
+         })
 
+       }
+      }
+      else{
+        this.router.navigate(['inicio/consultar-orden']);
+      }
     }     
       )
   }

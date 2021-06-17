@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpEvent, HttpRequest, HttpHeaders } from '@angular/common/http';
 import { API_REST } from './../url.constants';
 import { Observable } from 'rxjs';
+import { Orden } from '../models/orden.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -21,6 +22,10 @@ export class OrdenesService {
   generarOrdenes(): Observable<Boolean> {
     
     return this.http.get<Boolean>(this.baseUrl+'generarTodos');
+  }
+
+  pagar(id : string): Observable<Boolean> {
+    return this.http.get<Boolean>(`${this.baseUrl}pagar/${id}`);
   }
 
 }

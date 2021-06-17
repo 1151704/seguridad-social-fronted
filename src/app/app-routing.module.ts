@@ -1,3 +1,4 @@
+import { MainOrdenesComponent } from './components/main-ordenes/main-ordenes.component';
 import { InicioMostrarPagoComponent } from './components/inicio-mostrar-pago/inicio-mostrar-pago.component';
 import { MainClienteEditarComponent } from './components/main-cliente-editar/main-cliente-editar.component';
 import { MainReportesComponent } from './components/main-reportes/main-reportes.component';
@@ -59,6 +60,7 @@ const routes: Routes = [
       { path: 'clientes', component: MainClientesComponent},
       { path: 'cliente-registrar', component: MainClienteRegistrarComponent},
       { path: 'cliente-editar', component: MainClienteEditarComponent},
+      { path: 'ordenes', component: MainOrdenesComponent}
     ]
   }
 ]
