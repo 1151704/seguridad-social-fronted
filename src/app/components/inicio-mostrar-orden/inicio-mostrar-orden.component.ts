@@ -39,8 +39,8 @@ export class InicioMostrarOrdenComponent implements OnInit {
 
     this.apiService.empresaService.getEmpresaActual().subscribe(data => {
       this.empresa = data;
-      this.referenceCode = `ufps-professionacare-${this.orden.id}`
-     // this.referenceCode = `ufps-professionacare-${this.orden.id}`
+      this.referenceCode = `ufps.professionacare-${this.orden.id}`
+     // this.referenceCode = `ufps.professionacare-${this.orden.id}`
       let hash = `${data.api}~${data.merchantId}~${this.referenceCode}~${this.cliente.plan.precio}~${data.currency}`;
       this.signature = Md5.hashStr(hash);
 

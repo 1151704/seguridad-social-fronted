@@ -29,7 +29,9 @@ export class InicioMostrarPagoComponent implements OnInit {
       this.pago.message= params.get('message');
       this.pago.transactionState = params.get('transactionState');
        if(this.pago.message=="APPROVED"){
-         this.apiService.ordenesService.pagar(this.pago.referenceCode).subscribe(params => {
+         var str = this.pago.referenceCode.split('-');
+         console.log(str[1]);
+         this.apiService.ordenesService.pagar(str[1]).subscribe(params => {
            console.log(params)
            
          })
