@@ -1,6 +1,8 @@
+import { ApiService } from 'src/app/core/api.service';
+import { Empresa } from './../../models/empresa.model';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {Md5} from 'ts-md5/dist/md5';
+import { Md5 } from 'ts-md5/dist/md5';
 import Swal from 'sweetalert2';
 
 
@@ -12,23 +14,20 @@ import Swal from 'sweetalert2';
   styleUrls: ['./inicio-mostrar-orden.component.css']
 })
 export class InicioMostrarOrdenComponent implements OnInit {
-  cliente : any = null
-  orden : any = null
-  signature: any = null
-  url ="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/";
+  cliente = null
+  orden = null
+  signature = null
+  referenceCode = null
 
+  empresa: Empresa = new Empresa();
 
-  constructor(private router: Router ) { }
+  constructor(private router: Router, private apiService: ApiService) { }
 
   ngOnInit(): void {
- //   const md5 = new Md5();
-   // this.signature = md5.appendStr('hello').end();
-    
+
     this.cliente = JSON.parse(window.sessionStorage.getItem('cliente'));
     this.orden = JSON.parse(window.sessionStorage.getItem('orden'));
-    console.log(this.orden.id);
-    console.log(this.cliente.plan.precio);
-    this.signature =Md5.hashStr('4Vj8eK4rloUd272L48hsrarnUA~'.concat('508029~').concat(this.orden.id).concat('~').concat(this.cliente.plan.precio).concat('~').concat('COP'));
+
     if (!this.orden) {
       Swal.fire(
         'El cliente no existe',
@@ -37,8 +36,20 @@ export class InicioMostrarOrdenComponent implements OnInit {
       )
       this.router.navigate(['/inicio/consultar-orden']);
     }
+
+    this.apiService.empresaService.getEmpresaActual().subscribe(data => {
+      this.empresa = data;
+      this.referenceCode = `ufps-professionacare-${this.orden.id}`
+      let hash = `${data.api}~${data.merchantId}~${this.referenceCode}~${this.cliente.plan.precio}~${data.currency}`;
+      this.signature = Md5.hashStr(hash);
+
+    })
   }
 
+
+  pagarFactura() {
+    
+  }
 
   limpiar() {
     window.sessionStorage.removeItem('cliente')

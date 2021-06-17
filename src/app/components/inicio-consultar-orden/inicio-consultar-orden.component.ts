@@ -20,7 +20,7 @@ export class InicioConsultarOrdenComponent implements OnInit {
 
   ngOnInit(): void {
     this.checkoutForm = this.formBuilder.group({
-      tipoId: '',
+      tipoId: this.tipos[0].id,
       documento: '',
     });
   }

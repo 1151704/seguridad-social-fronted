@@ -1,20 +1,29 @@
 <br>
 <br>
 <br>
-<div class="container justify-content-center" id = "container-consulta">
-    <h3 class="text-center">Consultar Factura</h3>
-    <form class="row" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
-      <div class="col-3">
-        <select class="form-control" aria-label="Default select example"  formControlName="tipoId">
-          <option *ngFor="let tipo of tipos" [value]="tipo.id">{{tipo.label}}</option>
-        </select>
+<main id="main">
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="container" data-aos="fade-up">
+        <div class="container justify-content-center" id="container-consulta">
+          <h3 class="text-center">Consultar Factura</h3>
+          <form class="row" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+            <div class="col-md-3 mb-3">
+              <select class="form-control" aria-label="Default select example" formControlName="tipoId">
+                <option *ngFor="let tipo of tipos" [value]="tipo.id">{{tipo.label}}</option>
+              </select>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="documento" class="visually-hidden">No. documento</label>
+              <input type="text" class="form-control" id="documento" formControlName="documento"
+                placeholder="No. documento">
+            </div>
+            <div class="col-md-3">
+              <button type="submit" class="btn btn-primary mb-3">Consultar</button>
+            </div>
+          </form>
+        </div>
       </div>
-      <div class="col-6">
-        <label for="documento" class="visually-hidden"  >No. documento</label>
-        <input type="text" class="form-control" id="documento" formControlName="documento" placeholder="No. documento">
-      </div>
-      <div class="col-3">
-        <button type="submit" class="btn btn-primary mb-3" >Consultar</button>
-      </div>
-    </form>
-</div>
+    </div>
+  </section>
+</main>

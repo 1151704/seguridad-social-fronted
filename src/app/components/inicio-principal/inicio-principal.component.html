@@ -1,6 +1,5 @@
 
 <section id="hero" class="hero d-flex align-items-center">
-
   <div class="container">
     <div class="row">
       <div class="col-lg-6 d-flex flex-column justify-content-center">
@@ -21,15 +20,11 @@
       </div>
     </div>
   </div>
-
 </section><!-- End Hero -->
-
 <div class="container-2">
   <section id="about" class="about">
-
     <div class="container" data-aos="fade-up">
       <div class="row gx-0">
-
         <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
           <div class="content">
             <h2 class="title-3" style="text-align: center">¿Quienes somos?</h2>
@@ -48,19 +43,14 @@
           <div class="content">
             <h2 style="text-align: center">Vision</h2>
             <h5 data-aos="fade-up" id="prin_qmv" style="text-align: justify;">{{empresa.vision}}</h5>
-
           </div>
         </div>
-
         <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
           <img src="assets/40c29289-1307-4465-861e-db36efdfde99.jpg" class="img-fluid" alt="">
         </div>
-
       </div>
     </div>
-
   </section>
-
   <script>
     $(document).ready(function () {
       $('#icon').click(function () {
@@ -68,22 +58,14 @@
       });
     });
   </script>
-
   <main id="main">
-
     <section id="pricing" class="pricing">
-
       <div class="container" data-aos="fade-up">
-
         <header class="section-header">
           <p>Planes</p>
         </header>
-
         <br>
-
-
         <div class="row gy-4" data-aos="fade-left">
-
           <div *ngFor="let plan of planes; let i = index" class="col-lg-3 col-md-6" data-aos="zoom-in"
             [data-aos-delay]="i+1*100">
             <div id="box_plan" class="box">
@@ -95,26 +77,17 @@
                 <li id="text-hover_t">{{plan.servicios}}</li>
                 <li id="text-hover_t">{{plan.descripcion}}</li>
               </ul>
-
             </div>
           </div>
-
         </div>
-
       </div>
-
     </section>
-
   </main>
-
   <section id="clients" class="clients">
-
     <div class="container-fluid" data-aos="fade-up" style = "width: 80%;">
-
       <header class="section-header">
         <p>Convenios EPS</p>
       </header>
-
       <div class="clients-slider swiper-container">
         <div class="swiper-wrapper align-items-center">
           <div class="swiper-slide"><img src="assets/eps-sanitas.jpg" class="img-fluid" alt="sanitas"></div>
@@ -126,9 +99,5 @@
         <div class="swiper-pagination"></div>
       </div>
     </div>
-
   </section>
 </div>
-
-
-

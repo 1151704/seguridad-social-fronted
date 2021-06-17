@@ -1,4 +1,7 @@
 #container-consulta{
-	border: 2px solid black;
-	width: 30%;
+	padding: 1em ;
+	border: 2px solid #343759;
+	border-radius: .5em;
+
+	width: 80%;
 }

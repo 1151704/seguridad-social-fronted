@@ -1,103 +1,115 @@
 <br>
 <br>
 <br>
-<div class="invoice-box">
-    <table cellpadding="0" cellspacing="0">
-        <tr class="top">
-            <td colspan="2">
-                <table>
-                    <tr>
-                        <td class="tittle" style="width: 8%;">
-                            <img src="../assets/logo-fondo.png" style="width: 100%;" />
+<main id="main">
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="container" data-aos="fade-up">
+                <div class="invoice-box">
+                    <table cellpadding="0" cellspacing="0">
+                        <tr class="top">
+                            <td colspan="2">
+                                <table>
+                                    <tr>
+                                        <td class="tittle" style="width: 8%;">
+                                            <img src="../assets/logo-fondo.png" style="width: 100%;" />
 
-                        </td>
-                        <td class="heading" style="width: 40%; text-align: left">
-                            <h2 id="titulo">Profesional Care</h2>
-                        </td>
-                        <td style="width: 50%; text-align: left; padding-left:  20%">
-                            Profesional Care, S.A.S.<br />
-                            Av. 1 No. 11-81, Local 1. <br />
-                            Cúcuta, Norte de Santander.
-                        </td>
+                                        </td>
+                                        <td class="heading" style="width: 40%; text-align: left">
+                                            <h2 id="titulo">Profesional Care</h2>
+                                        </td>
+                                        <td style="width: 50%; text-align: left; padding-left:  20%">
+                                            Profesional Care, S.A.S.<br />
+                                            Av. 1 No. 11-81, Local 1. <br />
+                                            Cúcuta, Norte de Santander.
+                                        </td>
 
-                    </tr>
-                </table>
-            </td>
-        </tr>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
 
-        <tr class="information">
-            <td colspan="2">
-                <table>
-                    <tr>
-                        <td style="width: 50%; text-align: left; ">
-                            Gerente<br />
-                            Rafael Ricardo Velasquez Ovalle<br />
-                            ufps.seguridadsocial@gmail.com
-
-
-
-                    </tr>
-                </table>
-            </td>
-        </tr>
-
-        <tr class="heading">
-            <td>Orden de Servicio</td>
-
-            <td>Detalle</td>
-        </tr>
-
-        <tr class="details">
-            <td>
-                No. Orden<br />
-                Nombre <br />
-                Apellido<br />
-                Tipo Documento<br />
-                No. documento<br />
-                Plan adquirido<br />
-                Servicios<br/>
-                Costo de Plan<br/>
-                Plan adquirido<br />
-                Fecha de creación <br />
-                Fecha Límite de pago
-            </td>
-            <td>
-                {{orden.id}}<br />
-                {{cliente.nombre1}} {{cliente.nombre2}} <br />
-                {{cliente.apellido1}} {{cliente.apellido2}}<br />
-                {{cliente.tipoIdentificacion.tipo}}<br />
-                {{cliente.identificacion}}<br />
-                {{cliente.plan.titulo}}<br/>
-                {{cliente.plan.servicios}}<br/>
-                {{cliente.plan.precio}}<br/>
-                {{orden.fechaOrden}}<br />
-                {{orden.fechaLimite}}<br />
-            </td>
+                        <tr class="information">
+                            <td colspan="2">
+                                <table>
+                                    <tr>
+                                        <td style="width: 50%; text-align: left; ">
+                                            Gerente<br />
+                                            Rafael Ricardo Velasquez Ovalle<br />
+                                            ufps.seguridadsocial@gmail.com
 
 
 
-        </tr>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
 
-        <tr class="total">
-            <td></td>
-            <td>Total: ${{cliente.plan.precio}}</td>
-        </tr>
-        
-    <div style="text-align:center;">
-        <form form ngNoForm [action]="url" method="post"action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu/">
-            <input name="merchantId" type="hidden" value="508029">
-            <input name="accountId" type="hidden" value="512321">
-            <input name="description" type="hidden" value={{cliente.plan.titulo}}>
-            <input name="referenceCode" type="hidden" value={{orden.id}}>
-            <input name="amount" type="hidden" value={{cliente.plan.precio*0.81+0.19*cliente.plan.precio}}>
-            <input name="tax" type="hidden" value="0">
-            <input name="taxReturnBase" type="hidden" value={{cliente.plan.precio}}>
-            <input name="currency" type="hidden" value="COP">
-            <input name="signature" type="hidden" value={{signature}}>
-            <input name="test" type="hidden" value="1">
-            <input name="buyerEmail" type="hidden" value={{cliente.correo}}>
-            <input name="responseUrl" type="hidden" value="http://www.test.com/response">
-            <input name="confirmationUrl" type="hidden" value="http://www.test.com/confirmation">
-            <input name="Submit" type="submit"  value="Pagar">
-        </form>
-    </div>
+                        <tr class="heading">
+                            <td>Orden de Servicio</td>
+
+                            <td>Detalle</td>
+                        </tr>
+
+                        <tr class="details">
+                            <td>
+                                No. Orden<br />
+                                Nombre <br />
+                                Apellido<br />
+                                Tipo Documento<br />
+                                No. documento<br />
+                                Correo<br />
+                                Plan adquirido<br />
+                                Servicios<br />
+                                Costo de Plan<br />
+                                Plan adquirido<br />
+                                Fecha de creación <br />
+                                Fecha Límite de pago
+                            </td>
+                            <td>
+                                {{orden.id}}<br />
+                                {{cliente.nombre1}} {{cliente.nombre2}} <br />
+                                {{cliente.apellido1}} {{cliente.apellido2}}<br />
+                                {{cliente.tipoIdentificacion.tipo}}<br />
+                                {{cliente.identificacion}}<br />
+                                {{cliente.correo}}<br />
+                                {{cliente.plan.titulo}}<br />
+                                {{cliente.plan.servicios}}<br />
+                                {{cliente.plan.precio | currency}}<br />
+                                {{orden.fechaOrden}}<br />
+                                {{orden.fechaLimite}}<br />
+                            </td>
+
+
+
+                        </tr>
+
+                        <tr class="total">
+                            <td></td>
+                            <td>Total: {{cliente.plan.precio | currency}}</td>
+                        </tr>
+
+                        <div style="text-align:center;">
+                            <form form ngNoForm [action]="empresa.url" method="post">
+                                <input name="merchantId" class="form-control"[value]="empresa.merchantId">
+                                <input name="accountId" class="form-control"[value]="empresa.accountId">
+                                <input name="description"class="form-control" [value]="cliente.plan.titulo">
+                                <input name="referenceCode"class="form-control" [value]="referenceCode">
+                                <input name="amount" class="form-control"[value]="cliente.plan.precio">
+                                <input name="tax"class="form-control" [value]="0">
+                                <input name="taxReturnBase"class="form-control" [value]="cliente.plan.precio">
+                                <input name="currency" class="form-control"[value]="empresa.currency">
+                                <input name="signature" class="form-control"[value]="signature">
+                                <input name="test" class="form-control"[value]="empresa.test">
+                                <input name="buyerEmail"class="form-control" [value]="cliente.correo">
+                                <input name="responseUrl"class="form-control" [value]="empresa.responseUrl">
+                                <input name="confirmationUrl"class="form-control" [value]="empresa.confirmationUrl">
+                                <input name="Submit" type="submit" class="btn btn-primary" value="Pagar">
+                            </form>
+                        </div>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

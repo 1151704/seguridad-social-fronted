@@ -1,194 +1,199 @@
 <br>
 <br>
-<section id="hero" class="hero d-flex align-items-center">
-  <div class="container">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-sd-8 col-md-8 col-lg-8 col-xl-8" style="border-style: solid; border-color:#343759;">
-        <br>
-        <h3 class="text-center">Formulario de Afiliación</h3>
-        <br>
-        <div class="well well-sm">
+<main id="main">
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-sd-8 col-md-8 col-lg-8 col-xl-8" style="border-style: solid; border-color:#343759;">
+            <br>
+            <h3 class="text-center">Formulario de Afiliación</h3>
+            <br>
+            <div class="well well-sm">
 
-          <form (ngSubmit)="onSubmit()" [formGroup]="solicitudForm">
+              <form (ngSubmit)="onSubmit()" [formGroup]="solicitudForm">
 
-            <fieldset>
-              <div class="panel panel-default">
-                <div class="panel-heading">
-                  <div class="col-md-12">
-                    <div class="row ">
+                <fieldset>
+                  <div class="panel panel-default">
+                    <div class="panel-heading">
+                      <div class="col-md-12">
+                        <div class="row ">
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Primer Nombre:
-                        </label>
-                        <input type="text" class="form-control" formControlName="nombre1" placeholder="Primer nombre"
-                          required>
-                      </div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Primer Nombre:
+                            </label>
+                            <input type="text" class="form-control" formControlName="nombre1"
+                              placeholder="Primer nombre" required>
+                          </div>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Segundo Nombre:
-                        </label>
-                        <input type="text" name="nombre2" class="form-control" formControlName="nombre2"
-                          placeholder="Segundo nombre" required>
-                      </div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Segundo Nombre:
+                            </label>
+                            <input type="text" name="nombre2" class="form-control" formControlName="nombre2"
+                              placeholder="Segundo nombre" required>
+                          </div>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Primer Apellido:
-                        </label>
-                        <input type="text" class="form-control" name="apellido1" formControlName="apellido1"
-                          placeholder="Primer apellido" required>
-                      </div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Primer Apellido:
+                            </label>
+                            <input type="text" class="form-control" name="apellido1" formControlName="apellido1"
+                              placeholder="Primer apellido" required>
+                          </div>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Segundo Apellido:
-                        </label>
-                        <input type="text" class="form-control" name="apellido2" formControlName="apellido2"
-                          placeholder="Segundo apellido" required>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Segundo Apellido:
+                            </label>
+                            <input type="text" class="form-control" name="apellido2" formControlName="apellido2"
+                              placeholder="Segundo apellido" required>
 
-                      </div>
+                          </div>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Tipo de identificación:
-                        </label>
-                        <select class="form-control" formControlName="idTipoIdentificacion">
-                          <option *ngFor="let tipo of tipos" value="{{tipo.id}}">{{tipo.label}}</option>
-                        </select>
-                      </div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Tipo de identificación:
+                            </label>
+                            <select class="form-control" formControlName="idTipoIdentificacion">
+                              <option *ngFor="let tipo of tipos" value="{{tipo.id}}">{{tipo.label}}</option>
+                            </select>
+                          </div>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Numero de identificación:
-                        </label>
-                        <input type="text" class="form-control" name="apellido2" formControlName="identificacion"
-                          placeholder="Identificación" required>
-                      </div>
-                      <br><br><br>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Numero de identificación:
+                            </label>
+                            <input type="text" class="form-control" name="apellido2" formControlName="identificacion"
+                              placeholder="Identificación" required>
+                          </div>
+                          <br><br><br>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Teléfono:
-                        </label>
-                        <input type="text" class="form-control" name="apellido2" formControlName="telefono"
-                          placeholder="Teléfono" required>
-                      </div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Teléfono:
+                            </label>
+                            <input type="text" class="form-control" name="apellido2" formControlName="telefono"
+                              placeholder="Teléfono" required>
+                          </div>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Correo Eletronico:
-                        </label>
-                        <input type="text" class="form-control" name="apellido2" formControlName="correo"
-                          placeholder="Correo Electronico" required>
-                      </div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Correo Eletronico:
+                            </label>
+                            <input type="text" class="form-control" name="apellido2" formControlName="correo"
+                              placeholder="Correo Electronico" required>
+                          </div>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Departamento:
-                        </label>
-                        <select class="form-control" (ngModelChange)="getMunicipios($event)" [(ngModel)]="departamento"
-                          [ngModelOptions]="{standalone: true}">
-                          <option *ngFor="let tipo of departamentos" [ngValue]="tipo">{{tipo.nombreDepartamento}}</option>
-                        </select>
-                      </div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Departamento:
+                            </label>
+                            <select class="form-control" (ngModelChange)="getMunicipios($event)"
+                              [(ngModel)]="departamento" [ngModelOptions]="{standalone: true}">
+                              <option *ngFor="let tipo of departamentos" [ngValue]="tipo">{{tipo.nombreDepartamento}}
+                              </option>
+                            </select>
+                          </div>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Municipio:
-                        </label>
-                        <select class="form-control">
-                          <option></option>
-                          <option *ngFor="let tipo of municipios" value="{{tipo.idMunicipio}}">{{tipo.nombreMunicipio}}
-                          </option>
-                        </select>
-                      </div>
-                      <br><br><br><br>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Municipio:
+                            </label>
+                            <select class="form-control">
+                              <option></option>
+                              <option *ngFor="let tipo of municipios" value="{{tipo.idMunicipio}}">
+                                {{tipo.nombreMunicipio}}
+                              </option>
+                            </select>
+                          </div>
+                          <br><br><br><br>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Dirección:
-                        </label>
-                        <input type="text" class="form-control" name="apellido2" formControlName="direccion"
-                          placeholder="Dirección" required>
-                      </div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Dirección:
+                            </label>
+                            <input type="text" class="form-control" name="apellido2" formControlName="direccion"
+                              placeholder="Dirección" required>
+                          </div>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Profesión:
-                        </label>
-                        <input type="text" class="form-control" formControlName="profesion" placeholder="Profesión"
-                          required>
-                      </div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Profesión:
+                            </label>
+                            <input type="text" class="form-control" formControlName="profesion" placeholder="Profesión"
+                              required>
+                          </div>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Tipo de Plan:
-                        </label>
-                        <select class="form-control" formControlName="idTipoPlan">
-                          <option *ngFor="let tipo of tiposPlan" value="{{tipo.id}}">{{tipo.servicios}}</option>
-                        </select>
-                      </div>
-
-
-
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Tipo de Cliente:
-                        </label>
-                        <select class="form-control" formControlName="idTipoCliente">
-                          <option *ngFor="let tipo of tiposCliente" value="{{tipo.id}}">{{tipo.descripcion}}</option>
-                        </select>
-                      </div>
-
-
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Adjunte su Cédula:
-                        </label>
-                        <div class="custom-file">
-                          <input accept="application/pdf" type="file" class="custom-file-input" id="customFileLang"
-                            lang="es" (change)="handleFileInput($event)">
-                          <label class="custom-file-label" for="customFileLang">{{nameFile?nameFile: 'Seleccione un
-                            archivo'}}</label>
-                        </div>
-                        <label>
-                          <P>(Solo Formato .PDF)</P>
-                        </label>
-                      </div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Tipo de Plan:
+                            </label>
+                            <select class="form-control" formControlName="idTipoPlan">
+                              <option *ngFor="let tipo of tiposPlan" value="{{tipo.id}}">{{tipo.servicios}}</option>
+                            </select>
+                          </div>
 
 
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Observaciones:
-                        </label>
-                        <textarea type="text" class="form-control" formControlName="observaciones"
-                          placeholder="Observaciones"></textarea>
-                      </div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Tipo de Cliente:
+                            </label>
+                            <select class="form-control" formControlName="idTipoCliente">
+                              <option *ngFor="let tipo of tiposCliente" value="{{tipo.id}}">{{tipo.descripcion}}
+                              </option>
+                            </select>
+                          </div>
+
+
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Adjunte su Cédula:
+                            </label>
+                            <div class="custom-file">
+                              <input accept="application/pdf" type="file" class="custom-file-input" id="customFileLang"
+                                lang="es" (change)="handleFileInput($event)">
+                              <label class="custom-file-label" for="customFileLang">{{nameFile?nameFile: 'Seleccione un
+                                archivo'}}</label>
+                            </div>
+                            <label>
+                              <P>(Solo Formato .PDF)</P>
+                            </label>
+                          </div>
 
 
 
-                      <div
-                        class="col-sd-12 col-md-12 col-lg-12 col-xl-12 justify-content-center text-center align-items-center">
-                        <!-- <div class="loading">Loading</div>
+                          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+                            <label>
+                              Observaciones:
+                            </label>
+                            <textarea type="text" class="form-control" formControlName="observaciones"
+                              placeholder="Observaciones"></textarea>
+                          </div>
+
+
+
+                          <div
+                            class="col-sd-12 col-md-12 col-lg-12 col-xl-12 justify-content-center text-center align-items-center">
+                            <!-- <div class="loading">Loading</div>
                       <div class="error-message"></div>
                       <div class="sent-message">Your message has been sent. Thank you!</div> -->
 
-                        <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            </fieldset>
-          </form>
+                </fieldset>
+              </form>
+            </div>
+            <br>
+          </div>
         </div>
-        <br>
       </div>
     </div>
-  </div>
-</section>
-
-
+  </section>
+</main>
