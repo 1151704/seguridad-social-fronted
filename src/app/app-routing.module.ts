@@ -1,5 +1,6 @@
 import { InicioMostrarPagoComponent } from './components/inicio-mostrar-pago/inicio-mostrar-pago.component';
 import { MainClienteEditarComponent } from './components/main-cliente-editar/main-cliente-editar.component';
+import { MainReportesComponent } from './components/main-reportes/main-reportes.component';
 import { MainClienteRegistrarComponent } from './components/main-cliente-registrar/main-cliente-registrar.component';
 import { MainClientesComponent } from './components/main-clientes/main-clientes.component';
 import { MainGenerarOrdenesComponent } from './components/main-generar-ordenes/main-generar-ordenes.component';
@@ -53,6 +54,7 @@ const routes: Routes = [
       { path: 'usuario-editar', component: MainUsuarioEditarComponent},
       { path: 'solicitudes', component: MainSolicitudesComponent },
       { path: 'solicitudes-editar', component: MainSolicitudesEditarComponent},
+      { path: 'reportes', component: MainReportesComponent},
       { path: 'generar-ordenes', component: MainGenerarOrdenesComponent},
       { path: 'clientes', component: MainClientesComponent},
       { path: 'cliente-registrar', component: MainClienteRegistrarComponent},
