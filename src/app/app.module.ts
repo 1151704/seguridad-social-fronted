@@ -39,6 +39,7 @@ import { MainClientesComponent } from './components/main-clientes/main-clientes.
 import { MainClienteRegistrarComponent } from './components/main-cliente-registrar/main-cliente-registrar.component';
 import { MainClienteEditarComponent } from './components/main-cliente-editar/main-cliente-editar.component';
 import { InicioMostrarPagoComponent } from './components/inicio-mostrar-pago/inicio-mostrar-pago.component';
+import { MainReportesComponent } from './components/main-reportes/main-reportes.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { InicioMostrarPagoComponent } from './components/inicio-mostrar-pago/ini
     MainClienteRegistrarComponent,
     MainClienteEditarComponent,
     InicioMostrarPagoComponent,
+    MainReportesComponent
   ],
   imports: [
     BrowserModule,

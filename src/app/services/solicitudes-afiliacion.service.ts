@@ -56,7 +56,7 @@ export class SolicitudesAfiliacionService {
     formdata.append('profesion', proveedor.profesion);
     formdata.append('observaciones', proveedor.observaciones);
 
-    const req = new HttpRequest('POST', `${this.baseUrl}`, formdata, {
+    const req = new HttpRequest('POST', `${this.baseUrl}save`, formdata, {
       reportProgress: true
     });
 

@@ -13,6 +13,15 @@ export class Empresa {
     direccion: string;
     enable:boolean;
     file: File;
+    
+    merchantId: string;    
+    accountId: string;    
+    currency: string;    
+    test: string;
+    responseUrl: string;
+    confirmationUrl: string;
+    url: string;
+    api: string;
   
   }
   

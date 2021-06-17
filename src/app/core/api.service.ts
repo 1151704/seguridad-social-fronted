@@ -1,3 +1,4 @@
+import { ReportesService } from './../services/reportes.service';
 import { OrdenesService } from './../services/ordenes.service';
 import { DepartamentoService } from './../services/departamento.service';
 import { TipoClienteService } from './../services/tipo-cliente.service';
@@ -28,6 +29,7 @@ export class ApiService {
   municipioService: MunicipioService;
   departamentoService: DepartamentoService;
   ordenesService: OrdenesService;
+  reporteService: ReportesService;
 
   constructor(private http: HttpClient, public notifService: NotificacionService, public utilService: UtilsService) {
     this.empresaService = new EmpresaService(http)
@@ -39,6 +41,7 @@ export class ApiService {
     this.municipioService = new MunicipioService(http)
     this.departamentoService = new DepartamentoService(http)
     this.ordenesService = new OrdenesService(http);
+    this.reporteService = new ReportesService(http);
   }
 
 }
