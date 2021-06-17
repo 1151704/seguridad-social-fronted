@@ -89,39 +89,23 @@
                             <td>Total: {{cliente.plan.precio | currency}}</td>
                         </tr>
 
-                        <div style="text-align:center;">
-                            <form form ngNoForm [action]="empresa.url" method="post">
-                                <input name="merchantId"    type="hidden"  [value]="empresa.merchantId"   >
-                                <input name="accountId"     type="hidden"  value="512321" >
-                                <input name="description"   type="hidden"  value="Test PAYU"  >
-                                <input name="referenceCode" type="hidden"  value="33" >
-                                <input name="amount"        type="hidden"  value="20000"   >
-                                <input name="tax"           type="hidden"  value="3193"  >
-                                <input name="taxReturnBase" type="hidden"  value="16806" >
-                                <input name="currency"      type="hidden"  value="COP" >
-                                <input name="signature"     type="hidden"  value="d94f6a8b7cbf9f30a50f0e37fb0bec2f"  >
-                                <input name="test"          type="hidden"  value="1" >
-                                <input name="buyerEmail"    type="hidden"  value="test@test.com" >
-                                <input name="responseUrl"    type="hidden"  value="http://localhost:4200/inicio/mostrar-orden" >
-                                <input name="confirmationUrl"    type="hidden"  value="http://www.test.com/confirmation" >
-                                <input name="Submit"        type="submit"  value="Enviar" >
-                              </form>
-                          <!--  <form form ngNoForm [action]="empresa.url" method="post">
-                                <input name="merchantId" class="form-control"[value]="empresa.merchantId">
-                                <input name="accountId" class="form-control"[value]="empresa.accountId">
-                                <input name="description"class="form-control" [value]="cliente.plan.titulo">
-                                <input name="referenceCode"class="form-control" [value]="referenceCode">
-                                <input name="amount" class="form-control"[value]="cliente.plan.precio">
-                                <input name="tax"class="form-control" [value]="0">
-                                <input name="taxReturnBase"class="form-control" [value]="cliente.plan.precio">
-                                <input name="currency" class="form-control"[value]="empresa.currency">
-                                <input name="signature" class="form-control"[value]="signature">
-                                <input name="test" class="form-control"[value]="empresa.test">
-                                <input name="buyerEmail"class="form-control" [value]="cliente.correo">
-                                <input name="responseUrl"class="form-control" [value]="empresa.responseUrl">
-                                <input name="confirmationUrl"class="form-control" [value]="empresa.confirmationUrl">
+                        <div style="text-align:center;">                           
+                           <form form ngNoForm [action]="empresa.url" method="post">
+                                <input name="merchantId" type="hidden"[value]="empresa.merchantId">
+                                <input name="accountId" type="hidden"[value]="empresa.accountId">
+                                <input name="description"type="hidden" [value]="cliente.plan.titulo">
+                                <input name="referenceCode"type="hidden" [value]="referenceCode">
+                                <input name="amount" type="hidden"[value]="cliente.plan.precio">
+                                <input name="tax"type="hidden" value={{cliente.plan.precio*0.19}}>
+                                <input name="taxReturnBase"type="hidden" value={{cliente.plan.precio*0.81}}>
+                                <input name="currency" type="hidden"[value]="empresa.currency">
+                                <input name="signature" type="hidden"[value]="signature">
+                                <input name="test" type="hidden"[value]="empresa.test">
+                                <input name="buyerEmail"type="hidden" [value]="cliente.correo">
+                                <input name="responseUrl"type="hidden" [value]="empresa.responseUrl">
+                                <input name="confirmationUrl"type="hidden" [value]="empresa.confirmationUrl">
                                 <input name="Submit" type="submit" class="btn btn-primary" value="Pagar">
-                            </form>-->
+                            </form>
                         </div>
                     </table>
                 </div>

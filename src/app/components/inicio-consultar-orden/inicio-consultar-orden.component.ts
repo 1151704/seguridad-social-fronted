@@ -47,8 +47,6 @@ export class InicioConsultarOrdenComponent implements OnInit {
           } else {
             Swal.fire(
               'El cliente no existe',
-              'kdwoakdwoawodawkod',
-              'warning'
             )
           }
         },
