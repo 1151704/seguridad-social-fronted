@@ -44,13 +44,13 @@
 [routerLink]="[ '/main/generar-ordenes' ]">
 <a class="nav-link" href="" onclick="return false;">
     <i class="fas fa-fw fa-tachometer-alt"></i>
-    <span>&nbsp;Generar Ordenes</span>
+    <span>&nbsp;Ordenes de Servicio</span>
 </a>
 
 <li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
 [routerLink]="[ '/main/clientes' ]">
 <a class="nav-link" href="" onclick="return false;">
     <i class="fas fa-fw fa-tachometer-alt"></i>
-    <span>&nbsp;clientes</span>
+    <span>&nbsp;Clientes</span>
 </a>
 </li>

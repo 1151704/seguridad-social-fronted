@@ -1,2 +1,25 @@
-<button type="button" class="btn btn-primary" onclick="return false;"
-(click)="generar()">Generar Ordenes</button>
+
+
+<div class="container-fluid">
+    <div class="card mb-3 ">
+      <div class="card-header">
+        <i class="fas fa-table"></i>
+        Ordenes de Servicio
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-8">
+                <input class="form-control" type="text" placeholder="La generación de ordenes de servicio se realiza mensualmente cada primer día del mes" readonly>
+              </div>
+              <div class="col-md-4">
+                <button type="button" class="btn btn-primary" onclick="return false;"
+                (click)="generar()">Generar Ordenes</button>
+              </div>
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
