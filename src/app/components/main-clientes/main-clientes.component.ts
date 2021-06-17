@@ -21,9 +21,9 @@ export class MainClientesComponent implements OnInit {
       .subscribe(data => {
         this.clientes = [];
         console.log(data)
-        if (data.clientes) {
+        if (data) {
           this.clientes = data.clientes;
-          //alert("se ejecuto esa monda")
+          
         }
       }, error => {
         this.apiService.notifService.error('Error', 'Error al cargar lista de clientes');
