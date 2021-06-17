@@ -8,7 +8,7 @@ export class Empresa {
     mision: string;
     vision: string;
     telefono: string;
-    identificacion: string;
+    nit: string;
     email: string;
     direccion: string;
     enable:boolean;

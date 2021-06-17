@@ -7,7 +7,16 @@ export class EmpresaSalidaApi {
     direccion: string;
     telefono: string;
     email: string;
-    enable: boolean;
     file: File;
+    
+    updatePagos: boolean;
+    merchantId: string;
+	accountId: string;
+	currency: string;
+	test: string;
+	responseUrl: string;
+	confirmationUrl: string;
+	url: string;
+	api: string;
 
 }

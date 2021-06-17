@@ -28,28 +28,30 @@ export class MainEmpresaComponent implements OnInit {
   }
 
   ngOnInit() {
-
-    this.proveedor = new Empresa();
-
-
+    this.proveedor = new Empresa()
     this.proveedorForm = this.fb.group({
-      nombre: ['', Validators.required],
-      nit: ['', Validators.required],
       direccion: [''],
       telefono: [''],
       mision: [''],
       vision: [''],
       razonSocial: [''],
       email: [''],
-      enable: [false],
-      eliminado: [false]
+      updatePagos: [false],
+      merchantId: [''],
+      accountId: [''],
+      currency: [''],
+      test: [''],
+      responseUrl: [''],
+      confirmationUrl: [''],
+      url: [''],
+      api: [''],
     });
 
     this.apiService.empresaService.getEmpresaActual()
       .subscribe(data => {
         if (data) {
           this.proveedorForm.patchValue(data);
-          this.proveedor = Object.assign({}, this.proveedorForm.value);
+          this.proveedor = data;
         } else {
           this.router.navigate(['/main/empresa']);
         }
@@ -68,17 +70,10 @@ export class MainEmpresaComponent implements OnInit {
 
     this.currentFileUpload = this.selectedFiles && this.selectedFiles.length != 0 ? this.selectedFiles.item(0) : null;
 
-    this.proveedorEdit = Object.assign({}, this.proveedorForm.value);
+    let itemProveedor = Object.assign({}, this.proveedorForm.value);
 
-    let itemProveedor = new EmpresaSalidaApi();
-
-    itemProveedor.nombre = this.proveedorEdit.nombre;
-    itemProveedor.telefono = this.proveedorEdit.telefono;
-    itemProveedor.direccion = this.proveedorEdit.direccion;
-    itemProveedor.email = this.proveedorEdit.email;
-    itemProveedor.enable = this.proveedorEdit.enable;
     itemProveedor.file = this.currentFileUpload;
-
+    console.log(itemProveedor)
     this.apiService.empresaService.saveProveedor(itemProveedor).subscribe(
       event => {
         if (event.type === HttpEventType.UploadProgress) {

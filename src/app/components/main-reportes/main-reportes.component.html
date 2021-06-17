@@ -5,33 +5,86 @@
             Reporte de Solicitudes
         </div>
         <div class="card-body">
-            <div class="form-group">
-                <div class="form-row">
-                    <div class="col-md-3">
-                        <div class="form-group">
-                            <label>Tipo de Estado</label>
-                            <select class="form-control" [(ngModel)]="estado">
-                                <option value="">Todos</option>
-                                <option value="PENDIENTE">Pendientes</option>
-                                <option value="NEGADA">Negadas</option>
-                                <option value="APROBADA">Aprobadas</option>
-                            </select>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" id="pills-tab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link" [ngClass]="{'active': filtrado=='s'}" (click)="filtrado = 's'"
+                                id="pills-solicitudes-tab" data-toggle="pill" href="#pills-solicitudes" role="tab"
+                                aria-controls="pills-solicitudes" aria-selected="true">Solicitudes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" [ngClass]="{'active': filtrado=='p'}" (click)="filtrado = 'p'"
+                                id="pills-pagos-tab" data-toggle="pill" href="#pills-pagos" role="tab"
+                                aria-controls="pills-pagos" aria-selected="false">Pagos</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--./card-header-->
+                <div class="card-body">
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade " [ngClass]="{'show active': filtrado == 's'}" id="pills-solicitudes"
+                            role="tabpanel" aria-labelledby="pills-solicitudes-tab">
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Tipo de Estado</label>
+                                            <select class="form-control" [(ngModel)]="estado">
+                                                <option value="">Todos</option>
+                                                <option value="PENDIENTE">Pendientes</option>
+                                                <option value="NEGADA">Negadas</option>
+                                                <option value="APROBADA">Aprobadas</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Fecha Inicio</label>
+                                            <input type="date" [(ngModel)]="fechaInicio" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="form-group">
+                                            <label>Fecha final</label>
+                                            <input type="date" [(ngModel)]="fechaFinal" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-3" >
-                        <div class="form-group">
-                            <label>Fecha Inicio</label>
-                            <input type="date" [(ngModel)]="fechaInicio" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-3" >
-                        <div class="form-group">
-                            <label>Fecha final</label>
-                            <input type="date" [(ngModel)]="fechaFinal" class="form-control">
+
+                    <div class="tab-content" id="pills-tabContent">
+                        <div class="tab-pane fade " [ngClass]="{'show active': filtrado == 'p'}" id="pills-pagos"
+                            role="tabpanel" aria-labelledby="pills-pagos-tab">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Tipo de Estado</label>
+                                    <select class="form-control" [(ngModel)]="estadoPago">
+                                        <option value="">Todos</option>
+                                        <option value="PENDIENTE">Pendientes</option>
+                                        <option value="PAGADA">Pagadas</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Fecha Inicio</label>
+                                    <input type="date" [(ngModel)]="fechaInicio" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>Fecha final</label>
+                                    <input type="date" [(ngModel)]="fechaFinal" class="form-control">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="d-flex justify-content-center m-2">
                 <a *ngIf="!cargando" class="btn btn-primary m-1" href="#" onclick="return false;"
                     (click)="buscarSolicitudes()">Generar</a>
@@ -40,5 +93,6 @@
                 </button>
             </div>
         </div>
+        <!--./card-body-->
     </div>
 </div>

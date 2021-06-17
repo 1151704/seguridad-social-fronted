@@ -1,3 +1,4 @@
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { API_REST } from './../../url.constants';
 import { Component, OnInit } from '@angular/core';
 import { Empresa } from 'src/app/models/empresa.model';
@@ -30,9 +31,9 @@ export class InicioComponent implements OnInit {
   }
 
   onOutletLoaded(component: any) {
-    console.log(component)
     this.component = component
     component.empresa = this.empresa;
+    console.log(this.component.constructor.name)
   }
 
 

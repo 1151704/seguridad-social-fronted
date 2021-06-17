@@ -2,7 +2,6 @@ import { ReportesService } from './../services/reportes.service';
 import { OrdenesService } from './../services/ordenes.service';
 import { DepartamentoService } from './../services/departamento.service';
 import { TipoClienteService } from './../services/tipo-cliente.service';
-import { ClientesApi } from './../container/clientes-api';
 import { ClienteService } from './../services/cliente.service';
 import { SolicitudesAfiliacionService } from './../services/solicitudes-afiliacion.service';
 import { UsuarioService } from './../services/usuario.service';

@@ -13,18 +13,17 @@
             <label>
               Nombre:
             </label>
-            <input type="text" class="form-control" formControlName="nombre" readonly disabled>
+            <input type="text" class="form-control" [value]="proveedor.nombre" readonly disabled>
           </div>
 
           <div class="form-group col-6">
             <label>
-              Nit:
+              Identificación:
             </label>
-            <input type="text" class="form-control" formControlName="nit" readonly disabled>
+            <input type="text" class="form-control" [value]="proveedor.nit" readonly disabled>
           </div>
         </div>
         <div class="form-row">
-
           <div class="form-group col-6">
             <label>
               Teléfono:
@@ -38,8 +37,6 @@
             </label>
             <input type="text" class="form-control" formControlName="email">
           </div>
-
-
         </div>
         <div class="form-group">
           <label>
@@ -72,9 +69,60 @@
 
         <div class="form-group">
           <label>
-            Estado:
+            Cambiar datos de PayU:
           </label>
-          <input type="checkbox" formControlName="enable">
+          <input type="checkbox" formControlName="updatePagos">
+        </div>
+
+        <div class="form-row" *ngIf="proveedorForm.get('updatePagos').value">
+          <div class="form-group col-6">
+              <label>
+                Merchant Id:
+              </label>
+              <input type="text" class="form-control" formControlName="merchantId">
+          </div>
+          <div class="form-group col-6">
+              <label>
+                Account Id:
+              </label>
+              <input type="text" class="form-control" formControlName="accountId">
+          </div>
+          <div class="form-group col-6">
+              <label>
+                Currency:
+              </label>
+              <input type="text" class="form-control" formControlName="currency">
+          </div>
+          <div class="form-group col-6">
+              <label>
+                Test:
+              </label>
+              <input type="text" class="form-control" formControlName="test">
+          </div>
+          <div class="form-group col-6">
+              <label>
+                Response Url:
+              </label>
+              <input type="text" class="form-control" formControlName="responseUrl">
+          </div>
+          <div class="form-group col-6">
+              <label>
+                Confirmation Url:
+              </label>
+              <input type="text" class="form-control" formControlName="confirmationUrl">
+          </div>
+          <div class="form-group col-6">
+              <label>
+                Url:
+              </label>
+              <input type="text" class="form-control" formControlName="url">
+          </div>
+          <div class="form-group col-6">
+              <label>
+                API:
+              </label>
+              <input type="text" class="form-control" formControlName="api">
+          </div>
         </div>
 
         <div class="d-flex justify-content-center">
