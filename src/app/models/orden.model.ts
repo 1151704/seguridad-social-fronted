@@ -1,5 +1,4 @@
 import { Cliente } from './cliente.model';
-import { File } from "./file.model";
 
 export class Orden {
 
@@ -8,6 +7,7 @@ export class Orden {
     fechaLimite: Date;
     fechaPago: Date;
     precio: number;
+    estadoOrden: String;
     cliente: Cliente;
-
+    enable: boolean;
 }
