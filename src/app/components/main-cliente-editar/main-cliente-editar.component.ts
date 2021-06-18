@@ -22,6 +22,7 @@ export class MainClienteEditarComponent implements OnInit {
 
   proveedorForm: FormGroup;
   proveedor : Cliente;
+  proveedorEdit: Cliente;
   cliente: Cliente = new Cliente();
    tipos = TIPOS_DOCUMENTOS;
    tiposCliente : TipoCliente [] = [];
@@ -38,16 +39,26 @@ export class MainClienteEditarComponent implements OnInit {
       return;
     }
 
+    this.proveedor = new Cliente();
+
     this.proveedorForm = this.fb.group({
       nombre1: ['', Validators.required],
       nombre2: ['', Validators.required],
-      precio: ['', Validators.required],
-      color: ['', Validators.required],
-      servicios: ['', Validators.required],
+      apellido1: ['', Validators.required],
+      apellido2: ['', Validators.required],
+      correo: ['', Validators.required],
+      identificacion: ['', Validators.required],
+      telefono: ['', Validators.required],
+      direccion: ['', Validators.required],
+      idMunicipio: ['', Validators.required],
+      idTipoIdentificacion: ['', Validators.required],
+      idPlan: ['', Validators.required],
+      idTipoCliente: ['', Validators.required],
+
       enable: [false],
     });
 
-    this.proveedor = new Cliente();
+    
 
     this.apiService.clienteService.getClienteId(proveedorId)
       .subscribe(data => {
@@ -107,7 +118,38 @@ export class MainClienteEditarComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log("hola");
+    
+    this.proveedorEdit = Object.assign({}, this.proveedorForm.value);
+
+    let itemProveedor = new Cliente();
+    itemProveedor.id= +window.localStorage.getItem("editClienteId");
+    
+    itemProveedor.apellido1 = this.proveedor.apellido1;
+    itemProveedor.apellido2= this.proveedor.apellido2;
+    itemProveedor.nombre1= this.proveedor.nombre1;
+    itemProveedor.nombre2= this.proveedor.nombre2;
+    itemProveedor.direccion=this.proveedor.direccion;
+    itemProveedor.correo= this.proveedor.correo;
+    itemProveedor.idTipoCliente=this.cliente.idTipoCliente;
+    itemProveedor.idTipoIdentificacion= this.cliente.idTipoIdentificacion;
+    itemProveedor.idTipoPlan = this.cliente.idTipoPlan;
+    itemProveedor.identificacion = this.proveedor.identificacion;
+    itemProveedor.telefono = this.proveedor.telefono;
+    itemProveedor.idMunicipio= this.cliente.idMunicipio;
+    console.log(itemProveedor);
+    console.log(itemProveedor.apellido1);
+    console.log(this.cliente, "hello");
+    this.apiService.clienteService.guardarCliente(this.cliente).subscribe(params =>{
+      if(params){
+        console.log(params);
+
+      }
+      else{
+        alert("Error");
+      }
+    });
+
+
   }
 
 }

@@ -73,7 +73,9 @@ export class MainUsuarioEditarComponent implements OnInit {
     usuarioSave.email = this.usuarioEdit.email;
     usuarioSave.enable = this.usuarioEdit.enable;
     usuarioSave.identificacion = this.usuarioEdit.identificacion;
-
+    usuarioSave.nombres= this.usuarioEdit.nombres;
+    usuarioSave.apellidos = this.usuarioEdit.apellidos;
+    
     usuarioSave.rol = this.rol ? this.rol.rol : '';
 
     this.apiService.usuarioService.updateUsuario(usuarioSave).subscribe(data => {
