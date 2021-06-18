@@ -29,5 +29,9 @@ export class Cliente {
     asesor: Usuario;
     plan: Plan;
     soportes: any;
+    idTipoIdentificacion : number;
+    idTipoPlan : number;
+    idTipoCliente : number;
+    idMunicipio : number;
 
 }

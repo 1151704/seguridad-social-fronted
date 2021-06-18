@@ -1,1 +1,53 @@
-<p>main-ordenes works!</p>
+<div class="container-fluid">
+    <div class="card mb-3 ">
+        <div class="card-header">
+            <i class="fas fa-table"></i>
+            Ordenes
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-primary" onclick="return false;"
+            (click)="generar()">Generar Ordenes</button>
+          </div>
+        <div class="card-body">
+            <button class="btn btn-success btn-sm"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[ '/main/cliente-registrar' ]" title="Registrar"> <i
+                    class="fa fa-plus"></i> Registrar</button>
+            <table class=" mt-2 table table-striped table-bordered table-sm">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Fecha limite</th>
+                        <th>Fecha de la orden</th>
+                        <th>Precio</th>
+                        <th>Fecha pago</th>
+                        <th>Estado</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngIf="ordenes.length == 0">
+                        <td colspan="7" align="center">No hay registros</td>
+                    </tr>
+                    <tr *ngFor="let orden of ordenes; let i = index">
+
+                        <td >{{orden.id}}</td>
+
+                        
+                        <td>{{orden.fechaLimite}}</td>
+                        <td>{{orden.fechaOrden}}</td>
+                        <td>{{orden.precio}}</td>
+                        
+                        <td>{{orden.fechaPago}}</td>
+                        <td>{{orden.estadoOrden?orden.estadoOrden:''}}</td>
+                        <td>
+                            <button class="btn btn-outline-info btn-sm p-1" (click)="editarCliente(cliente)" title="Editar"> <i
+                                    class="fa fa-edit"></i> Editar</button>
+                            <button class="btn btn-outline-warning btn-sm p-1 ml-1" (click)="cambiarEstado(plan)"
+                                title="Cambiar"> <i class="fa fa-copy"></i> Cambiar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

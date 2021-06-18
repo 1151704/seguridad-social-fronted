@@ -118,36 +118,33 @@ export class MainClienteEditarComponent implements OnInit {
   }
 
   onSubmit() {
-    alert('Faltante')
-    // this.proveedorEdit = Object.assign({}, this.proveedorForm.value);
+    
+    this.proveedorEdit = Object.assign({}, this.proveedorForm.value);
 
-    // let itemProveedor = new Cliente();
-    // itemProveedor.id= +window.localStorage.getItem("editClienteId");
+     let itemProveedor = new Cliente();
+     itemProveedor.id= +window.localStorage.getItem("editClienteId");
+     itemProveedor.apellido1 = this.cliente.apellido1;
+     itemProveedor.apellido2= this.cliente.apellido2;
+     itemProveedor.nombre1= this.cliente.nombre1;
+     itemProveedor.nombre2= this.cliente.nombre2;
+     itemProveedor.direccion=this.cliente.direccion;
+     itemProveedor.correo= this.cliente.correo;
+     itemProveedor.idTipoCliente=this.cliente.idTipoCliente;
+     itemProveedor.idTipoIdentificacion= this.cliente.idTipoIdentificacion;
+    itemProveedor.idTipoPlan = this.cliente.idTipoPlan;
+    itemProveedor.identificacion = this.cliente.identificacion;
+     itemProveedor.telefono = this.cliente.telefono;
+     itemProveedor.idMunicipio= this.cliente.idMunicipio;
+     console.log(itemProveedor, "owinvowi");
+     this.apiService.clienteService.guardarCliente(itemProveedor).subscribe(params =>{
+       if(params){
+         console.log(params);
 
-    // itemProveedor.apellido1 = this.proveedor.apellido1;
-    // itemProveedor.apellido2= this.proveedor.apellido2;
-    // itemProveedor.nombre1= this.proveedor.nombre1;
-    // itemProveedor.nombre2= this.proveedor.nombre2;
-    // itemProveedor.direccion=this.proveedor.direccion;
-    // itemProveedor.correo= this.proveedor.correo;
-    // itemProveedor.idTipoCliente=this.cliente.idTipoCliente;
-    // itemProveedor.idTipoIdentificacion= this.cliente.idTipoIdentificacion;
-    // itemProveedor.idTipoPlan = this.cliente.idTipoPlan;
-    // itemProveedor.identificacion = this.proveedor.identificacion;
-    // itemProveedor.telefono = this.proveedor.telefono;
-    // itemProveedor.idMunicipio= this.cliente.idMunicipio;
-    // console.log(itemProveedor);
-    // console.log(itemProveedor.apellido1);
-    // console.log(this.cliente, "hello");
-    // this.apiService.clienteService.guardarCliente(this.cliente).subscribe(params =>{
-    //   if(params){
-    //     console.log(params);
-
-    //   }
-    //   else{
-    //     alert("Error");
-    //   }
-    // });
+       }
+       else{
+         alert("Error");
+       }
+     });
 
 
   }

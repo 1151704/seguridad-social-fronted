@@ -3,6 +3,7 @@ import { ApiService } from './../../core/api.service';
 import { Component, OnInit } from '@angular/core';
 import { Orden } from 'src/app/models/orden.model';
 import { HttpParams } from '@angular/common/http';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-main-ordenes',
@@ -18,9 +19,8 @@ export class MainOrdenesComponent implements OnInit {
   ngOnInit(): void {
 
     this.apiService.ordenesService.getOrdenes().subscribe(params => {
-
-      if(params){
-        this.ordenes=[];
+      this.ordenes=[];
+      if(params){       
         this.ordenes= params.ordenes;
       }
       else {
@@ -28,6 +28,18 @@ export class MainOrdenesComponent implements OnInit {
         console.error("hubo un error");
       }
     })
+  }
+
+  generar(){
+    Swal.fire(
+        'Generadas',
+        'Ordenes de servicio generadas a los clientes',
+        'success'
+      )
+    this.apiService.ordenesService.generarOrdenes().subscribe(
+      data=> {console.log(data)}
+    );
+
   }
 
 }
