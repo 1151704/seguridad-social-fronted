@@ -26,14 +26,14 @@
         <span>&nbsp;Usuarios</span>
     </a>
 </li>
-<li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
 [routerLink]="[ '/main/solicitudes' ]">
 <a class="nav-link" href="" onclick="return false;">
     <i class="fas fa-fw fa-tachometer-alt"></i>
     <span>&nbsp;Solicitudes</span>
 </a>
 
-<li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
 [routerLink]="[ '/main/reportes' ]">
 <a class="nav-link" href="" onclick="return false;">
     <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -47,7 +47,7 @@
     <span>&nbsp;Ordenes de Servicio</span>
 </a>
 
-<li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+<li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
 [routerLink]="[ '/main/clientes' ]">
 <a class="nav-link" href="" onclick="return false;">
     <i class="fas fa-fw fa-tachometer-alt"></i>
