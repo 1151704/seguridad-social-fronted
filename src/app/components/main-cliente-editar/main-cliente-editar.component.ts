@@ -18,19 +18,19 @@ import { Municipio } from 'src/app/models/municipio.model';
 })
 export class MainClienteEditarComponent implements OnInit {
 
-  constructor(private apiService: ApiService, private router:Router, private fb: FormBuilder) { }
+  constructor(private apiService: ApiService, private router: Router, private fb: FormBuilder) { }
 
   proveedorForm: FormGroup;
-  proveedor : Cliente;
+  proveedor: Cliente;
   proveedorEdit: Cliente;
   cliente: Cliente = new Cliente();
-   tipos = TIPOS_DOCUMENTOS;
-   tiposCliente : TipoCliente [] = [];
-   departamentos: Departamento[] = []
+  tipos = TIPOS_DOCUMENTOS;
+  tiposCliente: TipoCliente[] = [];
+  departamentos: Departamento[] = []
   departamento: Departamento = null
   municipios: Municipio[] = []
   municipio: Municipio = null
-  planes : Plan [] = [];
+  planes: Plan[] = [];
   ngOnInit(): void {
     let proveedorId = window.localStorage.getItem("editClienteId");
     alert(proveedorId);
@@ -58,24 +58,24 @@ export class MainClienteEditarComponent implements OnInit {
       enable: [false],
     });
 
-    
+
 
     this.apiService.clienteService.getClienteId(proveedorId)
       .subscribe(data => {
-        
+
         if (data) {
           this.proveedorForm.patchValue(data);
           this.proveedor = data;
-          
+
         } else {
           this.router.navigate(['/main/clientes']);
         }
       });
 
-      this.apiService.tipoClienteService.getTiposClientes()
+    this.apiService.tipoClienteService.getTiposClientes()
       .subscribe(data => {
         this.tiposCliente = [];
-        
+
         if (data.tiposCliente) {
           this.tiposCliente = data.tiposCliente;
           //alert("se ejecuto esa monda")
@@ -85,18 +85,18 @@ export class MainClienteEditarComponent implements OnInit {
         console.error(error);
       });
 
-      this.apiService.departamentoService.getDepartamentos().subscribe(
-        data => {
-          this.departamentos = data
-          this.departamento = data[0]
-          this.getMunicipios(data[0])
-        }
-      )
+    this.apiService.departamentoService.getDepartamentos().subscribe(
+      data => {
+        this.departamentos = data
+        this.departamento = data[0]
+        this.getMunicipios(data[0])
+      }
+    )
 
-      this.apiService.planService.getPlanes()
+    this.apiService.planService.getPlanes()
       .subscribe(data => {
         this.planes = [];
-        
+
         if (data.planes) {
           this.planes = data.planes;
           //alert("se ejecuto esa monda")
@@ -117,37 +117,37 @@ export class MainClienteEditarComponent implements OnInit {
     )
   }
 
-  onSubmit(){
-    
-    this.proveedorEdit = Object.assign({}, this.proveedorForm.value);
+  onSubmit() {
+    alert('Faltante')
+    // this.proveedorEdit = Object.assign({}, this.proveedorForm.value);
 
-    let itemProveedor = new Cliente();
-    itemProveedor.id= +window.localStorage.getItem("editClienteId");
-    
-    itemProveedor.apellido1 = this.proveedor.apellido1;
-    itemProveedor.apellido2= this.proveedor.apellido2;
-    itemProveedor.nombre1= this.proveedor.nombre1;
-    itemProveedor.nombre2= this.proveedor.nombre2;
-    itemProveedor.direccion=this.proveedor.direccion;
-    itemProveedor.correo= this.proveedor.correo;
-    itemProveedor.idTipoCliente=this.cliente.idTipoCliente;
-    itemProveedor.idTipoIdentificacion= this.cliente.idTipoIdentificacion;
-    itemProveedor.idTipoPlan = this.cliente.idTipoPlan;
-    itemProveedor.identificacion = this.proveedor.identificacion;
-    itemProveedor.telefono = this.proveedor.telefono;
-    itemProveedor.idMunicipio= this.cliente.idMunicipio;
-    console.log(itemProveedor);
-    console.log(itemProveedor.apellido1);
-    console.log(this.cliente, "hello");
-    this.apiService.clienteService.guardarCliente(this.cliente).subscribe(params =>{
-      if(params){
-        console.log(params);
+    // let itemProveedor = new Cliente();
+    // itemProveedor.id= +window.localStorage.getItem("editClienteId");
 
-      }
-      else{
-        alert("Error");
-      }
-    });
+    // itemProveedor.apellido1 = this.proveedor.apellido1;
+    // itemProveedor.apellido2= this.proveedor.apellido2;
+    // itemProveedor.nombre1= this.proveedor.nombre1;
+    // itemProveedor.nombre2= this.proveedor.nombre2;
+    // itemProveedor.direccion=this.proveedor.direccion;
+    // itemProveedor.correo= this.proveedor.correo;
+    // itemProveedor.idTipoCliente=this.cliente.idTipoCliente;
+    // itemProveedor.idTipoIdentificacion= this.cliente.idTipoIdentificacion;
+    // itemProveedor.idTipoPlan = this.cliente.idTipoPlan;
+    // itemProveedor.identificacion = this.proveedor.identificacion;
+    // itemProveedor.telefono = this.proveedor.telefono;
+    // itemProveedor.idMunicipio= this.cliente.idMunicipio;
+    // console.log(itemProveedor);
+    // console.log(itemProveedor.apellido1);
+    // console.log(this.cliente, "hello");
+    // this.apiService.clienteService.guardarCliente(this.cliente).subscribe(params =>{
+    //   if(params){
+    //     console.log(params);
+
+    //   }
+    //   else{
+    //     alert("Error");
+    //   }
+    // });
 
 
   }

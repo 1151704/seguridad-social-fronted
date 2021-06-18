@@ -1,123 +1,123 @@
 <div class="container-fluid">
-    <!-- Breadcrumbs-->
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item">
-        <a href="#" onclick="return false" [routerLink]="[ '/main/usuarios' ]">Usuarios</a>
-      </li>
-      <li class="breadcrumb-item active">Registrar</li>
-    </ol>
-  
-    <div class="card mb-3 ">
-      <div class="card-header">
-        <i class="fas fa-table"></i>
-        Registrar usuario
-      </div>
-      <div class="card-body">
-          
-        
-        <form   (ngSubmit)="onSubmit()">
-  
-          <div class="form-group">
-            <label>
-              Nombre1:
-            </label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.nombre1" name="nombre1" required>
-          </div>
-  
-          <div class="form-group">
-            <label>
-              Nombre2:
-            </label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.nombre2" name="nombre2">
-          </div>
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="#" onclick="return false" [routerLink]="[ '/main/usuarios' ]">Usuarios</a>
+    </li>
+    <li class="breadcrumb-item active">Registrar</li>
+  </ol>
 
-          <div class="form-group">
-            <label>
-              Apellido1:
-            </label>
-            <input type="text" class="form-control"  [(ngModel)]="cliente.apellido1" name="apellido1">
-          </div>
+  <div class="card mb-3 ">
+    <div class="card-header">
+      <i class="fas fa-table"></i>
+      Registrar usuario
+    </div>
+    <div class="card-body">
 
-          <div class="form-group">
-            <label>
-              Apellido2:
-            </label>
-            <input type="text" class="form-control"  [(ngModel)]="cliente.apellido2" name="apellido2">
-          </div>
-  
-          <div class="form-group">
-            <label>
-              Tipo de identificación:
-            </label>
-            <select class="form-control"  [(ngModel)]="cliente.idTipoIdentificacion" name="idTipoIdentificacion">
+
+      <form (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label>
+            Nombre1:
+          </label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.nombre1" name="nombre1" required>
+        </div>
+
+        <div class="form-group">
+          <label>
+            Nombre2:
+          </label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.nombre2" name="nombre2">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Apellido1:
+          </label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.apellido1" name="apellido1">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Apellido2:
+          </label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.apellido2" name="apellido2">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Tipo de identificación:
+          </label>
+          <!-- <select class="form-control"  [(ngModel)]="cliente.idTipoIdentificacion" name="idTipoIdentificacion">
               <option *ngFor="let tipo of tipos" value="{{tipo.id}}" >{{tipo.label}}</option>
-            </select>
-          </div>
+            </select> -->
+        </div>
 
-          <div class="form-group">
-            <label>
-              Plan:
-            </label>
-            <select class="form-control"  [(ngModel)]="cliente.idTipoPlan" name="idTipoPlan">
+        <div class="form-group">
+          <label>
+            Plan:
+          </label>
+          <!-- <select class="form-control"  [(ngModel)]="cliente.idTipoPlan" name="idTipoPlan">
               <option *ngFor="let plan of planes" value="{{plan.id}}" >{{plan.servicios}}</option>
-            </select>
-          </div>
-  
-          <div class="form-group">
-            <label>
-              Identificación:
-            </label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.identificacion" name ="identificacion" >
-          </div>
-  
-          <div class="form-group">
-            <label>
-              Email:
-            </label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.correo" name ="correo">
-          </div>
+            </select> -->
+        </div>
 
-          <div class="form-group">
-            <label>
-              Direccion:
-            </label>
-            <input type="text" class="form-control" [(ngModel)]="cliente.direccion" name ="direccion" >
-          </div>
-  
-          <div class="form-group">
-            <label>
-              Tipo de cliente:
-            </label>
-            <select class="form-control"  [(ngModel)]="cliente.idTipoCliente" name="idTipoCliente">
+        <div class="form-group">
+          <label>
+            Identificación:
+          </label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.identificacion" name="identificacion">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Email:
+          </label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.correo" name="correo">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Direccion:
+          </label>
+          <input type="text" class="form-control" [(ngModel)]="cliente.direccion" name="direccion">
+        </div>
+
+        <div class="form-group">
+          <label>
+            Tipo de cliente:
+          </label>
+          <!-- <select class="form-control"  [(ngModel)]="cliente.idTipoCliente" name="idTipoCliente">
               <option *ngFor="let tipoCliente of tiposCliente" value="{{tipoCliente.id}}" >{{tipoCliente.descripcion}}</option>
-            </select>
-          </div>
+            </select> -->
+        </div>
 
-          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-            <label>
-              Departamento:
-            </label>
-          <select class="form-control" (ngModelChange)="getMunicipios($event)" [(ngModel)]="departamento" name="departamento"
-                          [ngModelOptions]="{standalone: true}">
-                          <option *ngFor="let tipo of departamentos" [ngValue]="tipo" >{{tipo.nombreDepartamento}}</option>
-                        </select>
-                      </div>
+        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+          <label>
+            Departamento:
+          </label>
+          <select class="form-control" (ngModelChange)="getMunicipios($event)" [(ngModel)]="departamento"
+            name="departamento" [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let tipo of departamentos" [ngValue]="tipo">{{tipo.nombreDepartamento}}</option>
+          </select>
+        </div>
 
-                      <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-                        <label>
-                          Municipio:
-                        </label>
-                        <select class="form-control" [(ngModel)]="cliente.idMunicipio" name="idMunicipio">
+        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
+          <label>
+            Municipio:
+          </label>
+          <!-- <select class="form-control" [(ngModel)]="cliente.idMunicipio" name="idMunicipio">
                           <option></option>
                           <option *ngFor="let tipo of municipios" value="{{tipo.idMunicipio}}" >{{tipo.nombreMunicipio}}
                           </option>
-                        </select>
-                      </div>
-  
-          <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-success" >Registrar</button>
-          </div>
-        </form>
-      </div>
+                        </select> -->
+        </div>
+
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-success">Registrar</button>
+        </div>
+      </form>
     </div>
   </div>
+</div>

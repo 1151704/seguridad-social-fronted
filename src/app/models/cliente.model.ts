@@ -1,5 +1,9 @@
+import { TipoIdentificacion } from './tipo-identificacion.model';
+import { Usuario } from './usuario.model';
+import { ActividadEconomica } from './actividad-economica.model';
 import { Plan } from 'src/app/models/plan.model';
-import { File } from "./file.model";
+import { Municipio } from './municipio.model';
+import { TipoCliente } from './tipo-cliente.model';
 
 export class Cliente {
 
@@ -12,12 +16,18 @@ export class Cliente {
     apellido2: string;
     telefono: string;
     direccion: string;
-    idTipoIdentificacion: number;
-    idTipoCliente: number;
-    idMunicipio: number;
+    profesion: string;
+    dv: string;
+    ibc: number;
+    lugarExpedicion: string;
+    fechaNacimiento: string;
+    fechaExpedicion: string;
+    tipoIdentificacion: TipoIdentificacion;
+    municipio: Municipio;
+    tipoCliente: TipoCliente;
+    actividad: ActividadEconomica;
+    asesor: Usuario;
     plan: Plan;
-    idTipoPlan;
-    
-    file: File;
+    soportes: any;
 
 }

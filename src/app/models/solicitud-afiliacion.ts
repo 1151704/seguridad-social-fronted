@@ -1,3 +1,4 @@
+import { Usuario } from './usuario.model';
 import { Cliente } from './cliente.model';
 import { Plan } from 'src/app/models/plan.model';
 
@@ -8,7 +9,10 @@ export class Solicitud {
     observaciones: string;
     respuesta: string;
     ssptCliente: Cliente;
+    ssptUsuario: Usuario;
     ssptPlan: Plan;
-    soportes: any;
+    fechaRegistro: string;
+    fechaRespuesta : string;
+    soportes: any[];
 
   }

@@ -53,30 +53,32 @@
                         <th>Soportes</th>
                         <th>Nombre Cliente</th>
                         <th>Identificacion Cliente</th>
+                        <th>Correo Cliente</th>
                         <th>Plan</th>
                         <th>Estado</th>
-                        <th>Repuesta</th>
-                        <th>Observaciones</th>
+                        <th>Fecha Repuesta</th>
+                        <th>Fecha Registro</th>
                         <th>Acción</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngIf="solicitudes.length == 0">
-                        <td colspan="8" align="center">No hay registros</td>
+                        <td colspan="18" align="center">No hay registros</td>
                     </tr>
                     <tr *ngFor="let plan of solicitudes; let i = index">
 
-                        <td style="width: 10%;">
+                        <td style="width: 5%;">
                             <a *ngFor="let sop of plan.soportes" [href]="urlBase+'file/'+sop.file.id"
                                 [download]="urlBase+'file/'+sop.file.id" target="_blank">{{sop.descripcion}}</a>
                         </td>
                         <td>{{plan.ssptCliente.nombre1}} {{plan.ssptCliente.nombre2}} {{plan.ssptCliente.apellido1}}
                             {{plan.ssptCliente.apellido2}}</td>
                         <td>{{plan.ssptCliente.tipoIdentificacion.tipo}} {{plan.ssptCliente.identificacion}}</td>
+                        <td>{{plan.ssptCliente.correo}}</td>
                         <td>{{plan.ssptPlan.titulo}}</td>
                         <td>{{plan.estadoSolicitud}}</td>
-                        <td>{{plan.respuesta}}</td>
-                        <td>{{plan.observaciones}}</td>
+                        <td>{{plan.fechaRespuesta}}</td>
+                        <td>{{plan.fechaRegistro}}</td>
                         <td>
                             <button class="btn btn-outline-info btn-sm p-1" (click)="editPlan(plan)" title="Editar"> <i
                                     class="fa fa-edit"></i> Responder</button>

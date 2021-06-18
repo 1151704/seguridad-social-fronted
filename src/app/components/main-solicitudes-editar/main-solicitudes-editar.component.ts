@@ -20,6 +20,8 @@ export class MainSolicitudesEditarComponent implements OnInit {
   proveedorEdit: Solicitud;
   proveedorForm: FormGroup;
 
+  filtrado = 1
+
   constructor(private apiService: ApiService, private fb: FormBuilder, private router: Router) { }
 
   ngOnInit() {
@@ -28,8 +30,6 @@ export class MainSolicitudesEditarComponent implements OnInit {
       this.router.navigate(['/main/solicitudes']);
       return;
     }
-
-    this.proveedor = new Solicitud();
 
     this.proveedorForm = this.fb.group({
       estadoSolicitud: ['', Validators.required],

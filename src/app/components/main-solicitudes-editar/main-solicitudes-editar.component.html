@@ -8,100 +8,317 @@
   </ol>
 
   <div class="card mb-3 ">
+    <div class="card-header pb-0">
+      <div class="mb-3 text-center" *ngIf="!proveedor">
+        <button class="btn btn-primary" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Cargando...
+        </button>
+      </div>
+      <ul class="nav nav-tabs card-header-tabs mb-0" id="pills-tab" role="tablist" *ngIf="proveedor">
+        <li class="nav-item pb-0">
+          <a class="nav-link" [ngClass]="{'active': filtrado==1}" (click)="filtrado = 1" id="pills-form_1-tab"
+            data-toggle="pill" href="#pills-form_1" role="tab" aria-controls="pills-form_1" aria-selected="true">Datos
+            Personales</a>
+        </li>
+        <li class="nav-item pb-0">
+          <a class="nav-link" [ngClass]="{'active': filtrado==2}" (click)="filtrado = 2" id="pills-form_2-tab"
+            data-toggle="pill" href="#pills-form_2" role="tab" aria-controls="pills-form_2" aria-selected="false">Datos
+            de Contacto</a>
+        </li>
+        <li class="nav-item pb-0">
+          <a class="nav-link" [ngClass]="{'active': filtrado==3}" (click)="filtrado = 3" id="pills-form_3-tab"
+            data-toggle="pill" href="#pills-form_3" role="tab" aria-controls="pills-form_3" aria-selected="false">Datos
+            de Afiliación</a>
+        </li>
+        <li class="nav-item pb-0">
+          <a class="nav-link" [ngClass]="{'active': filtrado==4}" (click)="filtrado = 4" id="pills-form_4-tab"
+            data-toggle="pill" href="#pills-form_4" role="tab" aria-controls="pills-form_4"
+            aria-selected="false">Cambiar Información</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body" *ngIf="proveedor">
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade " [ngClass]="{'show active': filtrado == 1}" id="pills-form_1" role="tabpanel"
+          aria-labelledby="pills-form_1-tab">
+          <div class="row">
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Tipo de identificación:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.tipoIdentificacion.descripcion" disabled
+                readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Numero de identificación:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.identificacion" disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Primer Nombre:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.nombre1" disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Segundo Nombre:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.nombre2" disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Primer Apellido:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.apellido1" disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Segundo Apellido:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.apellido2" disabled readonly>
+
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Fecha Nacimiento:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.fechaNacimiento" disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Fecha Expedición Documento:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.fechaExpedicion" disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Lugar de Expedición:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.lugarExpedicion" disabled readonly>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- end form datos personales-->
+
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade " [ngClass]="{'show active': filtrado == 2}" id="pills-form_2" role="tabpanel"
+          aria-labelledby="pills-form_2-tab">
+          <div class="row">
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Teléfono:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.telefono" disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Correo Eletronico:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.correo" disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Dirección:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.direccion" disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Departamento:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.municipio.nombreDepartamento" disabled
+                readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Municipio:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.municipio.nombreMunicipio" disabled readonly>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end form datos contacto-->
+
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade " [ngClass]="{'show active': filtrado == 3}" id="pills-form_3" role="tabpanel"
+          aria-labelledby="pills-form_3-tab">
+          <div class="row">
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Tipo de Cliente:
+              </label>
+              <input class="form-control"
+                [value]="proveedor.ssptCliente.tipoCliente ? proveedor.ssptCliente.tipoCliente.descripcion: 'NO REGISTRA'"
+                disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Profesión:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.profesion" disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                IBC:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptCliente.ibc" disabled readonly>
+            </div>
+
+            <div class="form-group">
+              <label>Actividad Economica</label>
+              <input class="form-control"
+                [value]="proveedor.ssptCliente.actividad ? proveedor.ssptCliente.actividad.nombreActividad : 'NO REGISTRA'"
+                disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Tipo de Plan:
+              </label>
+              <input class="form-control" [value]="proveedor.ssptPlan ? proveedor.ssptPlan.servicios: 'NO REGISTRA'"
+                disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Asesor Vinculado:
+              </label>
+              <input class="form-control"
+                [value]="proveedor.ssptUsuario ? proveedor.ssptUsuario.nombres : 'NO REGISTRA'" disabled readonly>
+            </div>
+
+            <div class="form-group col-sd-6 col-md-4">
+              <label>
+                Soportes
+              </label>
+              <ul *ngIf="proveedor.soportes.length>0">
+                <li *ngFor="let sop of proveedor.soportes">
+                  <a [href]="urlBase+'file/'+sop.file.id" [download]="urlBase+'file/'+sop.file.id"
+                    target="_blank">{{sop.descripcion}}</a>
+                </li>
+              </ul>
+              <input *ngIf="proveedor.soportes.length==0" class="form-control" [value]="'NO REGISTRA'" disabled
+                readonly>
+            </div>
+
+            <div class="form-group col-12">
+              <label>
+                Observaciones:
+              </label>
+              <textarea type="text" class="form-control" [value]="proveedor.observaciones" disabled readonly></textarea>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!-- Datos de afiliación-->
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade " [ngClass]="{'show active': filtrado == 3}" id="pills-form_3" role="tabpanel"
+          aria-labelledby="pills-form_3-tab">
+          <div class="row">
+
+            <div class="form-group col-12">
+              <label>
+                Asesor Vinculado:
+              </label>
+              <input class="form-control"
+                [value]="proveedor.ssptUsuario ? proveedor.ssptUsuario.nombres : 'NO REGISTRA'" disabled readonly>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cambiar Funcionario -->
+
+    </div>
+  </div>
+
+  <div class="card mb-3 " *ngIf="proveedor">
     <div class="card-header">
       <i class="fas fa-table"></i>
       Responder Solicitud
     </div>
-    <div class="card-body">
 
+    <div class="card-body">
       <form [formGroup]="proveedorForm" *ngIf="proveedor.id" (ngSubmit)="onSubmit()">
         <div class="row ">
 
-          <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-          <label>
-            Id Solicitud:
-          </label>
-          <input type="text" class="form-control" [value]="proveedor.id" disabled>
-        </div>
-        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-          <label>
-            Identificación cliente:
-          </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptCliente.identificacion" disabled>
-        </div>
-        <div class="form-group col-sd-3 col-md-3 col-lg-3 col-xl-3">
-          <label>
-            Primer Nombre:
-          </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptCliente.nombre1" disabled>
-        </div>
-        <div class="form-group col-sd-3 col-md-3 col-lg-3 col-xl-3">
-          <label>
-            Segundo Nombre:
-          </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptCliente.nombre2" disabled>
-        </div>
-        <div class="form-group col-sd-3 col-md-3 col-lg-3 col-xl-3">
-          <label>
-            Primer Apellido:
-          </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptCliente.apellido1" disabled>
-        </div>
-        <div class="form-group col-sd-3 col-md-3 col-lg-3 col-xl-3">
-          <label>
-            Segundo Apellido:
-          </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptCliente.apellido2" disabled>
-        </div>
-        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-          <label>
-            Plan:
-          </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptPlan.titulo" disabled>
-        </div>
-        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-          <label>
-            Correo Electronico:
-          </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptCliente.correo" disabled>
-        </div>
+          <div class="form-group col-4">
+            <label>
+              Id Radicado:
+            </label>
+            <input type="text" class="form-control" [value]="proveedor.id" disabled>
+          </div>
 
-        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-          <label>
-            Numero de contacto:
-          </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptCliente.telefono" disabled>
-        </div>
-        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-          <label>
-            Direccion:
-          </label>
-          <input type="text" class="form-control" [value]="proveedor.ssptCliente.direccion" disabled>
-        </div>
+          <div class="form-group col-4">
+            <label>
+              Fecha Solicitud:
+            </label>
+            <input class="form-control" [value]="proveedor.fechaRegistro" disabled readonly>
+          </div>
 
-        <hr>
-        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-          <label>
-            Respuesta: 
-          </label>
-          <select class="form-control" formControlName="estadoSolicitud" *ngIf="proveedor.estadoSolicitud=='PENDIENTE'">
-            <option value="APROBADA">Aceptada</option>
-            <option value="NEGADA">Negada</option>
-          </select>
-          <input type="text" class="form-control" *ngIf="proveedor.estadoSolicitud!='PENDIENTE'" [value]="proveedor.estadoSolicitud" disabled>
-        </div>
-        <div class="form-group col-sd-6 col-md-6 col-lg-6 col-xl-6">
-          <label>
-            Observaciones:
-          </label>
-          <textarea class="form-control" formControlName="respuesta"  *ngIf="proveedor.estadoSolicitud=='PENDIENTE'"></textarea>
-          <textarea class="form-control" disabled *ngIf="proveedor.estadoSolicitud!='PENDIENTE'">{{proveedor.respuesta}}</textarea>
-        </div>
+          <div class="form-group col-4">
+            <label>
+              Respuesta:
+            </label>
+            <select class="form-control" formControlName="estadoSolicitud"
+              *ngIf="proveedor.estadoSolicitud=='PENDIENTE'">
+              <option value="APROBADA">Aceptada</option>
+              <option value="NEGADA">Negada</option>
+            </select>
+            <input type="text" class="form-control" *ngIf="proveedor.estadoSolicitud!='PENDIENTE'"
+              [value]="proveedor.estadoSolicitud" disabled>
+          </div>
 
-        <div class="d-flex justify-content-center" *ngIf="proveedor.estadoSolicitud=='PENDIENTE'">
-          <button type="submit" class="btn btn-success" [disabled]="!proveedorForm.valid">Responder</button>
+          <div class="form-group col-6" *ngIf="proveedor.estadoSolicitud!='PENDIENTE'">
+            <label>
+              Asesor Respuesta:
+            </label>
+            <input class="form-control" [value]="proveedor.ssptUsuario ? proveedor.ssptUsuario.nombres : 'NO REGISTRA'"
+              disabled readonly>
+          </div>
+
+          <div class="form-group col-6" *ngIf="proveedor.estadoSolicitud!='PENDIENTE'">
+            <label>
+              Fecha Respuesta:
+            </label>
+            <input class="form-control" [value]="proveedor.fechaRespuesta" disabled readonly>
+          </div>
+
+          <div class="form-group col-12">
+            <label>
+              Respuesta:
+            </label>
+            <textarea class="form-control" formControlName="respuesta"
+              *ngIf="proveedor.estadoSolicitud=='PENDIENTE'"></textarea>
+            <textarea class="form-control" disabled
+              *ngIf="proveedor.estadoSolicitud!='PENDIENTE'">{{proveedor.respuesta}}</textarea>
+          </div>
+
+          <div class="d-flex justify-content-center" *ngIf="proveedor.estadoSolicitud=='PENDIENTE'">
+            <button type="submit" class="btn btn-success" [disabled]="!proveedorForm.valid">Responder</button>
+          </div>
         </div>
-      </div>
       </form>
     </div>
   </div>
