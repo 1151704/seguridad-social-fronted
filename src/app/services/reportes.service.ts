@@ -18,5 +18,12 @@ export class ReportesService {
       params: { estado: estado, fechaInicio: fechaInicio, fechaFinal: fechaFin }
     });
   }
+
+  getClientesExcel(estado: string, fechaInicio: string, fechaFin: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}clientes?format=xlsx`, {
+      responseType: 'blob',
+      params: { estado: estado, fechaInicio: fechaInicio, fechaFinal: fechaFin }
+    });
+  }
   
 }

@@ -14,6 +14,11 @@
                 aria-controls="pills-solicitudes" aria-selected="true">Solicitudes</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" [ngClass]="{'active': filtrado=='c'}" (click)="filtrado = 'c'" id="pills-clientes-tab"
+                data-toggle="pill" href="#pills-clientes" role="tab" aria-controls="pills-clientes"
+                aria-selected="false">Clientes</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" [ngClass]="{'active': filtrado=='p'}" (click)="filtrado = 'p'" id="pills-pagos-tab"
                 data-toggle="pill" href="#pills-pagos" role="tab" aria-controls="pills-pagos"
                 aria-selected="false">Pagos</a>
@@ -35,6 +40,41 @@
                         <option value="PENDIENTE">Pendientes</option>
                         <option value="NEGADA">Negadas</option>
                         <option value="APROBADA">Aprobadas</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Fecha Inicio</label>
+                      <input type="date" [(ngModel)]="fechaInicio" class="form-control">
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Fecha final</label>
+                      <input type="date" [(ngModel)]="fechaFinal" class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade " [ngClass]="{'show active': filtrado == 'c'}" id="pills-clientes" role="tabpanel"
+              aria-labelledby="pills-clientes-tab">
+
+              <div class="form-group">
+                <div class="form-row">
+                  <div class="col-md-3">
+                    <div class="form-group">
+                      <label>Tipo de Estado</label>
+                      <select class="form-control" [(ngModel)]="estadoCliente">
+                        <option value="">Todos</option>
+                        <option value="AFILIADO">Afiliado</option>
+                        <option value="RETIRADO">Retirado</option>
+                        <option value="NEGADO">Negado</option>
+                        <option value="PENDIENTE">Pendiente</option>
                       </select>
                     </div>
                   </div>

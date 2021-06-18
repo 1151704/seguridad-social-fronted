@@ -14,6 +14,7 @@ export class MainReportesComponent implements OnInit {
     now = moment();
     estado = '';
     estadoPago = '';
+    estadoCliente = '';
     fechaInicio = this.now.format('YYYY-MM-DD');
     fechaFinal = this.now.format('YYYY-MM-DD');
     cargando = false;
@@ -44,10 +45,10 @@ export class MainReportesComponent implements OnInit {
                     this.apiService.notifService.error('Error', error);
                 });
         }
-        if (this.filtrado == 'p') {
-            this.apiService.reporteService.getSolicitudesExcel(this.estadoPago, this.fechaInicio, this.fechaFinal)
+        if (this.filtrado == 'c') {
+            this.apiService.reporteService.getClientesExcel(this.estadoCliente, this.fechaInicio, this.fechaFinal)
                 .subscribe(response => {
-                    this.apiService.utilService.downloadFile(response, 'reporte_ordenes', 'xlsx')
+                    this.apiService.utilService.downloadFile(response, 'reporte_clientes', 'xlsx')
                     this.cargando = false;
                 }, error => {
                     this.cargando = false;
