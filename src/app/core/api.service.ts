@@ -1,3 +1,4 @@
+import { ActividadesEconomicasService } from './../services/actividades-economicas.service';
 import { ReportesService } from './../services/reportes.service';
 import { OrdenesService } from './../services/ordenes.service';
 import { DepartamentoService } from './../services/departamento.service';
@@ -29,6 +30,7 @@ export class ApiService {
   departamentoService: DepartamentoService;
   ordenesService: OrdenesService;
   reporteService: ReportesService;
+  actividadesEconomicasService: ActividadesEconomicasService;
 
   constructor(private http: HttpClient, public notifService: NotificacionService, public utilService: UtilsService) {
     this.empresaService = new EmpresaService(http)
@@ -41,6 +43,7 @@ export class ApiService {
     this.departamentoService = new DepartamentoService(http)
     this.ordenesService = new OrdenesService(http);
     this.reporteService = new ReportesService(http);
+    this.actividadesEconomicasService = new ActividadesEconomicasService(http);
   }
 
 }

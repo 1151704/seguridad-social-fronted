@@ -14,6 +14,12 @@ export class SolicitudSalidaApi {
 	idTipoIdentificacion: number;
 	idTipoCliente: number;
 	idMunicipio: number;
+	idActividad: number;
+	idAsesor: number;
+	fechaExpedicion: string;
+	fechaNacimiento: string;
+	lugarExpedicion: string;
+	ibc: string;
 
 	idTipoPlan: number;
 	profesion: string;

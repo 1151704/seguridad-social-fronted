@@ -49,6 +49,12 @@ export class SolicitudesAfiliacionService {
     formdata.append('direccion', proveedor.direccion);
     formdata.append('correo', proveedor.correo);
     formdata.append('identificacion', proveedor.identificacion);
+    formdata.append('ibc', proveedor.ibc);
+    formdata.append('lugarExpedicion', proveedor.lugarExpedicion);
+    formdata.append('fechaNacimiento', proveedor.fechaNacimiento);
+    formdata.append('fechaExpedicion', proveedor.fechaExpedicion);
+    formdata.append('idAsesor', proveedor.idAsesor?proveedor.idAsesor.toString():'');
+    formdata.append('idActividad', proveedor.idActividad?proveedor.idActividad.toString():'');
     formdata.append('idTipoIdentificacion', proveedor.idTipoIdentificacion.toString());
     formdata.append('idTipoCliente', proveedor.idTipoCliente.toString());
     formdata.append('idMunicipio', proveedor.idMunicipio.toString());

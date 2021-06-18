@@ -7,7 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AngularDualListBoxModule } from 'angular-dual-listbox';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-
+import { NgSelect2Module } from 'ng-select2';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -83,6 +83,7 @@ import { MainOrdenesComponent } from './components/main-ordenes/main-ordenes.com
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgSelect2Module,
     AngularDualListBoxModule,
   ],
   providers: [NotificacionService, ApiService, {

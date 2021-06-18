@@ -22,7 +22,7 @@ export class MainSolicitudesComponent implements OnInit {
   cargando: boolean = true;
 
   porFechaFiltro: boolean = true;
-  estadoFiltro: string = '';
+  estadoFiltro: string = 'PENDIENTE';
   busquedaFiltro: string = '';
   fechaFiltro: string = moment().format('YYYY-MM-DD');
 
