@@ -176,6 +176,14 @@ export class InicioSolicitudComponent implements OnInit {
       Swal.fire('Formulario invalido', 'Debe ingresar la actividad economica', 'error')
       return;
     }
+    Swal.fire({
+      title: 'Procesando...',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading()
+      }
+    });
+
     this.solicitud.idActividad = this.actividad.idActividad;
     this.solicitud.file = this.currentFileUpload;
     this.apiService.solicitudService.guardar(this.solicitud).subscribe(
@@ -195,6 +203,7 @@ export class InicioSolicitudComponent implements OnInit {
             )
           } else {
             this.apiService.notifService.error("Error", event);
+            Swal.close();
           }
         }
       }, error => {

@@ -36,6 +36,10 @@ export class SolicitudesAfiliacionService {
     return this.http.post<SolicitudApi>(this.baseUrl+'responder/'+id, salida);
   }
 
+  reasignarSolicitud(id: number, idAsesor: number): Observable<SolicitudApi> {
+    return this.http.get<SolicitudApi>(`${this.baseUrl}cambiar-asesor/${id}?idAsesor=${idAsesor}`)
+  }
+
   guardar(proveedor: SolicitudSalidaApi): Observable<HttpEvent<{}>> {
 
     const formdata: FormData = new FormData();

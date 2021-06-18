@@ -4,6 +4,7 @@ import { Rol } from './rol.model';
 
 export class Usuario {
 
+    id: number;
     nombres: string;
     apellidos: string;
     email: string;
