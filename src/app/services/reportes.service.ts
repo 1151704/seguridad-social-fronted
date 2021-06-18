@@ -25,5 +25,12 @@ export class ReportesService {
       params: { estado: estado, fechaInicio: fechaInicio, fechaFinal: fechaFin }
     });
   }
+
+  getOrdenesExcel(estado: string, fechaInicio: string, fechaFin: string): Observable<any> {
+    return this.http.get(`${this.baseUrl}ordenes?format=xlsx`, {
+      responseType: 'blob',
+      params: { estado: estado, fechaInicio: fechaInicio, fechaFinal: fechaFin }
+    });
+  }
   
 }

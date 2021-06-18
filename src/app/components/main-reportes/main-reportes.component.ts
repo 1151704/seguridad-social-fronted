@@ -56,6 +56,17 @@ export class MainReportesComponent implements OnInit {
                     this.apiService.notifService.error('Error', error);
                 });
         }
+        if (this.filtrado == 'p') {
+            this.apiService.reporteService.getOrdenesExcel(this.estadoCliente, this.fechaInicio, this.fechaFinal)
+                .subscribe(response => {
+                    this.apiService.utilService.downloadFile(response, 'reporte_ordenes', 'xlsx')
+                    this.cargando = false;
+                }, error => {
+                    this.cargando = false;
+                    console.error(error)
+                    this.apiService.notifService.error('Error', error);
+                });
+        }
 
     }
 
