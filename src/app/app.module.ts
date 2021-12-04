@@ -41,6 +41,11 @@ import { MainClienteEditarComponent } from './components/main-cliente-editar/mai
 import { InicioMostrarPagoComponent } from './components/inicio-mostrar-pago/inicio-mostrar-pago.component';
 import { MainReportesComponent } from './components/main-reportes/main-reportes.component';
 import { MainOrdenesComponent } from './components/main-ordenes/main-ordenes.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
+import { IniciooComponent } from './Components/inicioo/inicioo.component';
+import { EditClienteComponent } from './components/edit-cliente/edit-cliente.component';
+import { MostrarClientesComponent } from './components/mostrar-clientes/mostrar-clientes.component';
+import { MainCuentaCobroComponent } from './components/main-cuenta-cobro/main-cuenta-cobro.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +79,12 @@ import { MainOrdenesComponent } from './components/main-ordenes/main-ordenes.com
     MainClienteEditarComponent,
     InicioMostrarPagoComponent,
     MainReportesComponent,
-    MainOrdenesComponent
+    MainOrdenesComponent,
+    ClienteComponent,
+    IniciooComponent,
+    EditClienteComponent,
+    MostrarClientesComponent,
+    MainCuentaCobroComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 const getURlBackend = () => {
-    let client = `${window.location.protocol}//${window.location.hostname}` //"http://35.222.30.134"
+    let client = `${window.location.protocol}//${window.location.hostname}` //"http://localhost"
     let portBackend = 8082;
 
     return `${client}:${portBackend}/`
