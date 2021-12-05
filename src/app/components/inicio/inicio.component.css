@@ -307,14 +307,12 @@
     }
   
     .bottom {
-    padding:5px;
-    font-size: 0.9375rem;
-    background: #151515;
-    margin-bottom: 10px;
-  
-  
+      padding-left: 10%;
+      background: #343759;
+      width: 120%;
+      text-align: center;
+      color: white;
     }
-  
   
   
   

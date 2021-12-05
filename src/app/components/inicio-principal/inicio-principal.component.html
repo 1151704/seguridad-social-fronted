@@ -1,56 +1,57 @@
 
-<section id="hero" class="hero d-flex align-items-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6 d-flex flex-column justify-content-center">
-        <h1 data-aos="fade-up " class="lessSize" style="text-align: center"> TU SEGURIDAD ESTÁ EN TUS MANOS</h1>
-        <h2 data-aos="fade-up" data-aos-delay="400" >Una manera sencilla de afiliarte a seguridad social.</h2>
-        <div data-aos="fade-up" data-aos-delay="600">
-          <div class="text-center text-lg-start">
-            <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center" [routerLinkActive]="['active']"
-            [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/afiliacion' ]">
-              <span>¡Afiliate ya!</span>
-              <i class="bi bi-arrow-right"></i>
-            </a>
-          </div>
+<section id="about" class="about">
+  <div class="container" data-aos="fade-up">
+    <div class="row gx-0">
+      <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+        <div class="content">
+          <h2 class="title-3" style="text-align: center">¿Quienes somos?</h2>
+          <h5 data-aos="fade-up" style="text-align: justify;">
+            En nuestra empresa te ofrecemos una propuesta comercial la cual permite brindar 
+            una mayor seguridad en cuanto a la afiliación de seguridad social,
+            seguimiento de los servicios adquiridos de acuerdo con las necesidades presentes y futuras,
+            con el fin de ofrecerles la mejor asesoría en suministro de planillas verificables.
+            Profesional Care brinda un respaldo y una trayectoria con excelentes referencias por
+            parte de nuestros clientes a los cuales se les administra en departamento de Nómina. </h5>
+        </div>
+        <div class="content">
+          <h2 style="text-align: center">Mision</h2>
+          <h5 data-aos="fade-up" id="prin_qmv" style="text-align: justify;">{{empresa.mision}}</h5>
+        </div>
+        <div class="content">
+          <h2 style="text-align: center">Vision</h2>
+          <h5 data-aos="fade-up" id="prin_qmv" style="text-align: justify;">{{empresa.vision}}</h5>
         </div>
       </div>
-      <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
-        <img src="assets/portada.png" class="img-fluid" alt="">
+      <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+        <img src="assets/40c29289-1307-4465-861e-db36efdfde99.jpg" class="img-fluid" alt="">
       </div>
     </div>
   </div>
-</section><!-- End Hero -->
+</section>
+
+
 <div class="container-2">
-  <section id="about" class="about">
-    <div class="container" data-aos="fade-up">
-      <div class="row gx-0">
-        <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="content">
-            <h2 class="title-3" style="text-align: center">¿Quienes somos?</h2>
-            <h5 data-aos="fade-up" style="text-align: justify;">
-              Para nuestra empresa, es de gran importancia presentarles a ustedes una propuesta comercial
-              La cual permita brindarle mayor seguridad en cuanto a la afiliación de seguridad social
-              Seguimiento de sus servicios adquiridos, de acuerdo con sus necesidades presentes y futuras,
-              Con el fin de ofrecerles la mejor asesoría en suministro de planillas verificables.
-              Profesional Care le brinda un respaldo y una trayectoria con excelentes referencias por
-              parte de nuestros clientes a los cuales se les administra en departamento de Nómina. </h5>
-          </div>
-          <div class="content">
-            <h2 style="text-align: center">Mision</h2>
-            <h5 data-aos="fade-up" id="prin_qmv" style="text-align: justify;">{{empresa.mision}}</h5>
-          </div>
-          <div class="content">
-            <h2 style="text-align: center">Vision</h2>
-            <h5 data-aos="fade-up" id="prin_qmv" style="text-align: justify;">{{empresa.vision}}</h5>
+  <section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h1 data-aos="fade-up " class="lessSize" style="text-align: center"> TU SEGURIDAD ESTÁ EN TUS MANOS</h1>
+          <h2 data-aos="fade-up" data-aos-delay="400" >Una manera sencilla de afiliarte a seguridad social.</h2>
+          <div data-aos="fade-up" data-aos-delay="600">
+            <div class="d-flex justify-content-center text-lg-start ">
+              <a href="#about" class="btn btn-lg btn-primary btn-block bottom" [routerLinkActive]="['active']"
+              [routerLinkActiveOptions]="{ exact: true }" [routerLink]="[ '/inicio/afiliacion' ]">
+                Afiliate ya!
+              </a>
+            </div>
           </div>
         </div>
-        <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
-          <img src="assets/40c29289-1307-4465-861e-db36efdfde99.jpg" class="img-fluid" alt="">
+        <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+          <img src="assets/portada.png" class="img-fluid" alt="">
         </div>
       </div>
     </div>
-  </section>
+  </section><!-- End Hero -->
   <script>
     $(document).ready(function () {
       $('#icon').click(function () {

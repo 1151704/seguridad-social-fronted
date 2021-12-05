@@ -307,12 +307,10 @@
   }
 
   .bottom {
-  padding:5px;
-  font-size: 0.9375rem;
-  background: #151515;
-  margin-bottom: 10px;
-
-
+    width: 30%;
+    background: #343759;
+    margin-bottom: 10px;
+    text-align: center;
   }
 
 

@@ -1,4 +1,3 @@
-import { ApiService } from './../../core/api.service';
 import { API_REST, NAME_APP } from './../../url.constants';
 import { Title } from '@angular/platform-browser';
 import { TokenStorageService } from './../../services/auth/token-storage.service';
@@ -31,6 +30,7 @@ export class InicioSignInComponent implements OnInit {
     private router: Router,
     private formBuilder: FormBuilder,
     private titleService: Title
+
   ) {}
 
   ngOnInit() {
