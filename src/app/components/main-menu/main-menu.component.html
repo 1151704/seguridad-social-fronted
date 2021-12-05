@@ -27,6 +27,15 @@
         <span>&nbsp;Usuarios</span>
     </a>
 </li>
+
+<li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="[ '/main/cuenta-cobro' ]">
+    <a class="nav-link" href="" onclick="return false;">
+        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <span>&nbsp;Generar Cuenta de Cobro</span>
+    </a>
+</li>
+
 <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
 [routerLink]="[ '/main/solicitudes' ]">
 <a class="nav-link" href="" onclick="return false;">

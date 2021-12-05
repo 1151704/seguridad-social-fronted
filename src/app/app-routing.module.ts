@@ -25,7 +25,11 @@ import { MainSolicitudesComponent } from './components/main-solicitudes/main-sol
 import { MainSolicitudesEditarComponent } from './components/main-solicitudes-editar/main-solicitudes-editar.component';
 import { InicioConsultarOrdenComponent } from './components/inicio-consultar-orden/inicio-consultar-orden.component';
 import { InicioMostrarOrdenComponent } from './components/inicio-mostrar-orden/inicio-mostrar-orden.component';
-
+import { ClienteComponent } from './components/cliente/cliente.component';
+import { IniciooComponent } from './Components/inicioo/inicioo.component';
+import { EditClienteComponent } from './components/edit-cliente/edit-cliente.component';
+import { MostrarClientesComponent } from './components/mostrar-clientes/mostrar-clientes.component';
+import { MainCuentaCobroComponent } from './components/main-cuenta-cobro/main-cuenta-cobro.component';
 const routes: Routes = [
   {
     path: "inicio",
@@ -40,6 +44,18 @@ const routes: Routes = [
     ]
   },
   { path: "", redirectTo: "inicio", pathMatch: "full" },
+  { path: "cliente", component: ClienteComponent },
+  {
+    path: "inicioo",
+    component: IniciooComponent,
+    children: [
+      { path: "cliente", component: ClienteComponent },
+      { path: "edit-cliente/:id", component: EditClienteComponent },
+      { path: "mostrar-clientes", component: MostrarClientesComponent }
+    ]
+  },
+
+
   {
     path: "main",
     component: MainComponent,
@@ -60,9 +76,11 @@ const routes: Routes = [
       { path: 'clientes', component: MainClientesComponent},
       { path: 'cliente-registrar', component: MainClienteRegistrarComponent},
       { path: 'cliente-editar', component: MainClienteEditarComponent},
-      { path: 'ordenes', component: MainOrdenesComponent}
+      { path: 'ordenes', component: MainOrdenesComponent},
+      {path: 'cuenta-cobro', component: MainCuentaCobroComponent}
     ]
   }
+
 ]
 
 @NgModule({

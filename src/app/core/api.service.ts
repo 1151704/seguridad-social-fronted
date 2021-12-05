@@ -13,6 +13,8 @@ import { HttpClient } from '@angular/common/http';
 import { NotificacionService } from './notificacion.service';
 import { UtilsService } from './utils.service';
 import { MunicipioService } from '../services/municipio.service';
+import { ClientessService } from '../services/clientess-service.service';
+import { CuentaCobroService } from '../services/cuenta-cobro.service';
 
 
 @Injectable({
@@ -31,6 +33,8 @@ export class ApiService {
   ordenesService: OrdenesService;
   reporteService: ReportesService;
   actividadesEconomicasService: ActividadesEconomicasService;
+  clienteServices:ClientessService;
+  cuentaCobroService: CuentaCobroService;
 
   constructor(private http: HttpClient, public notifService: NotificacionService, public utilService: UtilsService) {
     this.empresaService = new EmpresaService(http)
@@ -44,6 +48,8 @@ export class ApiService {
     this.ordenesService = new OrdenesService(http);
     this.reporteService = new ReportesService(http);
     this.actividadesEconomicasService = new ActividadesEconomicasService(http);
+    this.clienteServices = new ClientessService(http);
+    this.cuentaCobroService= new CuentaCobroService(http);
   }
 
 }
