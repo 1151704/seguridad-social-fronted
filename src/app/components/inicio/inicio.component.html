@@ -1,4 +1,36 @@
 <header id="header" class="header fixed-top">
+    <div class="row1">
+        <a href="#" class="logo d-flex align-items-center">
+            <img id="logo_nav" src="assets/logo-fondo.png" alt="">
+            <span id="text_navbar">PROFESIONAL CARE</span>
+        </a>
+    </div>
+
+</header>
+
+<div class="row2 fixed-top">
+    <ul id="navbar" class="navbar">
+        <li><a href="#"><button class="button">Inicio</button></a></li>
+        <li><a class="nav-link scrollto active" href="" [routerLink]="[ '/inicio' ]" fragment="about"><button class="button" >¿Quiénes somos?</button></a></li>
+        <li><a class="nav-link scrollto active" href="" [routerLink]="[ '/inicio' ]" fragment="pricing"><button class="button">Planes</button></a></li>
+        <li><a class="nav-link scrollto" href="" onclick="return false;"
+            [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[ '/inicio/afiliacion' ]"><button class="button">Afiliarme</button></a></li>
+        <li><a class="nav-link scrollto" href="" onclick="return false;"
+            [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[ '/inicio/consultar-orden' ]"><button class="button">Pagar Factura</button></a></li>
+        <li><a class="bottom" href="" onclick="return false;"
+            [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+            [routerLink]="[ '/inicio/signin' ]"><button class="button">Iniciar Sesión</button></a></li>
+    </ul>
+</div>
+
+
+
+ <!---End scroll To Top--->
+
+<!-- <header id="header" class="header fixed-top">
+    
     <div class="container-fluid container-xxl d-flex align-items-center justify-content-between">
 
         <a href="#" class="logo d-flex align-items-center">
@@ -18,7 +50,7 @@
                 <li><a id="text_navbar" class="nav-link scrollto" href="" onclick="return false;"
                         [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
                         [routerLink]="[ '/inicio/consultar-orden' ]">Consultar Factura</a></li>
-                <li><a class="btn btn-lg btn-primary btn-block bottom" href="" onclick="return false;"
+                <li><a class="bottom" href="" onclick="return false;"
                         [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
                         [routerLink]="[ '/inicio/signin' ]">Iniciar Sesión</a></li>
             </ul>
@@ -26,15 +58,19 @@
         </nav>
 
     </div>
-</header>
+</header> -->
+
+<br>
+<br>
 <br>
 <br>
 <br>
 
 <router-outlet (activate)="onOutletLoaded($event)" (change)="onOutletLoaded($event)"></router-outlet>
-<footer class="footer text-white" style="background-color: #343759;">
+
+<footer class="footer text-white">
     <div class="footer-top">
-        <div class="container">
+        <div class="container-1">
             <div class="row gy-12">
                 <div class="col-lg-12 col-md-12 footer-info">
                     <a href="index.html" class="logo d-flex align-items-center">
@@ -46,32 +82,29 @@
                 </div>
                 <section id="contact" class="contact">
                     <div class="container" data-aos="fade-up">
-                        <header class="section-header">
-                            <p>Contactanos</p>
-                        </header>
                         <div class="row col-lg-12 align-items-center justify-content-center" style="text-align: center">
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="info-box">
                                     <i class="bi bi-geo-alt"></i>
                                     <h3>Dirección</h3>
                                     <h5>{{empresa.direccion}}</h5>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="info-box">
                                     <i class="bi bi-telephone"></i>
                                     <h3>Llamanos</h3>
                                     <h5>{{empresa.telefono}}</h5>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="info-box">
                                     <i class="bi bi-envelope"></i>
                                     <h3>Correo Electrónico</h3>
                                     <h5>{{empresa.email}}</h5>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-3">
                                 <div class="info-box">
                                     <i class="bi bi-clock"></i>
                                     <h3>Horario</h3>
