@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="card mb-3 ">
+      <div class="card-header">
+        <i class="fas fa-table"></i>
+        Inicio
+      </div>
+      <div class="card-body">
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input type="text" id="inputNombres" class="form-control" placeholder="Nombres" readonly
+                  required="required" autofocus="autofocus" value="{{info.usuario.nombres | uppercase }}">
+                <label for="inputNombres">Nombres</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input type="text" id="inputApellidos" class="form-control" placeholder="Apellidos" readonly
+                  required="required" value="{{info.usuario.apellidos | uppercase }}">
+                <label for="inputApellidos">Apellidos</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input type="email" id="inputEmail" class="form-control" placeholder="Email" readonly required="required"
+                  value="{{info.usuario.email | uppercase }}">
+                <label for="inputEmail">Email</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input type="text" id="inputIdentificacion" class="form-control" placeholder="Identificación" readonly
+                  disabled
+                  value="{{(info.usuario.tipoIdentificacion ? info.usuario.tipoIdentificacion.tipo+' ':'') +info.usuario.identificacion }}">
+                <label for="inputIdentificacion">Identificación</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="col-md-6">
+              <div class="form-label-group">
+                <input type="text" id="inputRol" class="form-control" placeholder="Rol" readonly disabled
+                  value="{{(info.usuario.rol ? info.usuario.rol.descripcion : '') | uppercase}}">
+                <label for="inputRol">Rol</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

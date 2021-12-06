@@ -1,29 +1,28 @@
-
 <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
     [routerLink]="[ '/main/' ]">
     <a class="nav-link" href="" onclick="return false;">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa fa-home" aria-hidden="true"></i>
         <span>&nbsp;Inicio</span>
     </a>
 </li>
 <li class="nav-item"  *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
     [routerLink]="[ '/main/empresa' ]">
     <a class="nav-link" href="" onclick="return false;">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa fa-building" aria-hidden="true"></i>
         <span>&nbsp;Empresa</span>
     </a>
 </li>
 <li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
     [routerLink]="[ '/main/planes' ]">
     <a class="nav-link" href="" onclick="return false;">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
         <span>&nbsp;Planes</span>
     </a>
 </li>
 <li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
     [routerLink]="[ '/main/usuarios' ]">
     <a class="nav-link" href="" onclick="return false;">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
+        <i class="fa fa-user" aria-hidden="true"></i>
         <span>&nbsp;Usuarios</span>
     </a>
 </li>
@@ -31,36 +30,36 @@
 <li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
     [routerLink]="[ '/main/cuenta-cobro' ]">
     <a class="nav-link" href="" onclick="return false;">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>&nbsp;Generar Cuenta de Cobro</span>
+        <i class="fa fa-credit-card" aria-hidden="true"></i>
+        <span>&nbsp;Cuentas de Cobro</span>
     </a>
 </li>
 
 <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
 [routerLink]="[ '/main/solicitudes' ]">
 <a class="nav-link" href="" onclick="return false;">
-    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <i class="fa fa-envelope" aria-hidden="true"></i>
     <span>&nbsp;Solicitudes</span>
 </a>
 
 <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
 [routerLink]="[ '/main/reportes' ]">
 <a class="nav-link" href="" onclick="return false;">
-    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <i class="fa fa-bullhorn" aria-hidden="true"></i>
     <span>&nbsp;Reportes</span>
 </a>
 
 <li class="nav-item" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
 [routerLink]="[ '/main/ordenes' ]">
 <a class="nav-link" href="" onclick="return false;">
-    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <i class="fa fa-folder-open" aria-hidden="true"></i>
     <span>&nbsp;Ordenes de Servicio</span>
 </a>
 
 <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
 [routerLink]="[ '/main/clientes' ]">
 <a class="nav-link" href="" onclick="return false;">
-    <i class="fas fa-fw fa-tachometer-alt"></i>
+    <i class="fa fa-id-card" aria-hidden="true"></i>
     <span>&nbsp;Clientes</span>
 </a>
 </li>

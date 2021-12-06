@@ -1,8 +1,28 @@
-#header_main{background-color: #343759;}
+*{
+  margin: 0;
+  padding: 0
+}
+#header_main{
+  background-color: #2f3640;
+  
+}
 #text_navbar{color: white;}
 #userDropdown{color: white;}
 
 .navbar a{
-  padding: 10px 10px 10px 10px;
   justify-content: center;
+  
+}
+#logo_nav{
+  background-color: white;
+  border:1px solid #ffffff;
+  border-radius: 200px;
+  box-shadow: 4px 4px 4px 4px #343759;
+  height: 6%;
+}
+
+#text_navbar{
+  color: white;
+  font-size: 100%;
+  padding-right: 10%;
 }

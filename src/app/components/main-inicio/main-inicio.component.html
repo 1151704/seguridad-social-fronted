@@ -1,59 +1,75 @@
-<div class="container-fluid">
-    <div class="card mb-3 ">
-      <div class="card-header">
-        <i class="fas fa-table"></i>
-        Inicio
+<br>
+<br>
+
+<div class="container">
+  <div class="card-deck row">
+    <div class="card col-md-3">
+      <div class="d-flex justify-content-center">
+        <img class="card-img-top" src="assets/company.png" alt="company.png">
+      </div>
+      
+      <div class="card-body">
+        <h5 class="card-title text-center">Empresa</h5>
+      </div>
+    </div>
+    <div class="card col-md-3">
+      <div class="d-flex justify-content-center">
+      <img class="card-img-top" src="assets/planes.png" alt="planes.png">
+    </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">Planes</h5>
+      </div>
+    </div>
+    <div class="card col-md-4">
+      <div class="d-flex justify-content-center">
+      <img class="card-img-top" src="assets/cobro.png" alt="cobro.png">
       </div>
       <div class="card-body">
-        <div class="form-group">
-          <div class="form-row">
-            <div class="col-md-6">
-              <div class="form-label-group">
-                <input type="text" id="inputNombres" class="form-control" placeholder="Nombres" readonly
-                  required="required" autofocus="autofocus" value="{{info.usuario.nombres | uppercase }}">
-                <label for="inputNombres">Nombres</label>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-label-group">
-                <input type="text" id="inputApellidos" class="form-control" placeholder="Apellidos" readonly
-                  required="required" value="{{info.usuario.apellidos | uppercase }}">
-                <label for="inputApellidos">Apellidos</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-row">
-            <div class="col-md-6">
-              <div class="form-label-group">
-                <input type="email" id="inputEmail" class="form-control" placeholder="Email" readonly required="required"
-                  value="{{info.usuario.email | uppercase }}">
-                <label for="inputEmail">Email</label>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-label-group">
-                <input type="text" id="inputIdentificacion" class="form-control" placeholder="Identificación" readonly
-                  disabled
-                  value="{{(info.usuario.tipoIdentificacion ? info.usuario.tipoIdentificacion.tipo+' ':'') +info.usuario.identificacion }}">
-                <label for="inputIdentificacion">Identificación</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-row">
-            <div class="col-md-6">
-              <div class="form-label-group">
-                <input type="text" id="inputRol" class="form-control" placeholder="Rol" readonly disabled
-                  value="{{(info.usuario.rol ? info.usuario.rol.descripcion : '') | uppercase}}">
-                <label for="inputRol">Rol</label>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h5 class="card-title text-center">Cuentas de cobro</h5>
+      </div>
+    </div>
+    <div class="card col-md-4">
+      <div class="d-flex justify-content-center">
+      <img class="card-img-top" src="assets/solicitudes.png" alt="solicitudes.png">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">Solicitudes</h5>
       </div>
     </div>
   </div>
-  
+  <br>
+  <div class="card-deck row">
+    <div class="card col-md-4">
+      <div class="d-flex justify-content-center">
+      <img class="card-img-top" src="assets/reportes.png" alt="reportes.png">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">Reportes</h5>
+      </div>
+    </div>
+    <div class="card col-md-4">
+      <div class="d-flex justify-content-center">
+      <img class="card-img-top" src="assets/cobro.png" alt="cobro.png">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">Cuentas de cobro</h5>
+      </div>
+    </div>
+    <div class="card col-md-4">
+      <div class="d-flex justify-content-center">
+      <img class="card-img-top" src="assets/solicitudes.png" alt="solicitudes.png">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">Solicitudes</h5>
+      </div>
+    </div>
+    <div class="card col-md-4">
+      <div class="d-flex justify-content-center">
+      <img class="card-img-top" src="assets/reportes.png" alt="reportes.png">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">Reportes</h5>
+      </div>
+    </div>
+  </div>
+</div>

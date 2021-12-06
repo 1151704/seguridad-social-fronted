@@ -1,4 +1,6 @@
-<div class="container-fluid">
+<br>
+<br>
+<div class="container">
     <div class="card mb-3 ">
         <div class="card-header">
             <i class="fas fa-table"></i>
@@ -6,7 +8,7 @@
         </div>
         <div class="card-body">
 
-            <button class="btn btn-success btn-sm" [routerLink]="[ '/main/usuario-registrar']" title="Registrar"> <i
+            <button class="button" [routerLink]="[ '/main/usuario-registrar']" title="Registrar"> <i
                     class="fa fa-plus"></i> Registrar</button>
             <div class="table-responsive">
                 <table class=" mt-2 table table-striped table-bordered table-sm">
@@ -37,7 +39,7 @@
                             </td>
                             <td>{{usuario.rol ? usuario.rol.descripcion: 'Sin rol'}}</td>
                             <td>
-                                <button *ngIf="info && usuario.username != info.username" class="btn btn-warning btn-sm"
+                                <button *ngIf="info && usuario.username != info.username"
                                     (click)="editUsuario(usuario)">{{usuario.enable?'Desactivar': 'Activar'}}</button>
                                 <button
                                     *ngIf="info && usuario.rol && usuario.rol.rol != 'ROLE_ADMIN' && isValido('ROLE_ADMIN')"

@@ -1,3 +1,17 @@
+
+.button {
+    text-align: center;
+    background-color: rgb(0, 0, 0, 0.8);
+    color: white;
+    width: 150px;
+    height: 40px;
+    
+  }
+  .button:hover {
+    background-color: rgb(255, 255, 255, 0.6);
+    color: black;
+  }
+  
 .invoice-box {
     max-width: 800px;
     margin: auto;

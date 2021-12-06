@@ -1,17 +1,13 @@
-<div class="container-fluid">
+<br>
+<br>
+<div class="container">
     <div class="card mb-3 ">
         <div class="card-header">
             <i class="fas fa-table"></i>
-            Ordenes
+            Ordenes de servicio
         </div>
-        <div class="col-md-4">
-            <button type="button" class="btn btn-primary" onclick="return false;"
-            (click)="generar()">Generar Ordenes</button>
-          </div>
+
         <div class="card-body">
-            <button class="btn btn-success btn-sm"  [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
-            [routerLink]="[ '/main/cliente-registrar' ]" title="Registrar"> <i
-                    class="fa fa-plus"></i> Registrar</button>
             <table class=" mt-2 table table-striped table-bordered table-sm">
                 <thead>
                     <tr>
@@ -48,6 +44,10 @@
                     </tr>
                 </tbody>
             </table>
+            <div class="d-flex justify-content-center col-md-12">
+                <button type="button" class="button" onclick="return false;"
+                (click)="generar()">Generar Ordenes</button>
+            </div>
         </div>
     </div>
 </div>

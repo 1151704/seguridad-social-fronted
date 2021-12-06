@@ -1,2 +1,17 @@
-#header_main{background-color: #343759;}
-#menu_main{ background-color: #343759;}
+#header_main{background-color: #2f3640;}
+#menu_main{
+  background-color: #2f3640;
+}
+
+#button {
+    text-align: center;
+    background-color: rgb(0, 0, 0, 0.8);
+    color: white;
+    width: 150px;
+    height: 40px;
+    
+  }
+#button:hover {
+    background-color: rgb(255, 255, 255, 0.6);
+    color: black;
+  }

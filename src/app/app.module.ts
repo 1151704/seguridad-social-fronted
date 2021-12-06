@@ -46,6 +46,7 @@ import { IniciooComponent } from './Components/inicioo/inicioo.component';
 import { EditClienteComponent } from './components/edit-cliente/edit-cliente.component';
 import { MostrarClientesComponent } from './components/mostrar-clientes/mostrar-clientes.component';
 import { MainCuentaCobroComponent } from './components/main-cuenta-cobro/main-cuenta-cobro.component';
+import { MainProfileComponent } from './components/main-profile/main-profile.component';
 
 @NgModule({
   declarations: [
@@ -84,7 +85,8 @@ import { MainCuentaCobroComponent } from './components/main-cuenta-cobro/main-cu
     IniciooComponent,
     EditClienteComponent,
     MostrarClientesComponent,
-    MainCuentaCobroComponent
+    MainCuentaCobroComponent,
+    MainProfileComponent
   ],
   imports: [
     BrowserModule,
