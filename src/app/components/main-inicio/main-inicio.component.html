@@ -1,9 +1,10 @@
 <br>
 <br>
 
-<div class="container">
+<div class="container" data-aos="fade-up" data-aos-delay="100">
   <div class="card-deck row">
-    <div class="card col-md-3">
+    <div class="card col-md-3" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="[ '/main/empresa' ]">
       <div class="d-flex justify-content-center">
         <img class="card-img-top" src="assets/company.png" alt="company.png">
       </div>
@@ -12,7 +13,8 @@
         <h5 class="card-title text-center">Empresa</h5>
       </div>
     </div>
-    <div class="card col-md-3">
+    <div class="card col-md-3" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="[ '/main/planes' ]">
       <div class="d-flex justify-content-center">
       <img class="card-img-top" src="assets/planes.png" alt="planes.png">
     </div>
@@ -20,41 +22,28 @@
         <h5 class="card-title text-center">Planes</h5>
       </div>
     </div>
-    <div class="card col-md-4">
+    <div class="card col-md-4" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="[ '/main/usuarios' ]">
+      <div class="d-flex justify-content-center">
+      <img class="card-img-top" src="assets/usuarios.png" alt="users.png">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">Usuarios</h5>
+      </div>
+    </div>
+    <div class="card col-md-4" *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="[ '/main/cuenta-cobro' ]">
       <div class="d-flex justify-content-center">
       <img class="card-img-top" src="assets/cobro.png" alt="cobro.png">
       </div>
       <div class="card-body">
         <h5 class="card-title text-center">Cuentas de cobro</h5>
-      </div>
-    </div>
-    <div class="card col-md-4">
-      <div class="d-flex justify-content-center">
-      <img class="card-img-top" src="assets/solicitudes.png" alt="solicitudes.png">
-      </div>
-      <div class="card-body">
-        <h5 class="card-title text-center">Solicitudes</h5>
       </div>
     </div>
   </div>
   <br>
-  <div class="card-deck row">
-    <div class="card col-md-4">
-      <div class="d-flex justify-content-center">
-      <img class="card-img-top" src="assets/reportes.png" alt="reportes.png">
-      </div>
-      <div class="card-body">
-        <h5 class="card-title text-center">Reportes</h5>
-      </div>
-    </div>
-    <div class="card col-md-4">
-      <div class="d-flex justify-content-center">
-      <img class="card-img-top" src="assets/cobro.png" alt="cobro.png">
-      </div>
-      <div class="card-body">
-        <h5 class="card-title text-center">Cuentas de cobro</h5>
-      </div>
-    </div>
+  <div class="card-deck row" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+  [routerLink]="[ '/main/solicitudes' ]">
     <div class="card col-md-4">
       <div class="d-flex justify-content-center">
       <img class="card-img-top" src="assets/solicitudes.png" alt="solicitudes.png">
@@ -63,12 +52,32 @@
         <h5 class="card-title text-center">Solicitudes</h5>
       </div>
     </div>
-    <div class="card col-md-4">
+    <div class="card col-md-4" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="[ '/main/reportes' ]">
       <div class="d-flex justify-content-center">
       <img class="card-img-top" src="assets/reportes.png" alt="reportes.png">
       </div>
       <div class="card-body">
         <h5 class="card-title text-center">Reportes</h5>
+      </div>
+    </div>
+
+    <div class="card col-md-4 " *ngIf="isValido('ROLE_ADMIN')" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+    [routerLink]="[ '/main/ordenes' ]">
+      <div class="d-flex justify-content-center">
+      <img class="card-img-top" src="assets/invoice.png" alt="invoice.png">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">Ordenes de Servicio</h5>
+      </div>
+    </div>
+    <div class="card col-md-4">
+      <div class="d-flex justify-content-center" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }"
+      [routerLink]="[ '/main/clientes' ]">
+      <img class="card-img-top" src="assets/clientes.png" alt="clientes.png">
+      </div>
+      <div class="card-body">
+        <h5 class="card-title text-center">Clientes</h5>
       </div>
     </div>
   </div>

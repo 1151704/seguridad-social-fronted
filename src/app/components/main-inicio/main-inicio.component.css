@@ -1,3 +1,6 @@
 .card-img-top{
     width: 70%;
 }
+.card:hover{
+    background-color: rgb(0,0,0,0.2);
+}

@@ -1,10 +1,10 @@
 <div class="content">
   <div class="container">
     <div class="row">
-      <div class="col-md-6" id="container_img">
+      <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200" id="container_img">
         <img id="imagen_login" src="assets/login.jpg" class="img-responsive" alt="Image" class="img-fluid">
       </div>
-      <div class="card card-container">
+      <div class="card card-container" data-aos="zoom-out" data-aos-delay="200">
           <img id="profile-img" class="profile-img-card" src="http://www.asambleamurcia.es/sites/default/files/avatar_4.jpg" />
           <p id="profile-name" class="profile-name-card"></p>
           <form class="form-signin" [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" method="post">
