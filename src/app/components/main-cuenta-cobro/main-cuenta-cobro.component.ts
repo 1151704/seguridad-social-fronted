@@ -3,6 +3,7 @@ import { CuentaApi } from 'src/app/container/clientes-api copy';
 import { ApiService } from 'src/app/core/api.service';
 import { CuentaCobro } from 'src/app/models/cuentacobro';
 import { Usuario } from 'src/app/models/usuario.model';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-main-cuenta-cobro',
@@ -10,7 +11,7 @@ import { Usuario } from 'src/app/models/usuario.model';
   styleUrls: ['./main-cuenta-cobro.component.css']
 })
 export class MainCuentaCobroComponent implements OnInit {
-  cuentas : CuentaCobro [] = []; 
+  cuentas : CuentaCobro [] = [];
   cuenta : CuentaApi= new CuentaApi();
    usuarios: Usuario[] = [];
    
@@ -27,16 +28,18 @@ export class MainCuentaCobroComponent implements OnInit {
   }
 
   generarCuenta(){
-    
-
     this.apiService.cuentaCobroService.generarCuenta(this.cuenta)
       .subscribe(data => {
         this.usuarios = [];
         if (data.asesor) {
           this.cuenta.id_asesor = data.asesor.id;
         }
+        Swal.fire(
+          'Exito!',
+          `Se ha generado correctamente`,
+          'success'
+        )
       });
-      alert(this.cuenta.id_asesor + "" + this.cuenta.fecha);
   }
 
 }

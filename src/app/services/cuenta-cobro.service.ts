@@ -31,7 +31,7 @@ export class CuentaCobroService {
     return this.http.post<CuentaCobro>(`${this.baseUrl}guardar`, cuenta, {headers: this.HttpHeaders})
 
   }
-
-  
-
+  obtenerCuentas(){
+    return this.http.get<any>(`${this.baseUrl}todos`);
+  }
 }
