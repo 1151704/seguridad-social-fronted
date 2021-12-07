@@ -5,7 +5,9 @@ export class CuentaCobro {
 
     id: number;
     asesor:Usuario;
+    fecha: Date;
     total: number;
+    estado: Boolean;
   
   }
   

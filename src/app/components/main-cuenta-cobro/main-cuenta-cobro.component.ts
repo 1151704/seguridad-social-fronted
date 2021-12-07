@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CuentaApi } from 'src/app/container/clientes-api copy';
 import { ApiService } from 'src/app/core/api.service';
+import { CuentaCobro } from 'src/app/models/cuentacobro';
 import { Usuario } from 'src/app/models/usuario.model';
 
 @Component({
@@ -9,9 +10,11 @@ import { Usuario } from 'src/app/models/usuario.model';
   styleUrls: ['./main-cuenta-cobro.component.css']
 })
 export class MainCuentaCobroComponent implements OnInit {
-   cuenta : CuentaApi= new CuentaApi();
+  cuentas : CuentaCobro [] = []; 
+  cuenta : CuentaApi= new CuentaApi();
    usuarios: Usuario[] = [];
-  constructor(private apiService: ApiService) { }
+   
+  constructor(private apiService: ApiService) {  }
 
   ngOnInit(): void {
     this.apiService.usuarioService.getUsuarios()
