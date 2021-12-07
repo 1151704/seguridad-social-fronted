@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpEvent, HttpRequest, HttpHeaders } from '@angular/common/http';
 import { API_REST } from './../url.constants';
 import { Clientess } from '../models/cliente';
-import { CuentaApi } from '../container/clientes-api copy';
 import { CuentaCobro } from '../models/cuentacobro';
+import { CuentaApi } from '../container/cuenta-api';
 
 
 @Injectable({
@@ -31,7 +31,7 @@ export class CuentaCobroService {
     return this.http.post<CuentaCobro>(`${this.baseUrl}guardar`, cuenta, {headers: this.HttpHeaders})
 
   }
-  obtenerCuentas(){
-    return this.http.get<any>(`${this.baseUrl}todos`);
+  obtenerCuentas():  Observable<CuentaCobro[]>{
+    return this.http.get<CuentaCobro[]>(`${this.baseUrl}todos`);
   }
 }

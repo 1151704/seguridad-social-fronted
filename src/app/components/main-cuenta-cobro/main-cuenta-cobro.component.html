@@ -51,7 +51,7 @@
                 <tr>
                     <th>ID Asesor</th>
                     <th>Nombre Asesor</th>
-                    <th>Fecha Generada</th>
+                    
                     <th>Estado</th>
                     <th>Total a pagar</th>
                 </tr>
@@ -60,13 +60,13 @@
                 <tr *ngIf="cuentas.length == 0">
                     <td colspan="7" [align]="center">No hay registros</td>
                 </tr>
-                <tr *ngFor="let orden of cuentas; let i = index">
+                <tr *ngFor="let cuenta of cuentas; let i = index">
 
                     <td >{{cuenta.id}}</td>
-                    <td>{{cuenta.asesor}}</td>
-                    <td>{{orden.fecha}}</td>
-                    <td>{{orden.estado?"Pago":"Pendiente"}}</td>
-                    <td>{{orden.total}}</td>
+                    <td>{{cuenta.asesor.nombres}}</td>
+                   
+                    <td>{{cuenta.estadoOrden}}</td>
+                    <td>{{cuenta.total}}</td>
                 </tr>
             </tbody>
         </table>

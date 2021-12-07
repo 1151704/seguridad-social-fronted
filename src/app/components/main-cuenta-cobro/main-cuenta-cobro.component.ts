@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CuentaApi } from 'src/app/container/clientes-api copy';
+import { CuentaApi } from 'src/app/container/cuenta-api';
+
 import { ApiService } from 'src/app/core/api.service';
 import { CuentaCobro } from 'src/app/models/cuentacobro';
 import { Usuario } from 'src/app/models/usuario.model';
@@ -18,6 +19,15 @@ export class MainCuentaCobroComponent implements OnInit {
   constructor(private apiService: ApiService) {  }
 
   ngOnInit(): void {
+
+    this.apiService.cuentaCobroService.obtenerCuentas()
+    .subscribe(data => {
+      if(data){
+
+        this.cuentas=data;
+      }
+    })
+
     this.apiService.usuarioService.getUsuarios()
       .subscribe(data => {
         this.usuarios = [];
